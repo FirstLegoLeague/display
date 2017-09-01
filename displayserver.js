@@ -13,6 +13,7 @@ app.use('/config.js', function (req, res) {
     send(req, configFile).pipe(res);
 });
 
-app.use(serveStatic(__dirname)).listen(port);
+app.use(serveStatic(__dirname));
+app.listen(port);
 console.log('server running on port',port);
 console.log('open browser to http://localhost:'+port+'/');
