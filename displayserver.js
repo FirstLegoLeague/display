@@ -1,10 +1,11 @@
 var connect = require('connect');
 var serveStatic = require('serve-static');
-var argv = require('minimist')(process.argv.slice(2));
+var argumentAliases = {'port' : 'p', 'config' : 'c'};
+var argv = require('minimist')(process.argv.slice(2), {alias : argumentAliases});
 var path = require('path');
 var send = require('send');
 
-var port = argv.p || 1391;
+var port = argv.port || 1391;
 var configFile = argv.config ? path.resolve(argv.config) : path.resolve(path.dirname(process.argv[1]), 'config.js');
 
 
