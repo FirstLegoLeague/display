@@ -132,6 +132,7 @@ Luckily, we have already done this for you, but there is a catch. The control wi
     - type `npm install`
     - type `npm start`
     - you can now open the application by navigating to <http://localhost:1391>
+    - node has the advantage of taking arguments- you can specify a custom config file with `--config` or a custom port with `--port`. Shorthand arguments are also accepted.
 - Lastly, you can also control the display system by other means, but this gets more complicated. More on that below.
 
 So, the control window. To open it, press `c`
