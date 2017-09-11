@@ -36,6 +36,35 @@ displaySystem.registerModule({
             system.ws.sendMessage({name:name},action,data);
         }
 
+        function handleButton(module, f, inputs) {
+            return function() {
+                var data = inputs.map(getValue);
+                if (system.ws) {
+                    //handle via websocket
+                    sendMessage(name,fn,args,data);
+                } else {
+                    //handle directly
+                    f.apply(module,data);
+                }
+            }
+        }
+
+        function renderModule(module, name, container) {
+            return function(fn) {
+                var f = module[fn];
+                if (typeof f === 'function' && !f.hidden) {
+                    var s = container.appendChild(document.createElement('span'));
+                    var args = getArguments(f);
+                    var inps = args.map(createInput);
+                    var btn = document.createElement('button');
+                    btn.innerHTML = fn;
+                    btn.addEventListener('click', handleButton(module, f, inps));
+                    inps.forEach(appendTo(s));
+                    s.appendChild(btn);
+                }
+            }
+        }
+
         function renderModuleControls(name, document) {
             var module = system.modules[name];
             if (module.hidden) {
@@ -43,28 +72,7 @@ displaySystem.registerModule({
             }
             var p = document.createElement('p');
             p.innerHTML = '<label>'+name+'</label>';
-            Object.keys(module).forEach(function(fn) {
-                var f = module[fn];
-                if (typeof f === 'function' && !f.hidden) {
-                    var s = p.appendChild(document.createElement('span'));
-                    var args = getArguments(f);
-                    var inps = args.map(createInput);
-                    var btn = document.createElement('button');
-                    btn.innerHTML = fn;
-                    btn.addEventListener('click',function() {
-                        var data = inps.map(getValue);
-                        if (system.ws) {
-                            //handle via websocket
-                            sendMessage(name,fn,args,data);
-                        } else {
-                            //handle directly 
-                            f.apply(module,data);
-                        }
-                    });
-                    inps.forEach(appendTo(s));
-                    s.appendChild(btn);
-                }
-            });
+            Object.keys(module).forEach(renderModule(module, name, p));
             document.body.appendChild(p);
         }
 
@@ -86,9 +94,16 @@ displaySystem.registerModule({
 
         function open() {
             if (config.url) {
+                //we have a completely custom control window supplied by the user, do not bother rendering
                 var win = window.open(config.url,'fllDisplayControlWindow','resize=yes,width=800,height=550');
             } else {
                 var win = window.open('','fllDisplayControlWindow','resize=yes,width=800,height=550');
+                if (win.document.body.innerHTML) {
+                    // do not render, as the window has already been filled with html.
+                    // Just rendering would add more html to the existing screen
+                    // Rerendering would lose page state
+                    return;
+                }
                 win.document.write(html);
                 init(win.document);
             }
