@@ -71,7 +71,7 @@ displaySystem.config({
         'sprite': {
             visible: true,
             texts: [{
-                data:'2017 Regional, Modiin'
+                data:'2017 World Festival'
             }
             ],
             sprites: [{
