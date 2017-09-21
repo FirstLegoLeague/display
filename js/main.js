@@ -44,7 +44,7 @@ var displaySystem = (function () {
     function initWebsocket(config) {
         var ws, host;
 
-        var mhubPort = config.wsHost.substr(config.wsHost.indexOf(':'), config.wsHost.length);
+        var mhubPort = config.wsHost.substr(config.wsHost.indexOf(':') + 1, config.wsHost.length);
         config.wsHost = `${window.location.hostname}:${mhubPort}`;
 
         if (config.wsHost || config.wssHost) {
