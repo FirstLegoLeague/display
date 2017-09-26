@@ -37,14 +37,18 @@ displaySystem.registerModule({
             sprites[index].classList.add('hidden');
         }
 
+        function setTexts(eventName) {
+            texts = [eventName];
+        }
         function removeSprite(el) {
             el.parentNode.removeChild(el);
         }
 
+
         function addSprite(config) {
             let sprite = document.createElement('div');
             sprite.className = 'sprite';
-            var imgSrc = config.html || `http://${window.location.hostname}:1395/${config.alias}`||'';
+            var imgSrc = config.html || `http://${window.location.hostname}:1395/${config.alias}` || '';
             var img = document.createElement('img');
             img.setAttribute("src", imgSrc);
             img.setAttribute("class", config.imgClass);
@@ -98,6 +102,7 @@ displaySystem.registerModule({
             hide,
             showSprite,
             hideSprite,
+            setTexts,
         };
     }
 });
