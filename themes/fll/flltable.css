@@ -177,26 +177,28 @@ img.emojione {
 /* Top Left */
 #challenge {
     width: 100%;
-    top: 0.5vh;
-    left: 2vh;
+    top: 3vh;
+    left: 3vh;
     font-size: 8vh;
     text-align: left;
     color: rgba(255, 255, 255, 0.5);
 }
+
 /* Top Center */
 .eventName {
     position: absolute;
     top: 3%;
-    /* width: 100%; */
+    width: auto;
     text-align: center;
     border: #1e68d8;
     border-radius: 20px;
     background: linear-gradient(#e6e6ee,#b6b6db,#e6e6ee);
     border-width: 3px;
     border-style: solid;
-    font-size: 6vh;
+    font-size: 4.5vh;
     color:#3131a7;
-    margin-left: 32%;
+    margin-left: 50%;
+    -webkit-transform: translate(-50%, 0);
     padding: 15px 20px;
     font-weight: bold;
     font-family: sans-serif;
@@ -220,7 +222,6 @@ img.emojione {
 }
 
 /* Bottom Center */
-
 #LEGOEd {
     width: 100%;
     bottom: 0.5vh;
@@ -239,26 +240,26 @@ img.emojione {
 }
 
 .firstLogo {
-    height: 1.4em;
+    height: 9vh;
     margin-left: 5vh;
 }
 
 .challengeLogo {
-    height: 2.1em;
+    height: 10.5vh;
 }
 
 .legoLogo {
-    height: 1.3em;
+    height: 7vh;
     margin-right: 5vh;
 }
 
 .sponsor1Img {
-    height: 1em;
+    height: 7vh;
     margin-left: 5vh;
 }
 
 .sponsor2Img {
-    height: 1.4em;
+    height: 7vh;
     margin-right: 5vh;
 }
 
