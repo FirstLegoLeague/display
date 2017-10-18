@@ -29,7 +29,7 @@ displaySystem.registerModule({
     */
     factory: function (config, onMessage) {
         
-        var numberOfLines = 8;
+        var numberOfLines = 12;
         var pageTimeout = 5000;
         var pageTimer;
         var running = true;
@@ -125,6 +125,7 @@ displaySystem.registerModule({
         }
 
         function setLines(lines) {
+            console.info(`${lines}`);
             numberOfLines = lines;
         }
 

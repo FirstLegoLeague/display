@@ -119,7 +119,7 @@ displaySystem.config({
 
             ],
             timer: 10000,
-            lines: 8
+            lines: 12
         },
         'css': {
             href: [
