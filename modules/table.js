@@ -29,6 +29,7 @@ displaySystem.registerModule({
     */
     factory: function (config, onMessage) {
         
+        var displayedLines;
         var numberOfLines = 12;
         var pageTimeout = 5000;
         var pageTimer;
@@ -85,7 +86,9 @@ displaySystem.registerModule({
                     '</tr>'
                 ].join('');
             }).join('');
+
             getElement().innerHTML = head + html;
+            
         }
 
         function nextPage(data, header, page) {
@@ -102,6 +105,7 @@ displaySystem.registerModule({
                     nextPage(data, header, next);
                 }, pageTimeout);
             }
+            setDynamicLines(config.relativeSides);
         }
 
         function set(data, header) {
@@ -125,8 +129,36 @@ displaySystem.registerModule({
         }
 
         function setLines(lines) {
-            console.info(`${lines}`);
             numberOfLines = lines;
+        }
+
+        function setLimits(limits) {
+            var array = JSON.parse(`[${limits}]`);
+            if (array.length) {
+                if (array.length === 2) {
+                    setDynamicLines(array);
+                }
+            }
+        }
+
+        function setDynamicLines(sides) {
+            var height = getElement().parentElement.clientHeight;
+            if (sides.length !== 2) {
+                setLines(config.lines);
+            } else {
+                var lineHeight = 33;
+                var tbody = Array.from(getElement().children).find((child) => {
+                    return child.tagName === "TBODY";
+                });
+                if (tbody.children) {
+                    lineHeight = tbody.children[0].clientHeight;
+                }
+                
+                var h1 = sides[0] / 100 * height; //sides is a 2-element array with numbers, which are percentages.
+                var h2 = sides[1] / 100 * height;
+                var linesToSee = Math.round((h2 - h1) / lineHeight);
+                setLines(linesToSee);
+            }
         }
 
         if (config.timer) {
@@ -145,6 +177,16 @@ displaySystem.registerModule({
         if (config.visible) {
             show();
         }
+        if(config.relativeSides){
+            var sides = config.relativeSides;
+            if (sides instanceof Array) {
+                if (sides.length === 2) {
+                    sides.sort((a, b) => { return a - b; });
+                    setDynamicLines(sides);
+                }
+            }
+        }
+        
 
         onMessage('setData', function (msg) {
             set(msg.data.data, msg.data.header);

@@ -110,18 +110,7 @@ displaySystem.config({
                 imgClass: 'sponsor2Img',
 
             }]
-        },
-        'table': {
-            visible: true,
-            header: ['rank', 'NO.', 'name', 'best', '1', '2', '3'],
-            data: [
-                ['--', '--', '   ', '--', '--', '--', '--'],
-
-            ],
-            timer: 10000,
-            lines: 12
-        },
-        'css': {
+        },'css': {
             href: [
                 'themes/fll/flltable.css',
                 // 'themes/rednblue-plus/rednblue-plus-mod-rtl.css',
@@ -134,6 +123,18 @@ displaySystem.config({
             // href: 'themes/default/default.css',
             // gist: '9c7e4efaba9dbbc4831b'
         },
+        'table': {
+            visible: true,
+            header: ['rank', 'NO.', 'name', 'best', '1', '2', '3'],
+            data: [
+                ['--', '--', '   ', '--', '--', '--', '--'],
+
+            ],
+            timer: 5000,
+            relativeSides: [25, 75],
+            lines: 12
+        },
+        
         'geometry': {
             zoom: 1,
             aspect: 'native',
