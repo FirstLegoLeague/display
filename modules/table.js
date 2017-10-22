@@ -134,19 +134,19 @@ displaySystem.registerModule({
 
         function setLimits(limits) {
             var array = JSON.parse(`[${limits}]`);
-            if (array.length) {
-                if (array.length === 2) {
-                    setDynamicLines(array);
-                }
+            if (array.length === 2) {
+                setDynamicLines(array);
             }
         }
 
-        function setDynamicLines(sides) {
+        function setDynamicLines(sides) { 
+			//sides is a 2-element array with numbers, which are percentages. these percentages are the % from the total height of the window 
+			// i.e. if sides=[25,75], the table will take up 50% of the total height of the window, starting at 25% of the window and ending at 75% (rounding the number of lines).
             var height = getElement().parentElement.clientHeight;
             if (sides.length !== 2) {
                 setLines(config.lines);
             } else {
-                var lineHeight = 33;
+                var lineHeight = 0; //this value simply defines it as a number, and ensures it's not undefined or null.
                 var tbody = Array.from(getElement().children).find((child) => {
                     return child.tagName === "TBODY";
                 });
@@ -154,9 +154,9 @@ displaySystem.registerModule({
                     lineHeight = tbody.children[0].clientHeight;
                 }
                 
-                var h1 = sides[0] / 100 * height; //sides is a 2-element array with numbers, which are percentages.
-                var h2 = sides[1] / 100 * height;
-                var linesToSee = Math.round((h2 - h1) / lineHeight);
+                var top = sides[0] / 100 * height; 
+                var bottom = sides[1] / 100 * height;
+                var linesToSee = Math.round((bottom - top) / lineHeight);
                 setLines(linesToSee);
             }
         }
@@ -179,11 +179,9 @@ displaySystem.registerModule({
         }
         if(config.relativeSides){
             var sides = config.relativeSides;
-            if (sides instanceof Array) {
-                if (sides.length === 2) {
-                    sides.sort((a, b) => { return a - b; });
-                    setDynamicLines(sides);
-                }
+            if (sides instanceof Array && sides.length === 2) {
+                sides.sort((a, b) => { return a - b; });
+                setDynamicLines(sides);
             }
         }
         
