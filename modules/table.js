@@ -139,7 +139,7 @@ displaySystem.registerModule({
             } else {
                 var style = window.getComputedStyle(getElement(), null);
                 var styleLineHeight = parseInt(style.lineHeight);
-                var lineHeight = 0; //this value simply defines it as a number, and ensures it's not undefined or null.
+                var lineHeight; //this value simply defines it as a number, and ensures it's not undefined or null.
                 if (!isNaN(styleLineHeight)) {
                     lineHeight = styleLineHeight;
                 } else {
@@ -153,8 +153,13 @@ displaySystem.registerModule({
                 var height = getElement().parentElement.clientHeight;
                 var top = margins.top / 100 * height; 
                 var bottom = margins.bottom / 100 * height;
-                var linesToSee = Math.floor((bottom - top) / lineHeight);
-                setLines(linesToSee);
+                if(lineHeight !== 0 && lineHeight !== undefined){
+                    var linesToSee = Math.floor(Math.abs(bottom - top) / lineHeight);
+                    setLines(linesToSee);
+                }else{
+                    setLines(config.lines);
+                }
+                
             }
         }
 
@@ -175,13 +180,7 @@ displaySystem.registerModule({
             show();
         }
         if(config.margins){
-            var margins = config.margins;
-            if (config.margins.top > config.margins.bottom) {
-                margins.top = config.margins.bottom;
-                margins.bottom = config.margins.top;
-            }
-            setDynamicLines(margins);
-            
+            setDynamicLines(config.margins);
         }
         
 
