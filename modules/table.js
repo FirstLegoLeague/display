@@ -153,7 +153,7 @@ displaySystem.registerModule({
                 var height = getElement().parentElement.clientHeight;
                 var top = margins.top / 100 * height; 
                 var bottom = margins.bottom / 100 * height;
-                if(lineHeight !== 0 && lineHeight !== undefined){
+                if(lineHeight){
                     var linesToSee = Math.floor(Math.abs(bottom - top) / lineHeight);
                     setLines(linesToSee);
                 }else{
