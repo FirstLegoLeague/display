@@ -104,7 +104,7 @@ displaySystem.registerModule({
                     nextPage(data, header, next);
                 }, pageTimeout);
             }
-            setDynamicLines(config.relativeSides);
+            setDynamicLines(config.margins);
         }
 
         function set(data, header) {
@@ -131,28 +131,26 @@ displaySystem.registerModule({
             numberOfLines = lines;
         }
 
-        function setLimits(limits) {
-            var array = JSON.parse(`[${limits}]`);
-            if (array.length === 2) {
-                setDynamicLines(array);
-            }
-        }
-
         function setDynamicLines(margins) { 
 			//margins is an object with "top" and "bottom" properties, which are percentages. these percentages are the % from the total height of the window 
 			// i.e. if margins={top: 25, bottom: 75}, the table will take up 50% of the total height of the window, starting at 25% of the window and ending at 75% (rounding the number of lines).
-            var height = getElement().parentElement.clientHeight;
             if (!margins.top || !margins.bottom) {
                 setLines(config.lines);
             } else {
+                var style = window.getComputedStyle(getElement(), null);
+                var styleLineHeight = parseInt(style.lineHeight);
                 var lineHeight = 0; //this value simply defines it as a number, and ensures it's not undefined or null.
-                var tbody = Array.from(getElement().children).find((child) => {
-                    return child.tagName === "TBODY";
-                });
-                if (tbody.children) {
-                    lineHeight = tbody.children[0].clientHeight;
+                if (!isNaN(styleLineHeight)) {
+                    lineHeight = styleLineHeight;
+                } else {
+                    var tbody = Array.from(getElement().children).find((child) => {
+                        return child.tagName === "TBODY";
+                    });
+                    if (tbody.children) {
+                        lineHeight = tbody.children[0].clientHeight;
+                    }
                 }
-                
+                var height = getElement().parentElement.clientHeight;
                 var top = margins.top / 100 * height; 
                 var bottom = margins.bottom / 100 * height;
                 var linesToSee = Math.floor((bottom - top) / lineHeight);
