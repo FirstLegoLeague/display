@@ -29,8 +29,7 @@ displaySystem.registerModule({
     */
     factory: function (config, onMessage) {
         
-        var displayedLines;
-        var numberOfLines = 12;
+        var numberOfLines;
         var pageTimeout = 5000;
         var pageTimer;
         var running = true;
@@ -139,11 +138,11 @@ displaySystem.registerModule({
             }
         }
 
-        function setDynamicLines(sides) { 
-			//sides is a 2-element array with numbers, which are percentages. these percentages are the % from the total height of the window 
-			// i.e. if sides=[25,75], the table will take up 50% of the total height of the window, starting at 25% of the window and ending at 75% (rounding the number of lines).
+        function setDynamicLines(margins) { 
+			//margins is an object with "top" and "bottom" properties, which are percentages. these percentages are the % from the total height of the window 
+			// i.e. if margins={top: 25, bottom: 75}, the table will take up 50% of the total height of the window, starting at 25% of the window and ending at 75% (rounding the number of lines).
             var height = getElement().parentElement.clientHeight;
-            if (sides.length !== 2) {
+            if (!margins.top || !margins.bottom) {
                 setLines(config.lines);
             } else {
                 var lineHeight = 0; //this value simply defines it as a number, and ensures it's not undefined or null.
@@ -154,9 +153,9 @@ displaySystem.registerModule({
                     lineHeight = tbody.children[0].clientHeight;
                 }
                 
-                var top = sides[0] / 100 * height; 
-                var bottom = sides[1] / 100 * height;
-                var linesToSee = Math.round((bottom - top) / lineHeight);
+                var top = margins.top / 100 * height; 
+                var bottom = margins.bottom / 100 * height;
+                var linesToSee = Math.floor((bottom - top) / lineHeight);
                 setLines(linesToSee);
             }
         }
@@ -177,12 +176,14 @@ displaySystem.registerModule({
         if (config.visible) {
             show();
         }
-        if(config.relativeSides){
-            var sides = config.relativeSides;
-            if (sides instanceof Array && sides.length === 2) {
-                sides.sort((a, b) => { return a - b; });
-                setDynamicLines(sides);
+        if(config.margins){
+            var margins = config.margins;
+            if (config.margins.top > config.margins.bottom) {
+                margins.top = config.margins.bottom;
+                margins.bottom = config.margins.top;
             }
+            setDynamicLines(margins);
+            
         }
         
 

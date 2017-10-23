@@ -131,7 +131,7 @@ displaySystem.config({
 
             ],
             timer: 5000,
-            relativeSides: [25, 75],
+            margins:{top:25,bottom:75},
             lines: 12
         },
         
