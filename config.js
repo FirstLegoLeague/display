@@ -126,7 +126,7 @@ displaySystem.config({
 
             ],
             timer: 5000,
-            margins:{top:25,bottom:75},
+            margins:{top:25,bottom:85},
             lines: 12
         },
         
