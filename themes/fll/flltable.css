@@ -60,47 +60,23 @@ img.emojione {
 
 @media screen {
     #clock {
-        right: -11em;
-        top: 2vh;
-        transform: translate(-10em);
-        font-family: benchninebold;
-        color: white;
-        transition: transform 0.3s;
-        height: 1.2em;
-        font-size: 8vh;
-        line-height: 1.2em;
-        padding-left: 0.5em;
-        padding-top: 0.05em;
-        box-sizing: border-box;
-        text-align: left;
-        width: 3.5em;
-        box-sizing: border-box;
-        color: black;
-        text-shadow: 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.5);
-    }
-    #clock::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(214, 214, 214, 0.8) 100%);
-        box-sizing: border-box;
-        border: 0.05em solid rgba(255, 255, 255, 0.5);
-        transform: skew(-20deg);
-        border-radius: 0.5em / 1em;
-        transition: all 1s;
-        z-index: -1;
+        z-index: 1;
+        color: rgb(255, 247, 247);
+        position: relative;
+        margin: auto;
+        width: 3em;
+        right: 0;
+        top: 30vh;
+        background: linear-gradient(to right, rgba(0, 0, 139, 0.95) 0%, rgba(0, 0, 139, 0.85) 100%);
+        border-radius: 10px;
+        border: rgb(255, 255, 255) 1px solid;
+        padding: 0.1em;
+        font-size: 30vh;
+        transition: all 0.5s;
     }
     #clock.hidden {
-        transform: translate(0);
-    }
-    #clock.stopped::before {
-        background: linear-gradient(to bottom, rgba(237, 20, 61, 1) 0%, rgba(237, 20, 61, 0.8) 100%);
-    }
-    #clock.armed {
-        color: crimson;
+        transform: skewX(30deg);
+        transform: scale(1.5, 0.0);
     }
 }
 
