@@ -37,9 +37,6 @@ displaySystem.registerModule({
             sprites[index].classList.add('hidden');
         }
 
-        function setTexts(eventName) {
-            texts = [eventName];
-        }
         function removeSprite(el) {
             el.parentNode.removeChild(el);
         }
@@ -69,6 +66,7 @@ displaySystem.registerModule({
             text.setAttribute("class", "eventName");
 
             text.innerHTML = config.data;
+            texts.push(text);
 
             getElement().appendChild(text);
         }
@@ -77,8 +75,7 @@ displaySystem.registerModule({
         }
         function setText(configText) {
             texts.forEach(removeSprite);
-            addTextsToArray(configText);
-            configText.forEach(addText);
+            addText({ data: configText });
         }
         function set(configSprites) {
             sprites.forEach(removeSprite);
@@ -102,7 +99,7 @@ displaySystem.registerModule({
             hide,
             showSprite,
             hideSprite,
-            setTexts,
+            setText,
         };
     }
 });
