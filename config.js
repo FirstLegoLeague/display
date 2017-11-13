@@ -70,10 +70,7 @@ displaySystem.config({
         },
         'sprite': {
             visible: true,
-            texts: [{
-                data:'2017 World Festival'
-            }
-            ],
+            texts: ['2017 World Festival'],
             sprites: [{
                 side: 'top',
                 id: 'FIRST',
