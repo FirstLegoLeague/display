@@ -41,7 +41,6 @@ displaySystem.registerModule({
             el.parentNode.removeChild(el);
         }
 
-
         function addSprite(config) {
             let sprite = document.createElement('div');
             sprite.className = 'sprite';
@@ -61,21 +60,21 @@ displaySystem.registerModule({
             getElement().appendChild(sprite);
             return sprite;
         }
-        function addText(config) {
-            let text = document.createElement('span');
-            text.setAttribute("class", "eventName");
+        function addText(text) {
+            let element = document.createElement('span');
+            element.setAttribute("class", "eventName");
 
-            text.innerHTML = config.data;
-            texts.push(text);
+            element.innerHTML = text;
+            texts.push(element);
 
-            getElement().appendChild(text);
+            getElement().appendChild(element);
         }
         function addTextsToArray(config) {
             texts.push.apply(texts, config);
         }
-        function setText(configText) {
+        function setText(text) {
             texts.forEach(removeSprite);
-            addText({ data: configText });
+            addText(text);
         }
         function set(configSprites) {
             sprites.forEach(removeSprite);
@@ -85,7 +84,7 @@ displaySystem.registerModule({
             sprites = config.data;
         }
         if (config.texts) {
-            setText(config.texts);
+            config.texts.forEach(addText);
         }
         if (config.sprites) {
             set(config.sprites);
