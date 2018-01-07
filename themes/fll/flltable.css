@@ -95,7 +95,7 @@ img.emojione {
         border-spacing: 0;
         margin: 19vh auto;
         overflow: hidden;
-        font-size: 4vh;
+        font-size: 2vw;
         opacity: 0;
         transition: all 1s;
     }
@@ -124,14 +124,14 @@ img.emojione {
         width: 4%;
     }
     table#table td:nth-child(2) {
-        width: 7%;
+        width: 10%;
     }
     table#table td:nth-child(3) {
         text-align: left;
     }
     table#table td:nth-child(4) {
         width: 3.5em;
-        font-size: 4.5vh;
+        font-size: 2.2vw;
         font-weight: bold;
         color: #1cce1e;
     }
