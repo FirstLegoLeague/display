@@ -67,7 +67,7 @@ img.emojione {
         width: 3em;
         right: 0;
         top: 30vh;
-        background: linear-gradient(to right, rgba(0, 0, 139, 0.95) 0%, rgba(0, 0, 139, 0.85) 100%);
+        background: linear-gradient(to right, rgb(2, 2, 78) 0%, rgb(0, 0, 139) 100%);
         border-radius: 10px;
         border: rgb(255, 255, 255) 1px solid;
         padding: 0.1em;

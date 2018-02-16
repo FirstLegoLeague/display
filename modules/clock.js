@@ -1,7 +1,7 @@
 displaySystem.registerModule({
     name: 'clock',
     template: `
-        <div id="clock" class="hidden">02:30</div>
+        <div id="clock" class="stopped hidden">02:30</div>
     `,
     style: `
         @import url('fonts/lcd-bold.css');
@@ -17,7 +17,7 @@ displaySystem.registerModule({
     factory: function(config) {
         var div;
         var bgColor = 'black';
-        var state = 'stopped hidden';
+        var state = 'stopped';
         var time = 150000;
         var pauseTime = false;
         var armTime = 150;
@@ -51,7 +51,12 @@ displaySystem.registerModule({
                 str = pad(sec)+'.'+hsec;
             }
             getElement().innerHTML = str;
-            getElement().className = state;
+        }
+
+        function setState(newState) {
+            getElement().classList.remove(state);
+            state = newState;
+            getElement().classList.add(state);
         }
 
         var arm = function(countdown) {
@@ -59,7 +64,7 @@ displaySystem.registerModule({
             tenths = false;
             pauseTime = false;
             time = armTime*1000;
-            state = 'armed';
+            setState('armed');
             show();
             setTime(time,tenths);
         };
@@ -70,7 +75,7 @@ displaySystem.registerModule({
                 var startTime = (pauseTime||armTime);
                 var t = (startTime*1000) - (pauseStamp - (startStamp||pauseStamp));
                 time = t;
-                state = 'paused';
+                setState('paused');
                 pauseTime = t/1000;
             } else {
                 start(false,pauseStamp);
@@ -83,12 +88,12 @@ displaySystem.registerModule({
             }
             startStamp = (1*startTime)||(+(new Date()));
             tenths = false;
-            state = 'started';
+            setState('started');
             tick();
         };
 
         var stop = function() {
-            state = 'stopped';
+            setState('stopped');
             pauseTime = false;
             getElement().className = state;
             window.setTimeout(hide,3000);
