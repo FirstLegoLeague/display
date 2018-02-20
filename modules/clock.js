@@ -88,6 +88,7 @@ displaySystem.registerModule({
             }
             startStamp = (1*startTime)||(+(new Date()));
             tenths = false;
+            show();
             setState('started');
             tick();
         };
@@ -95,7 +96,6 @@ displaySystem.registerModule({
         var stop = function() {
             setState('stopped');
             pauseTime = false;
-            getElement().className = state;
             window.setTimeout(hide,3000);
         };
 
