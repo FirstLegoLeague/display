@@ -1,25 +1,17 @@
 {
-  "name": "@first-lego-league/display",
-  "version": "1.1.6",
-  "description": "Display Systems",
-  "main": "config.js",
-  "scripts": {
-    "start": "node displayserver.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FirstLegoLeague/displaySystem.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FirstLegoLeague/displaySystem/issues"
-  },
-  "homepage": "https://github.com/FirstLegoLeague/displaySystem#readme",
+  "name": "display",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "connect": "^3.5.0",
-    "minimist": "^1.2.0",
-    "send": "^0.15.4",
-    "serve-static": "^1.11.1"
+    "@first-lego-league/user-interface": "^1.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
