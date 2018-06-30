@@ -1,0 +1,12 @@
+#logos-stripe {
+	height: 100%;
+	display: flex;
+	overflow-x: hidden;
+}
+
+#logos-stripe > * {
+	display: inline-block;
+	min-width: 20em;
+	height: calc(100% - 2em);
+	margin: 1em;
+}
