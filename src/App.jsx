@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
-import '../node_modules/@first-lego-league/user-interface/current/assets/js/app'
+import '@first-lego-league/user-interface/current/assets/js/app.js'
 
-import '../node_modules/@first-lego-league/user-interface/current/assets/css/app.css'
-import './App.css';
+import '@first-lego-league/user-interface/current/assets/css/app.css'
+import './App.scss'
 
-import LogosStripe from './components/LogosStripe'
-import ScoresTable from './components/ScoresTable'
+import Title from './js/components/container/Title.jsx'
+import Timer from './js/components/container/Timer.jsx'
+import LogosStripe from './js/components/container/LogosStripe.jsx'
+import RankingsTable from './js/components/container/RankingsTable.jsx'
 
 class App extends Component {
   render() {
     return (
       <div className="App" style={{height:'100vh'}}>
         <div className="grid-y" style={{height:'100%'}}>
-          <div className="cell small-10">
-          	<ScoresTable></ScoresTable>
+          <div className="cell small-2">
+            <Title />
+          </div>
+          <div className="cell small-8 grid-y" style={{'overflow-y': 'hidden'}}>
+            <RankingsTable />
           </div>
           <div className="cell small-2">
-          	<LogosStripe></LogosStripe>
+          	<LogosStripe />
           </div>
         </div>
+        <Timer />
       </div>
     );
   }
