@@ -35,6 +35,8 @@ app.get('/rankings/:stage', (req, res, next) => {
 app.use('/images', express.static(path.resolve(__dirname, 'images')))
 app.use('/img', express.static(path.resolve(__dirname, '../node_modules/@first-lego-league/user-interface/current/assets/img')))
 
+app.use(express.static(path.resolve(__dirname, '../dist')))
+
 app.listen(PORT, () => {
     console.log(`Scoring service listening on port ${PORT}`)
 })

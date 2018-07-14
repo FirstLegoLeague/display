@@ -29,8 +29,8 @@ class Timer extends Component {
   }
 
   render() {
-  	return <Reveal show={this.state.running}>
-      {this.state.minutes}:{this.state.seconds}
+  	return <Reveal size="tiny" show={this.state.running}>
+      <div className="text-center h1">{this.state.minutes}:{this.state.seconds}</div>
     </Reveal>
   }
 }

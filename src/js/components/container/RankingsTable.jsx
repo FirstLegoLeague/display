@@ -3,18 +3,41 @@ import Config from '../../services/config'
 import Messanger from '../../services/messanger'
 import SyncingComponent from './generic/SyncingComponent.jsx'
 import InfintieTable from '../presentational/InfiniteTable.jsx'
+import axios from 'axios'
 
 class RankingsTable extends SyncingComponent {
 
   constructor() {
     super('scores', '')
-    this.url = `${Config.tournamentUrl}/rankings/practice`
 
-    Messanger.on('settings:reload', () => {
-      axios.get(this.url).then(response => {
-        this.url = `${Config.tournamentUrl}/rankings/${response.data}`
-      })
+    Messanger.on('settings:reload', () => this.reload())
+  }
+
+  componentDidMount() {
+    super.componentDidMount()
+    this.reload()
+    Messanger.on('settings:reload', () => this.reload())
+  }
+
+  reload() {
+    const stageUrl = `${Config.tournamentUrl}/settings/stage`
+    axios.get(stageUrl).then(response => {
+      this.url = `${Config.tournamentUrl}/rankings/${response.data}`
+      super.reload()
     })
+  }
+
+  tableHeaders() {
+    let headers = ['Rank', 'Team']
+    if(this.state.data[0].scores.length === 1) {
+      headers.push('Score')
+    } else {
+      headers.push('High')
+      const scoresHeaders = Array.from(new Array(this.state.data[0].scores.length),(val,index)=>(index+1))
+      headers = headers.concat(scoresHeaders)
+    }
+
+    return headers
   }
 
   tableData() {
@@ -24,7 +47,7 @@ class RankingsTable extends SyncingComponent {
         tableRank.Score = rank.scores[0]
       } else {
         tableRank.High = rank.highest
-        tableRank.scores.forEach((score, index) => {
+        rank.scores.forEach((score, index) => {
           tableRank[(index + 1).toString()] = score
         })
       }
@@ -41,7 +64,7 @@ class RankingsTable extends SyncingComponent {
       </div>
     }
 
-    return <InfintieTable largeCell="Team" data={this.tableData()}/>
+    return <InfintieTable id="rankings" largeCell="Team" headers={this.tableHeaders()} highlight={['High']} data={this.tableData()}/>
   }
 }
 
