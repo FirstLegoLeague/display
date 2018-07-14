@@ -36,3 +36,7 @@ body {
 #rankings .primary {
 	font-weight: bold;
 }
+
+[role="dialog"], .reveal-overlay {
+    overflow-y: hidden !important;
+}
