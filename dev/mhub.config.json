@@ -1,0 +1,20 @@
+{
+    "listen": [
+        {
+            "type": "websocket",
+            "port": 13900
+        },
+        {
+            "type": "tcp",
+            "port": 13902
+        }
+    ],
+    "logging": "debug",
+    "nodes": {
+        "public": "Exchange",
+        "protected": "Exchange",
+        "configuration": "TopicStore"
+    },
+    "bindings": [],
+    "storage": "./storage/"
+}

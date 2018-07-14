@@ -1,0 +1,42 @@
+@import './scss/components/infinite_stripe';
+
+body {
+	background: url('http://localhost:3000/img/background_tile.jpg');
+}
+
+#logos-stripe, #title-row {
+	background: white;
+}
+
+#title-row {
+	height: 100%;
+	margin: 0;
+}
+
+#fll-logo {
+	background: url('http://localhost:3000/img/fll_logo_wide.png');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#challenge-logo {
+	background: url('http://localhost:3000/img/challenge_logo.png');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#rankings .callout {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+#rankings .primary {
+	font-weight: bold;
+}
+
+[role="dialog"], .reveal-overlay {
+    overflow-y: hidden !important;
+}

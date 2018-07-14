@@ -1,0 +1,13 @@
+.infinite-stipe {
+  height: 100%;
+  display: flex;
+  overflow-x: hidden;
+
+  > * {
+    display: inline-block;
+    height: calc(100% - 2em);
+    max-width: unset;
+    margin: 1em 10vh;
+  }
+
+}
