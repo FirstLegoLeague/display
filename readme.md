@@ -1,31 +1,28 @@
 # Display
-A Display module for the big screen in FIRST LEGO League competitions.
+A Big-Screen Display for Tournament information
 
 ## Background
-There are several things that tournament officials would like to appear on their big screen:
- - A Rankings Table
- - A Match Timer
- - Logos of sponsors
- - Competition Title & Logos
-This module is meant to display these to the teams in an eye-pleasing manner, which is informative and intuitive, with data that updates at real-time.
+Tournament official usually want to display some information on the Big Screen such as:
+ * Teams rankings status
+ * Match Timer
+ * Sponsor Logos
+ * Tournament title and logos
+This module is meant to help those be displayed. This module simply display data from other modules. Other then having configuration, it does not hold any state.
 
-### Future additions:
- - Camera feed
-
-## Techincal details
-This module is a `web` module (see the [Module Standard](https://github.com/FirstLegoLeague/architecture/blob/master/module-standard/v1.0-SNAPSHOT.md)). It runs on [react-js](https://reactjs.org/).
+## Techincal background
+The module is a `web` module is described [here](https://github.com/FirstLegoLeague/architecture/blob/master/module-standard/v1.0-SNAPSHOT.md#web-module) and uses [React-js](https://reactjs.org/).
 
 ## Development
-1. Fork this repository or create your own branch here
-2. make some changes
-3. create a Pull Request
-4. Wait for a CR from the code owner
-5. make sure everything is well
-6. merge
+1. Fork this repository or create a new branch
+2. Make some changes
+3. Create a Pull Request
+4. Wait for a CR from the Code Owner
+5. Make sure everything is well
+6. Merge
 
 A few things to notice while developing:
 * Use `yarn` not `npm`
 * Follow javascript standard as described [here](https://standardjs.com/)
 * Keep the service lightweight
-* Follow the API of the other modules.
+* Make sure you use the correct API of the used services
 * Be creative and have fun
