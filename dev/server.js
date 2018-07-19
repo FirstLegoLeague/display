@@ -12,6 +12,11 @@ function mockResponses() {
 
 app.use(cors())
 
+app.get('/environment.json', (req, res, next) => {
+	let responses = mockResponses()
+	res.send(responses.env)
+})
+
 app.get('/settings/title', (req, res, next) => {
 	let responses = mockResponses()
 	res.send(responses.title)

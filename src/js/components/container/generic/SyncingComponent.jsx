@@ -4,11 +4,11 @@ import axios from 'axios'
 
 class Title extends Component {
 
-  constructor(topic, url) {
+  constructor(topic, urlPromise) {
     super()
     this.topic = topic
-    this.url = url
     this.state = { data: '' }
+    urlPromise.then(url => this.url = url)
   }
 
   componentDidMount() {

@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import Messanger from '../../services/messanger.js'
-import Config from '../../services/config.js'
 import Reveal from 'react-foundation-components/lib/reveal'
 
 class Timer extends Component {
   
   constructor() {
     super()
-    this.state = { running: false, seconds: 0, minutes: 0 }
+    this.state = { running: false, time: '00:00' }
   }
 
   componentDidMount() {
@@ -20,17 +19,15 @@ class Timer extends Component {
     })
 
     Messanger.on('timer:time', message => {
-      const time = parseInt(message.data.time)
       this.setState({
-        minutes: Math.floor(time / 60).toString(),
-        seconds: (time % 60).toString()
+        time: message.data.time.toString()
       })
     })
   }
 
   render() {
   	return <Reveal size="tiny" show={this.state.running}>
-      <div className="text-center h1">{this.state.minutes}:{this.state.seconds}</div>
+      <div className="text-center h1">{this.state.time}</div>
     </Reveal>
   }
 }

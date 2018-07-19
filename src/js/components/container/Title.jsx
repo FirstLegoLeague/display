@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import Config from '../../services/config'
+import Environment from '../../services/env'
 import SyncingComponent from './generic/SyncingComponent.jsx'
 import { Textfit } from 'react-textfit';
 
 class Title extends SyncingComponent {
 
   constructor() {
-    let url = `${Config.tournamentUrl}/settings/title`
-    super('title', url)
+    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/settings/title`)
+    super('title', urlPromise)
   }
 
   render() {

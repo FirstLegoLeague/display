@@ -22,6 +22,11 @@
 		"http://localhost:3000/images/2016.jpg",
 		"http://localhost:3000/images/2017.jpg"
 	],
+	"env": {
+		"mhub": "ws://localhost:13900",
+		"moduleTournamentUrl": "http://localhost:3000",
+		"moduleRankingsUrl": "http://localhost:3000"
+	},
 	"rankings": {
 		"practice": [{
 			"team": { "number": 173, "name": "The Society of the Blind Eye" },

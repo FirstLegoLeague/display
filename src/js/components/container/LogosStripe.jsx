@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import Config from '../../services/config'
+import Environment from '../../services/env'
 import InfiniteStripe from '../presentational/InfiniteStripe.jsx'
 import SyncingComponent from './generic/SyncingComponent.jsx'
 
 class LogosStripe extends SyncingComponent {
 
   constructor() {
-    let url = `${Config.tournamentUrl}/settings/logos`
-    super('logos', url)
+    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/settings/logos`)
+    super('logos', urlPromise)
   }
 
   render() {

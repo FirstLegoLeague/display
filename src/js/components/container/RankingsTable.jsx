@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Config from '../../services/config'
+import Environment from '../../services/env'
 import Messanger from '../../services/messanger'
 import SyncingComponent from './generic/SyncingComponent.jsx'
 import InfintieTable from '../presentational/InfiniteTable.jsx'
@@ -8,7 +8,7 @@ import axios from 'axios'
 class RankingsTable extends SyncingComponent {
 
   constructor() {
-    super('scores', '')
+    super('scores', Promise.resolve(''))
 
     Messanger.on('settings:reload', () => this.reload())
   }
@@ -20,10 +20,13 @@ class RankingsTable extends SyncingComponent {
   }
 
   reload() {
-    const stageUrl = `${Config.tournamentUrl}/settings/stage`
-    axios.get(stageUrl).then(response => {
-      this.url = `${Config.tournamentUrl}/rankings/${response.data}`
-      super.reload()
+    return Environment.load()
+    .then(env => {
+      const stageUrl = `${env.moduleTournamentUrl}/settings/stage`
+      return axios.get(stageUrl).then(response => {
+        this.url = `${env.moduleRankingsUrl}/rankings/${response.data}`
+        super.reload()
+      })
     })
   }
 
