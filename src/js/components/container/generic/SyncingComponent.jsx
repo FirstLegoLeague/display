@@ -8,7 +8,7 @@ class Title extends Component {
     super()
     this.topic = topic
     this.state = { data: '' }
-    urlPromise.then(url => this.url = url)
+    this.urlPromise = urlPromise.then(url => this.url = url)
   }
 
   componentDidMount() {
@@ -18,7 +18,9 @@ class Title extends Component {
   }
 
   reload () {
-    return axios.get(this.url).then(response => {
+    return this.urlPromise
+    .then(() => axios.get(this.url))
+    .then(response => {
       this.setState({ data: response.data })
     })
   }
