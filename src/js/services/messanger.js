@@ -15,7 +15,7 @@ class Messanger {
 
     if (!this._openingPromsie) {
       this._openingPromsie = Environment.load().then(env => {
-        this.ws = new WebSocket(env.mhub)
+        this.ws = new WebSocket(env.mhubUri)
         this.open = false
         this.headers = {}
         this.headers[IDENTITY_TOKEN_KEY] = parseInt(Math.floor(0x100000*(Math.random())), 16)
