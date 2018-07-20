@@ -22,7 +22,7 @@ class RankingsTable extends SyncingComponent {
   reload() {
     return Environment.load()
     .then(env => {
-      const stageUrl = `${env.moduleTournamentUrl}/settings/stage`
+      const stageUrl = `${env.moduleTournamentUrl}/settings/tournamentLevel`
       return axios.get(stageUrl).then(response => {
         this.url = `${env.moduleRankingsUrl}/rankings/${response.data}`
         super.reload()

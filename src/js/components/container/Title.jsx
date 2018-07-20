@@ -6,7 +6,7 @@ import { Textfit } from 'react-textfit';
 class Title extends SyncingComponent {
 
   constructor() {
-    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/settings/title`)
+    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/settings/tournamentTitle`)
     super('title', urlPromise)
   }
 

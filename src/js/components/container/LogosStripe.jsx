@@ -6,7 +6,7 @@ import SyncingComponent from './generic/SyncingComponent.jsx'
 class LogosStripe extends SyncingComponent {
 
   constructor() {
-    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/settings/logos`)
+    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/images/all`)
     super('logos', urlPromise)
   }
 
