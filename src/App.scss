@@ -1,7 +1,7 @@
 @import './scss/components/infinite_stripe';
 
 body {
-	background: url('http://localhost:3000/img/background_tile.jpg');
+	background: url('/img/background_tile.jpg');
 }
 
 #logos-stripe, #title-row {
@@ -14,14 +14,14 @@ body {
 }
 
 #fll-logo {
-	background: url('http://localhost:3000/img/fll_logo_wide.png');
+	background: url('/img/fll_logo_wide.png');
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 
 #challenge-logo {
-	background: url('http://localhost:3000/img/challenge_logo.png');
+	background: url('/img/challenge_logo.png');
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
