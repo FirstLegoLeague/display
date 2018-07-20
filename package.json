@@ -6,7 +6,8 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "start mhub-server -c ./dev/mhub.config.json && node dev/server.js"
+    "start": "start mhub-server -c ./dev/mhub.config.json && node dev/server.js",
+    "prepack": "yarn run build"
   },
   "devDependencies": {
     "@first-lego-league/user-interface": "^1.2.3",
