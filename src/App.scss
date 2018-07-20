@@ -1,7 +1,7 @@
 @import './scss/components/infinite_stripe';
 
 body {
-	background: url('/img/background_tile.jpg');
+	background: url('~@first-lego-league/user-interface/current/assets/img/background_tile.jpg');
 }
 
 #logos-stripe, #title-row {
@@ -14,14 +14,14 @@ body {
 }
 
 #fll-logo {
-	background: url('/img/fll_logo_wide.png');
+	background: url('~@first-lego-league/user-interface/current/assets/img/fll_logo_wide.png');
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 
 #challenge-logo {
-	background: url('/img/challenge_logo.png');
+	background: url('~@first-lego-league/user-interface/current/assets/img/challenge_logo.png');
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;

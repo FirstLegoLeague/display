@@ -1,5 +1,4 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin")
-const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 module.exports = {
   module: {
@@ -36,6 +35,10 @@ module.exports = {
             "style-loader",
             "css-loader"
         ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|svg|png|jpeg|jpg|tif|gif|ico)$/,
+        use: ["file-loader"]
       }
     ]
   },
@@ -43,7 +46,6 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
-    }),
-    new CopyWebpackPlugin([{ from: 'node_modules/@first-lego-league/user-interface/current/assets/img', to: 'img' }])
+    })
   ]
 };
