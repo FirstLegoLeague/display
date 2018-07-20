@@ -14,12 +14,17 @@ class Timer extends Component {
       this.setState({ running: true })
     })
 
-    Messanger.on('timer:stop', () => {
+    Messanger.on('timer:end', () => {
+      this.setState({ running: false })
+    })
+
+    Messanger.on('timer:end', () => {
       this.setState({ running: false })
     })
 
     Messanger.on('timer:time', message => {
       this.setState({
+        running: true,
         time: message.data.time.toString()
       })
     })
