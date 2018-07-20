@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin")
+const CopyWebPackPlugin = require("copy-webpack-plugin")
 
 module.exports = {
   module: {
@@ -46,6 +47,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
-    })
+    }),
+    new CopyWebPackPlugin([{ from: 'module.yml', to: 'module.yml' }])
   ]
 };
