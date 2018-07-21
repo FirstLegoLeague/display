@@ -9,14 +9,11 @@ class RankingsTable extends SyncingComponent {
 
   constructor() {
     super('scores', Promise.resolve(''))
-
-    Messanger.on('settings:reload', () => this.reload())
   }
 
-  componentDidMount() {
-    super.componentDidMount()
-    this.reload()
+  componentWillMount() {
     Messanger.on('settings:reload', () => this.reload())
+    this.reload()
   }
 
   reload() {

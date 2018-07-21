@@ -6,15 +6,14 @@ class Title extends Component {
 
   constructor(topic, urlPromise) {
     super()
-    this.topic = topic
+    this.topic = `${topic}:reload`
     this.state = { data: '' }
     this.urlPromise = urlPromise.then(url => this.url = url)
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.reload()
-    let topic = `${this.topic}:reload`
-    Messanger.on(topic, () => this.reload())
+    Messanger.on(this.topic, this.reload)
   }
 
   reload () {

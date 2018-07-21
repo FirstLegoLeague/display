@@ -17,17 +17,17 @@ app.get('/environment.json', (req, res, next) => {
 	res.send(responses.env)
 })
 
-app.get('/settings/title', (req, res, next) => {
+app.get('/settings/tournamentTitle', (req, res, next) => {
 	let responses = mockResponses()
 	res.send(responses.title)
 })
 
-app.get('/settings/stage', (req, res, next) => {
+app.get('/settings/tournamentLevel', (req, res, next) => {
 	let responses = mockResponses()
 	res.send(responses.stage)
 })
 
-app.get('/settings/logos', (req, res, next) => {
+app.get('/images/all', (req, res, next) => {
 	let responses = mockResponses()
 	res.send(responses.logos)
 })
@@ -38,7 +38,6 @@ app.get('/rankings/:stage', (req, res, next) => {
 })
 
 app.use('/images', express.static(path.resolve(__dirname, 'images')))
-app.use('/img', express.static(path.resolve(__dirname, '../node_modules/@first-lego-league/user-interface/current/assets/img')))
 
 app.use(express.static(path.resolve(__dirname, '../dist')))
 

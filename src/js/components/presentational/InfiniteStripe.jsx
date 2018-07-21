@@ -9,17 +9,22 @@ class InfiniteStripe extends Component {
   }
 
   componentDidMount() {
-    let self = this
     this.interval = setInterval(() => {
-      self.setState({ scrollLeft: self.state.scrollLeft + 1 })
+      this.setState({ scrollLeft: this.newScroll(this.state.scrollLeft) })
     }, 1000 / (this.props.speed || DEFAULT_SPEED))
   }
 
-  componentDidUpdate() {
+  newScroll(oldScroll) {
     const width = this.refs.stripe.scrollWidth
-    if(this.state.scrollLeft >= width / 2) {
-      this.setState({ scrollLeft: 0 })
+    if(oldScroll >= width / 2) {
+      return 0
+    } else {
+      return oldScroll + 1
     }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   render() {
