@@ -8,23 +8,13 @@ import axios from 'axios'
 class RankingsTable extends SyncingComponent {
 
   constructor() {
-    super('scores', Promise.resolve(''))
+    let urlPromise = Environment.load().then(env => `${env.moduleRankingsUrl}/rankings.json`)
+    super('scores', urlPromise)
   }
 
   componentWillMount() {
+    super.componentWillMount()
     Messanger.on('settings:reload', () => this.reload())
-    this.reload()
-  }
-
-  reload() {
-    return Environment.load()
-    .then(env => {
-      const stageUrl = `${env.moduleTournamentUrl}/settings/tournamentLevel`
-      return axios.get(stageUrl).then(response => {
-        this.url = `${env.moduleRankingsUrl}/rankings/${response.data}`
-        super.reload()
-      })
-    })
   }
 
   tableHeaders() {
