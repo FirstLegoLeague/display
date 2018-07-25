@@ -49,6 +49,6 @@ module.exports = {
       filename: "./index.html",
       favicon: './node_modules/@first-lego-league/user-interface/current/assets/img/first-favicon.ico'
     }),
-    new CopyWebPackPlugin([{ from: './src/module.yml', to: 'module.yml' }])
+    new CopyWebPackPlugin([{ from: 'module.yml', to: 'module.yml' }, { from: 'package.json', to: 'package.json' }])
   ]
 };

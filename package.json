@@ -1,13 +1,10 @@
 {
-  "name": "display",
-  "version": "0.1.0",
-  "dependencies": {
-    "react-dom": "^16.4.1"
-  },
+  "name": "@first-lego-league/display",
+  "version": "0.0.1",
   "scripts": {
     "build": "webpack --mode production",
     "start": "start mhub-server -c ./dev/mhub.config.json && node dev/server.js",
-    "prepack": "yarn run build"
+    "pub": "yarn build && cd ./dist && npm publish --access public"
   },
   "devDependencies": {
     "@first-lego-league/user-interface": "1.2.4",
@@ -27,6 +24,7 @@
     "node-sass": "^4.9.2",
     "path": "^0.12.7",
     "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-foundation-components": "^0.14.0",
     "react-textfit": "^1.1.0",
     "sass-loader": "^7.0.3",
