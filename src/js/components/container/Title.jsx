@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
 import Environment from '../../services/env'
-import SyncingComponent from './generic/SyncingComponent.jsx'
+import Messanger from '../../../services/messanger'
+import axios from 'axios'
 import { Textfit } from 'react-textfit';
 
-class Title extends SyncingComponent {
+class Title {
 
-  constructor() {
-    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/settings/tournamentTitle`)
-    super('title', urlPromise)
+  componentDidMount() {
+    Environment.load()
+      .then(env => {
+        const url = `${env.moduleTournamentUrl}/settings/tournamentTitle`
+        axios.get(url)
+      }).then(response => this.setState({ data: response.data }))
+
+    Messanger.on('title:updated', data => {
+      this.setState({ data: data.value })
+    })
   }
 
   render() {
