@@ -22,6 +22,10 @@ class Title extends Component {
     .then(response => {
       this.setState({ data: response.data })
     })
+    .catch(error => {
+      console.warn(error)
+      this.setState({ error })
+    })
   }
 
 }

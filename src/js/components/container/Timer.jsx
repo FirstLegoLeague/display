@@ -10,19 +10,19 @@ class Timer extends Component {
   }
 
   componentDidMount() {
-    Messanger.on('timer:start', () => {
+    Messanger.on('clock:start', () => {
       this.setState({ running: true })
     })
 
-    Messanger.on('timer:end', () => {
+    Messanger.on('clock:end', () => {
       this.setState({ running: false })
     })
 
-    Messanger.on('timer:end', () => {
+    Messanger.on('clock:end', () => {
       this.setState({ running: false })
     })
 
-    Messanger.on('timer:time', message => {
+    Messanger.on('clock:time', message => {
       this.setState({
         running: true,
         time: message.data.time.toString()
