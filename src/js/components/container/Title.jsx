@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Environment from '../../services/env'
-import Messanger from '../../../services/messanger'
+import Messanger from '../../services/messanger'
 import axios from 'axios'
 import { Textfit } from 'react-textfit';
 
@@ -13,7 +13,7 @@ class Title {
         axios.get(url)
       }).then(response => this.setState({ data: response.data }))
 
-    Messanger.on('title:updated', data => {
+    Messanger.on('tournamentTitle:updated', data => {
       this.setState({ data: data.value })
     })
   }
