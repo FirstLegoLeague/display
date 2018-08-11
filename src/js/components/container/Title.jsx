@@ -4,13 +4,13 @@ import Messanger from '../../services/messanger'
 import axios from 'axios'
 import { Textfit } from 'react-textfit';
 
-class Title {
+class Title extends React.Component {
 
   componentDidMount() {
     Environment.load()
       .then(env => {
         const url = `${env.moduleTournamentUrl}/settings/tournamentTitle`
-        axios.get(url)
+        return axios.get(url)
       }).then(response => this.setState({ data: response.data }))
 
     Messanger.on('tournamentTitle:updated', data => {
