@@ -9,7 +9,7 @@ class RankingsTable extends SyncingComponent {
 
   constructor() {
     let urlPromise = Environment.load().then(env => `${env.moduleRankingsUrl}/rankings.json`)
-    super('scores', urlPromise)
+    super('rankings', urlPromise)
   }
 
   componentWillMount() {

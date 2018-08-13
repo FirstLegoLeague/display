@@ -13,7 +13,7 @@ class Title extends Component {
 
   componentWillMount() {
     this.reload()
-    Messanger.on(this.topic, this.reload)
+    Messanger.on(this.topic, () => this.reload())
   }
 
   reload () {
