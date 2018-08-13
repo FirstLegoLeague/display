@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 const DEFAULT_SPEED = 10
 
-class InfintieTable extends Component {
+class InfiniteTable extends Component {
   constructor (props) {
     super(props)
     this.state = { scrollTop: 0 }
@@ -26,7 +26,7 @@ class InfintieTable extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
-  
+
   data() {
     return this.props.data.map(entry => this.props.headers.map(header => ([header, entry[header]])))
   }
@@ -84,4 +84,4 @@ class InfintieTable extends Component {
   }
 }
 
-export default InfintieTable
+export default InfiniteTable

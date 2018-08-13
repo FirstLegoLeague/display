@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Environment from '../../services/env'
-import Messanger from '../../services/messanger'
+import Messenger from '../../services/messenger'
 import SyncingComponent from './generic/SyncingComponent.jsx'
-import InfintieTable from '../presentational/InfiniteTable.jsx'
+import InfiniteTable from '../presentational/InfiniteTable.jsx'
 import axios from 'axios'
 
 class RankingsTable extends SyncingComponent {
@@ -14,7 +14,7 @@ class RankingsTable extends SyncingComponent {
 
   componentWillMount() {
     super.componentWillMount()
-    Messanger.on('settings:reload', () => this.reload())
+    Messenger.on('settings:reload', () => this.reload())
   }
 
   tableHeaders() {
@@ -54,7 +54,7 @@ class RankingsTable extends SyncingComponent {
       </div>
     }
 
-    return <InfintieTable id="rankings" largeCell="Team" headers={this.tableHeaders()} highlight={['High']} data={this.tableData()}/>
+    return <InfiniteTable id="rankings" largeCell="Team" headers={this.tableHeaders()} highlight={['High']} data={this.tableData()}/>
   }
 }
 
