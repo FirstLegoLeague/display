@@ -14,7 +14,8 @@ class RankingsTable extends SyncingComponent {
 
   componentWillMount() {
     super.componentWillMount()
-    Messanger.on('settings:reload', () => this.reload())
+    Messanger.on('tournamentStage:update', () => this.reload())
+    Messanger.on('teams:reload', () => this.reload())
   }
 
   tableHeaders() {
