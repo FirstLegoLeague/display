@@ -10,6 +10,7 @@ There are several things that tournament officials would like to appear on their
 This module is meant to display these to the teams in an eye-pleasing manner, which is informative and intuitive, with data that updates at real-time.
 
 ### Future additions:
+ - Up next
  - Camera feed
 
 ## Techincal details
@@ -23,7 +24,19 @@ This module is a `web` module (see the [Module Standard](https://github.com/Firs
 5. make sure everything is well
 6. merge
 
-A few things to notice while developing:
+### To run in development
+* Run `yarn install` first
+* Run `yarn mhub` to start mhub with the correct configuration which sits in `dev/mhub.config.json`
+* Run `yarn start` to run the `webpack-dev-server`
+
+### To Publish to NPM
+You must publish the subdirectory `dist` to NPM instead of the whole module, so in order to publish to NPM:
+* Run `yarn version` to update the version on the root of the repository as well
+* Run `yarn build` to build the client, and copy the `package.json` into the `dist` folder
+* Go into `dist` directory (using `cd ./dist` or something)
+* Rub `yarn publish`
+
+### A few things to notice while developing:
 * Use `yarn` not `npm`
 * Follow javascript standard as described [here](https://standardjs.com/)
 * Keep the service lightweight
