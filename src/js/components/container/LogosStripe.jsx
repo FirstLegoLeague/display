@@ -6,24 +6,26 @@ import SyncingComponent from './generic/SyncingComponent.jsx'
 class LogosStripe extends SyncingComponent {
 
   constructor() {
-    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/images/all`)
+    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/image/all`)
     super('logos', urlPromise)
   }
 
   render() {
-    if(!this.state.data) {
+    if(this.state.data) {
+      let logos = []
+      for (let i = 0; i < this.state.data.length; i++) {
+          logos.push(<img src={this.state.data[i]}></img>)
+      }
+      return <InfiniteStripe id="logos-stripe" speed="100">{logos}</InfiniteStripe>
+    } else if(this.state.error) {
+      return <div>Could'nt load logos</div>
+    } else {
       return <div className="loading">
         <div className="dimmer">
           <div className="big loader"></div>
         </div>
       </div>
     }
-
-    let logos = []
-    for (let i = 0; i < this.state.data.length; i++) {
-        logos.push(<img src={this.state.data[i]}></img>)
-    }
-    return <InfiniteStripe id="logos-stripe" speed="100">{logos}</InfiniteStripe>
   }
 
 }

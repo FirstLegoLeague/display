@@ -13,7 +13,7 @@ class Title extends Component {
 
   componentWillMount() {
     this.reload()
-    Messenger.on(this.topic, this.reload)
+    Messenger.on(this.topic, () => this.reload())
   }
 
   reload () {
@@ -21,6 +21,10 @@ class Title extends Component {
     .then(() => axios.get(this.url))
     .then(response => {
       this.setState({ data: response.data })
+    })
+    .catch(error => {
+      console.warn(error)
+      this.setState({ error })
     })
   }
 

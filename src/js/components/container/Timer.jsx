@@ -10,19 +10,19 @@ class Timer extends Component {
   }
 
   componentDidMount() {
-    Messenger.on('timer:start', () => {
+    Messenger.on('clock:start', () => {
       this.setState({ running: true })
     })
 
-    Messenger.on('timer:end', () => {
+    Messenger.on('clock:end', () => {
       this.setState({ running: false })
     })
 
-    Messenger.on('timer:end', () => {
+    Messenger.on('clock:end', () => {
       this.setState({ running: false })
     })
 
-    Messenger.on('timer:time', message => {
+    Messenger.on('clock:time', message => {
       this.setState({
         running: true,
         time: message.data.time.toString()
