@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Messanger from '../../../services/messanger'
+import Messenger from '../../../services/messenger'
 import axios from 'axios'
 
 class Title extends Component {
@@ -13,7 +13,7 @@ class Title extends Component {
 
   componentWillMount() {
     this.reload()
-    Messanger.on(this.topic, () => this.reload())
+    Messenger.on(this.topic, () => this.reload())
   }
 
   reload () {

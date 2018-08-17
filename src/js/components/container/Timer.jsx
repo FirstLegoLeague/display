@@ -1,28 +1,28 @@
 import React, { Component } from 'react'
-import Messanger from '../../services/messanger.js'
+import Messenger from '../../services/messenger.js'
 import Reveal from 'react-foundation-components/lib/reveal'
 
 class Timer extends Component {
-  
+
   constructor() {
     super()
     this.state = { running: false, time: '00:00' }
   }
 
   componentDidMount() {
-    Messanger.on('clock:start', () => {
+    Messenger.on('clock:start', () => {
       this.setState({ running: true })
     })
 
-    Messanger.on('clock:end', () => {
+    Messenger.on('clock:end', () => {
       this.setState({ running: false })
     })
 
-    Messanger.on('clock:end', () => {
+    Messenger.on('clock:end', () => {
       this.setState({ running: false })
     })
 
-    Messanger.on('clock:time', message => {
+    Messenger.on('clock:time', message => {
       this.setState({
         running: true,
         time: message.data.time.toString()
