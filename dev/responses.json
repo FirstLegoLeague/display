@@ -1,30 +1,30 @@
 {
 	"title": "FIRST Lego League Houston",
 	"logos": [
-		"http://localhost:3000/images/1999.jpg",
-		"http://localhost:3000/images/2000.jpg",
-		"http://localhost:3000/images/2001.jpg",
-		"http://localhost:3000/images/2002.jpg",
-		"http://localhost:3000/images/2003.jpg",
-		"http://localhost:3000/images/2004.jpg",
-		"http://localhost:3000/images/2005.jpg",
-		"http://localhost:3000/images/2006.jpg",
-		"http://localhost:3000/images/2007.jpg",
-		"http://localhost:3000/images/2008.jpg",
-		"http://localhost:3000/images/2009.jpg",
-		"http://localhost:3000/images/2010.jpg",
-		"http://localhost:3000/images/2011.png",
-		"http://localhost:3000/images/2012.jpg",
-		"http://localhost:3000/images/2013.jpg",
-		"http://localhost:3000/images/2014.jpg",
-		"http://localhost:3000/images/2015.jpg",
-		"http://localhost:3000/images/2016.jpg",
-		"http://localhost:3000/images/2017.jpg"
+		"/images/1999.jpg",
+		"/images/2000.jpg",
+		"/images/2001.jpg",
+		"/images/2002.jpg",
+		"/images/2003.jpg",
+		"/images/2004.jpg",
+		"/images/2005.jpg",
+		"/images/2006.jpg",
+		"/images/2007.jpg",
+		"/images/2008.jpg",
+		"/images/2009.jpg",
+		"/images/2010.jpg",
+		"/images/2011.png",
+		"/images/2012.jpg",
+		"/images/2013.jpg",
+		"/images/2014.jpg",
+		"/images/2015.jpg",
+		"/images/2016.jpg",
+		"/images/2017.jpg"
 	],
 	"env": {
 		"mhubUri": "ws://localhost:13900",
-		"moduleTournamentUrl": "http://localhost:3000",
-		"moduleRankingsUrl": "http://localhost:3000"
+		"moduleTournamentUrl": "",
+		"moduleRankingsUrl": ""
 	},
 	"rankings": {
 		"practice": [{

@@ -3,8 +3,8 @@
   "version": "2.0.3",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "start mhub-server -c ./dev/mhub.config.json && node dev/server.js",
-    "pub": "yarn build && cd ./dist && npm publish --access public"
+    "mhub": "mhub-server -c ./dev/mhub.config.json",
+    "start": "webpack-dev-server --config webpack.config.js"
   },
   "devDependencies": {
     "@first-lego-league/user-interface": "1.2.4",
@@ -30,6 +30,7 @@
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.15.1",
-    "webpack-cli": "^3.0.8"
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.5"
   }
 }
