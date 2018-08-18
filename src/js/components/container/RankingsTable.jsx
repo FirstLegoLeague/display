@@ -48,7 +48,7 @@ class RankingsTable extends SyncingComponent {
 
   render() {
     if(this.state.data) {
-      return <InfintieTable id="rankings" largeCell="Team" headers={this.tableHeaders()} highlight={['High']} data={this.tableData()}/>
+      return <InfiniteTable id="rankings" largeCell="Team" headers={this.tableHeaders()} highlight={['High']} data={this.tableData()}/>
     } else if(this.state.error) {
       return <div>Couldn't load rankings</div>
     } else {
