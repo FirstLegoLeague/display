@@ -2,6 +2,20 @@ import React, { Component } from 'react'
 import Messenger from '../../services/messenger.js'
 import Reveal from 'react-foundation-components/lib/reveal'
 
+function pad (number, length) {
+  return (new Array(length + 1).join('0') + number).slice(-length)
+}
+
+function parseTime (time, format) {
+  switch (format) {
+    case 'clock':
+      return `${pad(Math.floor(time / 60), 2)}:${pad(time % 60, 2)}`
+    case 'seconds':
+    default:
+      return `${time | 0}`
+  }
+}
+
 class Timer extends Component {
 
   constructor() {
@@ -25,7 +39,7 @@ class Timer extends Component {
     Messenger.on('clock:time', message => {
       this.setState({
         running: true,
-        time: message.data.time.toString()
+        time: parseTime(message.data.time, message.data.clockFormat)
       })
     })
   }
