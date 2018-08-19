@@ -14,7 +14,7 @@ class LogosStripe extends SyncingComponent {
     if(this.state.data) {
       let logos = []
       for (let i = 0; i < this.state.data.length; i++) {
-          logos.push(<img src={this.state.data[i]}></img>)
+          logos.push(<img src={this.state.data[i].image}></img>)
       }
       return <InfiniteStripe id="logos-stripe" speed="100">{logos}</InfiniteStripe>
     } else if(this.state.error) {
