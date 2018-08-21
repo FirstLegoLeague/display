@@ -4181,6 +4181,10 @@ react-foundation-components@^0.14.0:
     uncontrollable "^5.1.0"
     underscore.string "^3.3.4"
 
+react-foundation-modal@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/react-foundation-modal/-/react-foundation-modal-0.1.5.tgz#cc866beb816093762e7cd3a7f17b8b8a41d5e0ad"
+
 react-is@^16.3.2:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"

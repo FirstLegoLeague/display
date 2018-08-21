@@ -26,6 +26,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-foundation-components": "^0.14.0",
+    "react-foundation-modal": "^0.1.5",
     "react-textfit": "^1.1.0",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
