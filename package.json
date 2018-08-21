@@ -1,6 +1,6 @@
 {
   "name": "@first-lego-league/display",
-  "version": "2.0.7",
+  "version": "2.0.9",
   "scripts": {
     "build": "webpack --mode production",
     "mhub": "mhub-server -c ./dev/mhub.config.json",
