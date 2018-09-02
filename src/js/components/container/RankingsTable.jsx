@@ -18,29 +18,29 @@ class RankingsTable extends SyncingComponent {
     Messenger.on('teams:reload', () => this.reload())
   }
 
-  tableHeaders() {
+  tableHeaders(maxScoresCount) {
     let headers = ['Rank', 'Team']
-    if(this.state.data[0].scores.length === 1) {
-      headers.push('Score')
-    } else {
+    if(maxScoresCount > 1) {
       headers.push('High')
-      const scoresHeaders = Array.from(new Array(this.state.data[0].scores.length),(val,index)=>(index+1))
+      const scoresHeaders = Array.from(new Array(maxScoresCount),(val,index)=>((index + 1).toString()))
       headers = headers.concat(scoresHeaders)
+    } else {
+      headers.push('Score')
     }
 
     return headers
   }
 
-  tableData() {
+  tableData(maxScoresCount) {
     return this.state.data.map(rank => {
       const tableRank = { Rank: rank.rank, Team: `#${rank.team.number} - ${rank.team.name}` }
-      if (rank.scores.length === 1) {
-        tableRank.Score = rank.scores[0]
-      } else {
+      if (maxScoresCount > 1) {
         tableRank.High = rank.highest
         rank.scores.forEach((score, index) => {
           tableRank[(index + 1).toString()] = score
         })
+      } else {
+        tableRank.Score = rank.scores[0]
       }
       return tableRank
     })
@@ -48,7 +48,11 @@ class RankingsTable extends SyncingComponent {
 
   render() {
     if(this.state.data) {
-      return <InfiniteTable id="rankings" largeCell="Team" headers={this.tableHeaders()} highlight={['High']} data={this.tableData()}/>
+      const maxScoresCount = Math.max.apply(null, this.state.data.map(rank => rank.scores.length))
+      return <InfiniteTable id="rankings" largeCell="Team"
+        headers={this.tableHeaders(maxScoresCount)}
+        highlight={['High', 'Score']}
+        data={this.tableData(maxScoresCount)}/>
     } else if(this.state.error) {
       return <div>Couldn't load rankings</div>
     } else {

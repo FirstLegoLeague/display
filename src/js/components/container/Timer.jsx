@@ -1,12 +1,26 @@
 import React, { Component } from 'react'
 import Messenger from '../../services/messenger.js'
-import Reveal from 'react-foundation-components/lib/reveal'
+import Modal from 'react-foundation-modal'
+
+function pad (number, length) {
+  return (new Array(length + 1).join('0') + number).slice(-length)
+}
+
+function parseTime (time, format) {
+  switch (format) {
+    case 'clock':
+      return `${pad(Math.floor(time / 60), 2)}:${pad(time % 60, 2)}`
+    case 'seconds':
+    default:
+      return `${time | 0}`
+  }
+}
 
 class Timer extends Component {
 
   constructor() {
     super()
-    this.state = { running: false, time: '00:00' }
+    this.state = { running: null, time: '00:00' }
   }
 
   componentDidMount() {
@@ -18,22 +32,23 @@ class Timer extends Component {
       this.setState({ running: false })
     })
 
-    Messenger.on('clock:end', () => {
+    Messenger.on('clock:stop', () => {
       this.setState({ running: false })
     })
 
     Messenger.on('clock:time', message => {
       this.setState({
-        running: true,
-        time: message.data.time.toString()
+        running: this.state.running || this.state.running === null, // Keep running, or start running only if we aren't told not to.
+        time: parseTime(message.data.time, message.data.clockFormat)
       })
     })
   }
 
   render() {
-  	return <Reveal size="tiny" show={this.state.running}>
+  	return <Modal isModal size="tiny"
+    open={this.state.running} closeStyle={{'display': 'none'}}>
       <div className="text-center h1">{this.state.time}</div>
-    </Reveal>
+    </Modal>
   }
 }
 
