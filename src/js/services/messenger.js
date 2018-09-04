@@ -7,6 +7,7 @@ const MESSAGE_TYPES = {
 }
 const NODE = 'protected'
 const IDENTITY_TOKEN_KEY = 'client-id'
+const RETRY_TIMEOUT = 10 * 1000 // 10 seconds
 
 class Messenger {
 
@@ -19,7 +20,7 @@ class Messenger {
         this.open = false
         this.headers = {}
         this.headers[IDENTITY_TOKEN_KEY] = parseInt(Math.floor(0x100000*(Math.random())), 16)
-        this.listeners = []
+        this.listeners = this.listeners || []
 
         return new Promise((resolve, reject) => {
           self.ws.onopen = function () {
@@ -29,6 +30,7 @@ class Messenger {
             }));
 
             self.open = true
+            console.log('Connected to mhub')
             resolve(self.ws)
           }
 
@@ -38,7 +40,12 @@ class Messenger {
 
           self.ws.onclose = function () {
             self.open = false
-            console.info('Web Socket closing')
+            console.log('Disonnected from mhub')
+            setTimeout(() => {
+              console.log('Retrying mhub connection')
+              self._openingPromsie = null
+              self.init()
+            }, RETRY_TIMEOUT)
           }
 
           self.ws.onmessage = function (msg) {
