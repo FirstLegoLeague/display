@@ -7,7 +7,7 @@ class LogosStripe extends SyncingComponent {
 
   constructor() {
     let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/image/all`)
-    super('logos', urlPromise)
+    super('images', urlPromise)
   }
 
   render() {
