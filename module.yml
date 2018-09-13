@@ -1,4 +1,5 @@
 api: "1.0"
 name: "display"
+display: scoreboard
 type: web
 config:
