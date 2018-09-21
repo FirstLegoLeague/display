@@ -19,7 +19,7 @@ class Title extends React.Component {
       }).then(response => this.setState({ data: response.data }))
 
     Messenger.on('tournamentTitle:updated', data => {
-      this.setState({ data: data.value })
+      this.setState({ data: data.data.value })
     })
   }
 
@@ -35,7 +35,7 @@ class Title extends React.Component {
         <div className="cell small-2" id="challenge-logo" />
       </div>
     } else if(this.state.error) {
-      return <div>Couldn't load title</div>    
+      return <div>Couldn't load title</div>
     } else {
       return <div className="loading">
         <div className="dimmer">
