@@ -18,8 +18,8 @@ class Title extends React.Component {
         return axios.get(url)
       }).then(response => this.setState({ data: response.data }))
 
-    Messenger.on('tournamentTitle:updated', data => {
-      this.setState({ data: data.data.value })
+    Messenger.on('tournamentTitle:updated', message => {
+      this.setState({ data: message.data.value })
     })
   }
 
