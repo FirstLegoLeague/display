@@ -33,7 +33,7 @@ class RankingsTable extends SyncingComponent {
 
   tableData(maxScoresCount) {
     return this.state.data.map(rank => {
-      const tableRank = { Rank: rank.rank, Team: `#${rank.team.number} - ${rank.team.name}` }
+      const tableRank = { Rank: rank.rank, Team: `#${rank.team.number} - ${rank.team.name} (${rank.team.affiliation})` }
       if (maxScoresCount > 1) {
         tableRank.High = rank.highest
         rank.scores.forEach((score, index) => {
