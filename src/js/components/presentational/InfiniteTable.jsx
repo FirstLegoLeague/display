@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 const DEFAULT_SPEED = 10
+const DEFAULT_DELAY = 1000
 
 class InfiniteTable extends Component {
   constructor (props) {
@@ -9,9 +10,11 @@ class InfiniteTable extends Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(() => {
-        this.setState({ scrollTop: this.newScroll(this.state.scrollTop) })
-    }, 1000 / (this.props.speed || DEFAULT_SPEED))
+    setTimeout(() => {
+      this.interval = setInterval(() => {
+          this.setState({ scrollTop: this.newScroll(this.state.scrollTop) })
+      }, 1000 / (this.props.speed || DEFAULT_SPEED))
+    }, (this.props.delay || DEFAULT_DELAY))
   }
 
   newScroll(oldScroll) {

@@ -49,7 +49,9 @@ class RankingsTable extends SyncingComponent {
   render() {
     if(this.state.data) {
       const maxScoresCount = Math.max.apply(null, this.state.data.map(rank => rank.scores.length))
-      return <InfiniteTable id="rankings" largeCell="Team"
+      return <InfiniteTable id="rankings"
+        delay={3000}
+        largeCell="Team"
         headers={this.tableHeaders(maxScoresCount)}
         highlight={['High', 'Score']}
         data={this.tableData(maxScoresCount)}/>

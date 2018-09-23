@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 const DEFAULT_SPEED = 10
+const DEFAULT_DELAY = 0
 
 class InfiniteStripe extends Component {
   constructor (props) {
@@ -9,9 +10,11 @@ class InfiniteStripe extends Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(() => {
-      this.setState({ scrollLeft: this.newScroll(this.state.scrollLeft) })
-    }, 1000 / (this.props.speed || DEFAULT_SPEED))
+    setTimeout(() => {
+      this.interval = setInterval(() => {
+        this.setState({ scrollLeft: this.newScroll(this.state.scrollLeft) })
+      }, 1000 / (this.props.speed || DEFAULT_SPEED))
+    }, (this.props.delay || DEFAULT_DELAY))
   }
 
   newScroll(oldScroll) {
