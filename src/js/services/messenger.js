@@ -7,7 +7,7 @@ const MESSAGE_TYPES = {
 }
 const NODE = 'protected'
 const IDENTITY_TOKEN_KEY = 'client-id'
-const RETRY_TIMEOUT = 10 * 1000 // 10 seconds
+const RETRY_TIMEOUT = 1000 // second
 
 class Messenger {
 
