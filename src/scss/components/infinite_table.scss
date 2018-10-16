@@ -1,0 +1,8 @@
+.infinite-table .grid-x .grid-x:nth-child(2n) {
+  background: #bbe2ff;
+
+  .cell.callout {
+    opacity: 0.5;
+    color: black;
+  }
+}
