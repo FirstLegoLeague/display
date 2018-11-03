@@ -38,7 +38,7 @@
 			"scores": [465],
 			"highest": 465
 		}, {
-			"team": { "number": 2, "name": "Two is always together", "affiliation": "2" },
+			"team": { "number": 2, "name": "Two is always together", "affiliation": " " },
 			"rank": 3,
 			"scores": [426],
 			"highest": 426
@@ -68,17 +68,17 @@
 			"scores": [240],
 			"highest": 240
 		}, {
-			"team": { "number": 15, "name": "The RoboJars", "affiliation": "15" },
+			"team": { "number": 15, "name": "The RoboJars", "affiliation": "" },
 			"rank": 8,
 			"scores": [240],
 			"highest": 240
 		}, {
-			"team": { "number": 981, "name": "The Green slime club", "affiliation": "981" },
+			"team": { "number": 981, "name": "The Green slime club" },
 			"rank": 9,
 			"scores":  [236],
 			"highest":  236
 		}, {
-			"team": { "number": 956, "name": "ElectroWreckers", "affiliation": "956" },
+			"team": { "number": 956, "name": "ElectroWreckers", "affiliation": null },
 			"rank": 10,
 			"scores": [156],
 			"highest": 156
@@ -109,22 +109,22 @@
 			"scores": [465,350,85],
 			"highest": 465
 		}, {
-			"team": { "number": 15, "name": "The RoboJars", "affiliation": "15" },
+			"team": { "number": 15, "name": "The RoboJars", "affiliation": "" },
 			"rank": 2,
 			"scores": [455,432,195],
 			"highest": 455
 		}, {
-			"team": { "number": 8, "name": "Magic 8", "affiliation": "8" },
+			"team": { "number": 8, "name": "Magic 8" },
 			"rank": 3,
 			"scores": [455,364,165],
 			"highest": 455
 		}, {
-			"team": { "number": 182, "name": "The blue dot", "affiliation": "182" },
+			"team": { "number": 182, "name": "The blue dot", "affiliation": null },
 			"rank": 4,
 			"scores": [385,135,24],
 			"highest": 385
 		}, {
-			"team": { "number": 2, "name": "Two is always together", "affiliation": "2" },
+			"team": { "number": 2, "name": "Two is always together", "affiliation": " " },
 			"rank": 5,
 			"scores": [375,182,56],
 			"highest": 375
