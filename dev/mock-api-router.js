@@ -23,6 +23,11 @@ router.get('/settings/tournamentTitle', (req, res, next) => {
 	res.send(responses.title)
 })
 
+router.get('/settings/tournamentStage', (req, res, next) => {
+  let responses = mockResponses()
+  res.send(responses.stage)
+})
+
 router.get('/image/all', (req, res, next) => {
 	let responses = mockResponses()
 	res.send(responses.logos)

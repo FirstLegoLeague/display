@@ -3,6 +3,7 @@ import Environment from '../../services/env'
 import Messenger from '../../services/messenger'
 import axios from 'axios'
 import { Textfit } from 'react-textfit';
+import Stage from './Stage.jsx'
 
 class Title extends React.Component {
 
@@ -31,6 +32,7 @@ class Title extends React.Component {
           <Textfit className="cell" mode="single" max="50" forceSingleModeWidth="false">
             {this.state.data}
           </Textfit>
+          <Stage />
         </div>
         <div className="cell small-2" id="challenge-logo" />
       </div>
