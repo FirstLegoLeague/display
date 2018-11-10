@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Environment from '../../services/env'
-import Messenger from '../../services/messenger'
-import axios from 'axios'
+import SyncingComponent from './generic/SyncingComponent.jsx'
 import { Textfit } from 'react-textfit'
 
 function upperCaseFirstIfLetter (string) {
@@ -16,29 +15,18 @@ function upperCaseFirstIfLetter (string) {
   return string
 }
 
-class Stage extends React.Component {
+class Stage extends SyncingComponent {
 
   constructor () {
-    super()
+    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/settings/tournamentStage`)
+    super('tournamentStage:updated', urlPromise)
     this.state = {data: ''}
-  }
-
-  componentDidMount () {
-    Environment.load()
-      .then(env => {
-        const url = `${env.moduleTournamentUrl}/settings/tournamentStage`
-        return axios.get(url)
-      }).then(response => this.setState({data: upperCaseFirstIfLetter(response.data)}))
-
-    Messenger.on('tournamentStage:updated', message => {
-      this.setState({data: upperCaseFirstIfLetter(message.data.value)})
-    })
   }
 
   render () {
     if (this.state.data) {
       return <Textfit className="cell" mode="single" max="20" forceSingleModeWidth="false">
-        {this.state.data}
+        {upperCaseFirstIfLetter(this.state.data)}
       </Textfit>
     } else if (this.state.error) {
       return <div>Couldn't load title</div>
