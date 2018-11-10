@@ -18,22 +18,22 @@ function parseTime (time, format) {
 
 class Timer extends Component {
 
-  constructor() {
+  constructor () {
     super()
-    this.state = { running: null, time: '00:00' }
+    this.state = {running: null, time: '00:00'}
   }
 
-  componentDidMount() {
+  componentDidMount () {
     Messenger.on('clock:start', () => {
-      this.setState({ running: true })
+      this.setState({running: true})
     })
 
     Messenger.on('clock:end', () => {
-      this.setState({ running: false })
+      this.setState({running: false})
     })
 
     Messenger.on('clock:stop', () => {
-      this.setState({ running: false })
+      this.setState({running: false})
     })
 
     Messenger.on('clock:time', message => {
@@ -44,10 +44,16 @@ class Timer extends Component {
     })
   }
 
-  render() {
-  	return <Modal isModal size="tiny"
-    open={this.state.running} closeStyle={{'display': 'none'}}>
-      <div className="text-center h1">{this.state.time}</div>
+  render () {
+    const overlayStyle = {
+      'backgroundColor': 'rgba(0,0,0,0)'
+    }
+
+    return <Modal isModal size="tiny"
+                  overlayStyle={overlayStyle}
+                  style="border: 5px black solid;"
+                  open={this.state.running} closeStyle={{'display': 'none'}}>
+      <div className="time text-center h1">{this.state.time}</div>
     </Modal>
   }
 }
