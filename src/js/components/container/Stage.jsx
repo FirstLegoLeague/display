@@ -29,7 +29,7 @@ class Stage extends SyncingComponent {
         {upperCaseFirstIfLetter(this.state.data)}
       </Textfit>
     } else if (this.state.error) {
-      return <div>Couldn't load title</div>
+      return <div>Couldn't load stage</div>
     } else {
       return <div className="loading">
         <div className="dimmer">
