@@ -49,9 +49,16 @@ class Timer extends Component {
       'backgroundColor': 'rgba(0,0,0,0)'
     }
 
+    const revelStyle = {
+      'background-color': '#f9ebde',
+      'opacity': '0.75',
+      'border': '2px #adadad solid'
+    }
+
     return <Modal isModal size="tiny"
+                  className="timer-modal"
                   overlayStyle={overlayStyle}
-                  style="border: 5px black solid;"
+                  revealStyle={revelStyle}
                   open={this.state.running} closeStyle={{'display': 'none'}}>
       <div className="time text-center h1">{this.state.time}</div>
     </Modal>
