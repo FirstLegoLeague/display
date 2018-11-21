@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Environment from '../../services/env'
 import InfiniteStripe from '../presentational/InfiniteStripe.jsx'
-import SyncingComponent from './generic/SyncingComponent.jsx'
+import RestSyncingComponent from './generic/RestSyncingComponent.jsx'
 
-class LogosStripe extends SyncingComponent {
+class LogosStripe extends RestSyncingComponent {
 
   constructor() {
     let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/image/all`)
-    super('images', urlPromise)
+    super('images:reload', urlPromise)
   }
 
   render() {

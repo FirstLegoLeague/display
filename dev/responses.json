@@ -1,183 +1,460 @@
 {
-	"title": "FIRST Lego League Houston",
-	"logos": [
-		{ "image": "/images/1999.jpg" },
-		{ "image": "/images/2000.jpg" },
-		{ "image": "/images/2001.jpg" },
-		{ "image": "/images/2002.jpg" },
-		{ "image": "/images/2003.jpg" },
-		{ "image": "/images/2004.jpg" },
-		{ "image": "/images/2005.jpg" },
-		{ "image": "/images/2006.jpg" },
-		{ "image": "/images/2007.jpg" },
-		{ "image": "/images/2008.jpg" },
-		{ "image": "/images/2009.jpg" },
-		{ "image": "/images/2010.jpg" },
-		"/images/2011.png",
-		{ "image": "/images/2012.jpg" },
-		{ "image": "/images/2013.jpg" },
-		{ "image": "/images/2014.jpg" },
-		{ "image": "/images/2015.jpg" },
-		{ "image": "/images/2016.jpg" },
-		"/images/2017.jpg"
-	],
-	"env": {
-		"mhubUri": "ws://localhost:13900",
-		"moduleTournamentUrl": "",
-		"moduleRankingsUrl": ""
-	},
-	"rankings": {
-		"practice": [{
-			"team": { "number": 173, "name": "The Society of the Blind Eye", "affiliation": "173" },
-			"rank": 1,
-			"scores": [523],
-			"highest": 523
-		}, {
-			"team": { "number": 534, "name": "The Fellowship of the Ring", "affiliation": "534" },
-			"rank": 2,
-			"scores": [465],
-			"highest": 465
-		}, {
-			"team": { "number": 2, "name": "Two is always together", "affiliation": " " },
-			"rank": 3,
-			"scores": [426],
-			"highest": 426
-		}, {
-			"team": { "number": 182, "name": "The blue dot", "affiliation": "182" },
-			"rank": 4,
-			"scores": [423],
-			"highest": 423
-		}, {
-			"team": { "number": 8, "name": "Magic 8", "affiliation": "8" },
-			"rank": 5,
-			"scores": [356],
-			"highest": 356
-		}, {
-			"team": { "number": 123, "name": "Genesis", "affiliation": "123" },
-			"rank": 6,
-			"scores": [256],
-			"highest": 256
-		}, {
-			"team": { "number": 856, "name": "The Order of the Phoenix", "affiliation": "856" },
-			"rank": 7,
-			"scores": [245],
-			"highest": 245
-		}, {
-			"team": { "number": 132, "name": "King of Hearts", "affiliation": "132" },
-			"rank": 8,
-			"scores": [240],
-			"highest": 240
-		}, {
-			"team": { "number": 15, "name": "The RoboJars", "affiliation": "" },
-			"rank": 8,
-			"scores": [240],
-			"highest": 240
-		}, {
-			"team": { "number": 981, "name": "The Green slime club" },
-			"rank": 9,
-			"scores":  [236],
-			"highest":  236
-		}, {
-			"team": { "number": 956, "name": "ElectroWreckers", "affiliation": null },
-			"rank": 10,
-			"scores": [156],
-			"highest": 156
-		}, {
-			"team": { "number": 54, "name": "What will you get if you multiply six by nine?", "affiliation": "54" },
-			"rank": 11,
-			"scores": [125],
-			"highest": 125
-		}, {
-			"team": { "number": 8846, "name": "Syntax error", "affiliation": "8846" },
-			"rank": 12,
-			"scores": [85],
-			"highest": 85
-		}, {
-			"team": { "number": 2212, "name": "The Spikes", "affiliation": "2212" },
-			"rank": 13,
-			"scores": [55],
-			"highest": 55
-		}, {
-			"team": { "number": 1, "name": "The first team", "affiliation": "1" },
-			"rank": 13,
-			"scores": [55],
-			"highest": 55
-		}],
-		"qualification": [{
-			"team": { "number": 8846, "name": "Syntax error", "affiliation": "8846" },
-			"rank": 1,
-			"scores": [465,350,85],
-			"highest": 465
-		}, {
-			"team": { "number": 15, "name": "The RoboJars", "affiliation": "" },
-			"rank": 2,
-			"scores": [455,432,195],
-			"highest": 455
-		}, {
-			"team": { "number": 8, "name": "Magic 8" },
-			"rank": 3,
-			"scores": [455,364,165],
-			"highest": 455
-		}, {
-			"team": { "number": 182, "name": "The blue dot", "affiliation": null },
-			"rank": 4,
-			"scores": [385,135,24],
-			"highest": 385
-		}, {
-			"team": { "number": 2, "name": "Two is always together", "affiliation": " " },
-			"rank": 5,
-			"scores": [375,182,56],
-			"highest": 375
-		}, {
-			"team": { "number": 2212, "name": "The Spikes", "affiliation": "2212" },
-			"rank": 6,
-			"scores": [345,250,44],
-			"highest": 345
-		}, {
-			"team": { "number": 123, "name": "Genesis", "affiliation": "123" },
-			"rank": 7,
-			"scores": [315,153,145],
-			"highest": 315
-		}, {
-			"team": { "number": 534, "name": "The Fellowship of the Ring", "affiliation": "534" },
-			"rank": 8,
-			"scores": [285,56,45],
-			"highest": 285
-		}, {
-			"team": { "number": 173, "name": "The Society of the Blind Eye", "affiliation": "173" },
-			"rank": 9,
-			"scores": [275,245,20],
-			"highest": 275
-		}, {
-			"team": { "number": 54, "name": "What will you get if you multiply six by nine?", "affiliation": "54" },
-			"rank": 10,
-			"scores": [255,162,35],
-			"highest": 255
-		}, {
-			"team": { "number": 132, "name": "King of Hearts", "affiliation": "132" },
-			"rank": 11,
-			"scores": [255,152,42],
-			"highest": 255
-		}, {
-			"team": { "number": 981, "name": "The Green slime club", "affiliation": "981" },
-			"rank": 12,
-			"scores": [245,75,45],
-			"highest": 245
-		}, {
-			"team": { "number": 956, "name": "ElectroWreckers", "affiliation": "956" },
-			"rank": 13,
-			"scores": [235,145,35],
-			"highest": 235
-		}, {
-			"team": { "number": 1, "name": "The first team", "affiliation": "1" },
-			"rank": 14,
-			"scores": [195,125,50],
-			"highest": 195
-		}, {
-			"team": { "number": 856, "name": "The Order of the Phoenix", "affiliation": "856" },
-			"rank": 15,
-			"scores": [95,85,75],
-			"highest": 95
-		}]
-	}
+  "title": "FIRST Lego League Houston",
+  "stage": "practice",
+  "logos": [
+    {
+      "image": "/images/1999.jpg"
+    },
+    {
+      "image": "/images/2000.jpg"
+    },
+    {
+      "image": "/images/2001.jpg"
+    },
+    {
+      "image": "/images/2002.jpg"
+    },
+    {
+      "image": "/images/2003.jpg"
+    },
+    {
+      "image": "/images/2004.jpg"
+    },
+    {
+      "image": "/images/2005.jpg"
+    },
+    {
+      "image": "/images/2006.jpg"
+    },
+    {
+      "image": "/images/2007.jpg"
+    },
+    {
+      "image": "/images/2008.jpg"
+    },
+    {
+      "image": "/images/2009.jpg"
+    },
+    {
+      "image": "/images/2010.jpg"
+    },
+    "/images/2011.png",
+    {
+      "image": "/images/2012.jpg"
+    },
+    {
+      "image": "/images/2013.jpg"
+    },
+    {
+      "image": "/images/2014.jpg"
+    },
+    {
+      "image": "/images/2015.jpg"
+    },
+    {
+      "image": "/images/2016.jpg"
+    },
+    "/images/2017.jpg"
+  ],
+  "env": {
+    "mhubUri": "ws://localhost:13900",
+    "moduleTournamentUrl": "",
+    "moduleRankingsUrl": ""
+  },
+  "rankings": {
+    "practice": [
+      {
+        "team": {
+          "number": 173,
+          "name": "The Society of the Blind Eye",
+          "affiliation": "173"
+        },
+        "rank": 1,
+        "scores": [
+          523
+        ],
+        "highest": 523
+      },
+      {
+        "team": {
+          "number": 534,
+          "name": "The Fellowship of the Ring",
+          "affiliation": "534"
+        },
+        "rank": 2,
+        "scores": [
+          465
+        ],
+        "highest": 465
+      },
+      {
+        "team": {
+          "number": 2,
+          "name": "Two is always together",
+          "affiliation": "2"
+        },
+        "rank": 3,
+        "scores": [
+          426
+        ],
+        "highest": 426
+      },
+      {
+        "team": {
+          "number": 182,
+          "name": "The blue dot",
+          "affiliation": "182"
+        },
+        "rank": 4,
+        "scores": [
+          423
+        ],
+        "highest": 423
+      },
+      {
+        "team": {
+          "number": 8,
+          "name": "Magic 8",
+          "affiliation": "8"
+        },
+        "rank": 5,
+        "scores": [
+          356
+        ],
+        "highest": 356
+      },
+      {
+        "team": {
+          "number": 123,
+          "name": "Genesis",
+          "affiliation": "123"
+        },
+        "rank": 6,
+        "scores": [
+          256
+        ],
+        "highest": 256
+      },
+      {
+        "team": {
+          "number": 856,
+          "name": "The Order of the Phoenix",
+          "affiliation": "856"
+        },
+        "rank": 7,
+        "scores": [
+          245
+        ],
+        "highest": 245
+      },
+      {
+        "team": {
+          "number": 132,
+          "name": "King of Hearts",
+          "affiliation": "132"
+        },
+        "rank": 8,
+        "scores": [
+          240
+        ],
+        "highest": 240
+      },
+      {
+        "team": {
+          "number": 15,
+          "name": "The RoboJars",
+          "affiliation": "15"
+        },
+        "rank": 8,
+        "scores": [
+          240
+        ],
+        "highest": 240
+      },
+      {
+        "team": {
+          "number": 981,
+          "name": "The Green slime club",
+          "affiliation": "981"
+        },
+        "rank": 9,
+        "scores": [
+          236
+        ],
+        "highest": 236
+      },
+      {
+        "team": {
+          "number": 956,
+          "name": "ElectroWreckers",
+          "affiliation": "956"
+        },
+        "rank": 10,
+        "scores": [
+          156
+        ],
+        "highest": 156
+      },
+      {
+        "team": {
+          "number": 54,
+          "name": "What will you get if you multiply six by nine?",
+          "affiliation": "54"
+        },
+        "rank": 11,
+        "scores": [
+          125
+        ],
+        "highest": 125
+      },
+      {
+        "team": {
+          "number": 8846,
+          "name": "Syntax error",
+          "affiliation": "8846"
+        },
+        "rank": 12,
+        "scores": [
+          85
+        ],
+        "highest": 85
+      },
+      {
+        "team": {
+          "number": 2212,
+          "name": "The Spikes",
+          "affiliation": "2212"
+        },
+        "rank": 13,
+        "scores": [
+          55
+        ],
+        "highest": 55
+      },
+      {
+        "team": {
+          "number": 1,
+          "name": "The first team",
+          "affiliation": "1"
+        },
+        "rank": 13,
+        "scores": [
+          55
+        ],
+        "highest": 55
+      }
+    ],
+    "qualification": [
+      {
+        "team": {
+          "number": 8846,
+          "name": "Syntax error",
+          "affiliation": "8846"
+        },
+        "rank": 1,
+        "scores": [
+          465,
+          350,
+          85
+        ],
+        "highest": 465
+      },
+      {
+        "team": {
+          "number": 15,
+          "name": "The RoboJars",
+          "affiliation": "15"
+        },
+        "rank": 2,
+        "scores": [
+          455,
+          432,
+          195
+        ],
+        "highest": 455
+      },
+      {
+        "team": {
+          "number": 8,
+          "name": "Magic 8",
+          "affiliation": "8"
+        },
+        "rank": 3,
+        "scores": [
+          455,
+          364,
+          165
+        ],
+        "highest": 455
+      },
+      {
+        "team": {
+          "number": 182,
+          "name": "The blue dot",
+          "affiliation": "182"
+        },
+        "rank": 4,
+        "scores": [
+          385,
+          135,
+          24
+        ],
+        "highest": 385
+      },
+      {
+        "team": {
+          "number": 2,
+          "name": "Two is always together",
+          "affiliation": "2"
+        },
+        "rank": 5,
+        "scores": [
+          375,
+          182,
+          56
+        ],
+        "highest": 375
+      },
+      {
+        "team": {
+          "number": 2212,
+          "name": "The Spikes",
+          "affiliation": "2212"
+        },
+        "rank": 6,
+        "scores": [
+          345,
+          250,
+          44
+        ],
+        "highest": 345
+      },
+      {
+        "team": {
+          "number": 123,
+          "name": "Genesis",
+          "affiliation": "123"
+        },
+        "rank": 7,
+        "scores": [
+          315,
+          153,
+          145
+        ],
+        "highest": 315
+      },
+      {
+        "team": {
+          "number": 534,
+          "name": "The Fellowship of the Ring",
+          "affiliation": "534"
+        },
+        "rank": 8,
+        "scores": [
+          285,
+          56,
+          45
+        ],
+        "highest": 285
+      },
+      {
+        "team": {
+          "number": 173,
+          "name": "The Society of the Blind Eye",
+          "affiliation": "173"
+        },
+        "rank": 9,
+        "scores": [
+          275,
+          245,
+          20
+        ],
+        "highest": 275
+      },
+      {
+        "team": {
+          "number": 54,
+          "name": "What will you get if you multiply six by nine?",
+          "affiliation": "54"
+        },
+        "rank": 10,
+        "scores": [
+          255,
+          162,
+          35
+        ],
+        "highest": 255
+      },
+      {
+        "team": {
+          "number": 132,
+          "name": "King of Hearts",
+          "affiliation": "132"
+        },
+        "rank": 11,
+        "scores": [
+          255,
+          152,
+          42
+        ],
+        "highest": 255
+      },
+      {
+        "team": {
+          "number": 981,
+          "name": "The Green slime club",
+          "affiliation": "981"
+        },
+        "rank": 12,
+        "scores": [
+          245,
+          75,
+          45
+        ],
+        "highest": 245
+      },
+      {
+        "team": {
+          "number": 956,
+          "name": "ElectroWreckers",
+          "affiliation": "956"
+        },
+        "rank": 13,
+        "scores": [
+          235,
+          145,
+          35
+        ],
+        "highest": 235
+      },
+      {
+        "team": {
+          "number": 1,
+          "name": "The first team",
+          "affiliation": "1"
+        },
+        "rank": 14,
+        "scores": [
+          195,
+          125,
+          50
+        ],
+        "highest": 195
+      },
+      {
+        "team": {
+          "number": 856,
+          "name": "The Order of the Phoenix",
+          "affiliation": "856"
+        },
+        "rank": 15,
+        "scores": [
+          95,
+          85,
+          75
+        ],
+        "highest": 95
+      }
+    ]
+  }
 }
