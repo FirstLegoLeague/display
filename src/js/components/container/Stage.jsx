@@ -1,7 +1,7 @@
 import React from 'react'
 import Environment from '../../services/env'
-import SyncingComponent from './generic/SyncingComponent.jsx'
 import { Textfit } from 'react-textfit'
+import MhubSyncingComponent from './generic/MhubSyncingComponent.jsx'
 
 function upperCaseFirstIfLetter (string) {
   let stringRegex = /^\D/
@@ -15,7 +15,7 @@ function upperCaseFirstIfLetter (string) {
   return string
 }
 
-class Stage extends SyncingComponent {
+class Stage extends MhubSyncingComponent {
 
   constructor () {
     let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/settings/tournamentStage`)

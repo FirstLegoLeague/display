@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import Environment from '../../services/env'
 import Messenger from '../../services/messenger'
-import SyncingComponent from './generic/SyncingComponent.jsx'
+import RestSyncingComponent from './generic/RestSyncingComponent.jsx'
 import InfiniteTable from '../presentational/InfiniteTable.jsx'
 import axios from 'axios'
 
-class RankingsTable extends SyncingComponent {
+class RankingsTable extends RestSyncingComponent {
 
   constructor() {
     let urlPromise = Environment.load().then(env => `${env.moduleRankingsUrl}/rankings.json`)
-    super('rankings', urlPromise)
+    super('rankings:reload', urlPromise)
   }
 
   componentWillMount() {
     super.componentWillMount()
     Messenger.on('tournamentStage:update', () => this.reload())
-    Messenger.on('teams:reload', () => this.reload())
+    Messenger.on('teams:load', () => this.reload())
   }
 
   tableHeaders(maxScoresCount) {
