@@ -6,7 +6,7 @@ class RestSyncingComponent extends Component {
 
   constructor(topic, urlPromise) {
     super()
-    this.topic = `${topic}`
+    this.topic = topic
     this.state = { data: '' }
     this.urlPromise = urlPromise.then(url => this.url = url)
   }
@@ -29,7 +29,6 @@ class RestSyncingComponent extends Component {
   }
 
   reload(data, msg){
-    console.log(data,msg)
     this.setState({ data: data.data.value })
   }
 

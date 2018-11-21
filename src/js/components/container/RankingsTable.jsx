@@ -15,7 +15,7 @@ class RankingsTable extends RestSyncingComponent {
   componentWillMount() {
     super.componentWillMount()
     Messenger.on('tournamentStage:update', () => this.reload())
-    Messenger.on('teams:load', () => this.reload())
+    Messenger.on('teams:reload', () => this.reload())
   }
 
   tableHeaders(maxScoresCount) {

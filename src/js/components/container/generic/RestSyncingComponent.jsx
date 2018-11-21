@@ -6,7 +6,7 @@ class RestSyncingComponent extends Component {
 
   constructor(topic, urlPromise) {
     super()
-    this.topic = `${topic}`
+    this.topic = topic
     this.state = { data: '' }
     this.urlPromise = urlPromise.then(url => this.url = url)
   }
