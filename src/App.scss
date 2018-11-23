@@ -3,42 +3,42 @@
 @import './scss/components/timer';
 
 body {
-	background: url('~@first-lego-league/user-interface/current/assets/img/background_tile.jpg');
+  background: url('~@first-lego-league/user-interface/current/assets/img/background_tile.jpg');
 }
 
 #logos-stripe, #title-row {
-	background: white;
+  background: white;
 }
 
 #title-row {
-	height: 100%;
-	margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 #fll-logo {
-	background: url('~@first-lego-league/user-interface/current/assets/img/fll_logo_wide.png');
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
+  background: url('~@first-lego-league/user-interface/current/assets/img/fll_logo_wide.png');
+  background-position: center;
+  background-size: 75%;
+  background-repeat: no-repeat;
 }
 
 #challenge-logo {
-	background: url('~@first-lego-league/user-interface/current/assets/img/challenge_logo.png');
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
+  background: url('~@first-lego-league/user-interface/current/assets/img/challenge_logo.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #rankings .callout {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
 }
 
 #rankings .primary {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 [role="dialog"], .reveal-overlay {
-    overflow-y: hidden !important;
+  overflow-y: hidden !important;
 }
