@@ -1,6 +1,7 @@
 @import './scss/components/infinite_stripe';
 @import './scss/components/infinite_table';
 @import './scss/components/timer';
+@import './scss/components/settings';
 
 body {
   background: url('~@first-lego-league/user-interface/current/assets/img/background_tile.jpg');
@@ -42,3 +43,13 @@ body {
 [role="dialog"], .reveal-overlay {
   overflow-y: hidden !important;
 }
+
+.fullscreen .show-on-hover {
+  transition: linear 0.2s opacity;
+  opacity: 0;
+}
+
+.fullscreen .show-on-hover:hover {
+  opacity: 1;
+}
+

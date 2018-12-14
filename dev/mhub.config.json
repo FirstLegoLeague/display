@@ -15,6 +15,57 @@
         "protected": "Exchange",
         "configuration": "TopicStore"
     },
+    "users": {
+        "launcher": "launcher-pass",
+        "protected-client": "321LEGO",
+        "configuration": "321LEGO"
+    },
+    "rights": {
+        "": {
+            "subscribe": {
+                "public": true,
+                "protected": true,
+                "configuration": false
+            },
+            "publish": {
+                "public": true,
+                "protected": false,
+                "configuration": false
+            }
+        },
+        "protected-client": {
+            "subscribe": {
+                "public": true,
+                "protected": true,
+                "configuration": false
+            },
+            "publish": {
+                "public": true,
+                "protected": true,
+                "configuration": false
+            }
+        },
+        "configuration": {
+            "subscribe": {
+                "public": false,
+                "protected": false,
+                "configuration": [
+                    "config:*"
+                ]
+            },
+            "publish": {
+                "public": false,
+                "protected": false,
+                "configuration": [
+                    "config:*"
+                ]
+            }
+        },
+        "launcher": {
+            "subscribe": true,
+            "publish": true
+        }
+    },
     "bindings": [],
     "storage": "./storage/"
 }
