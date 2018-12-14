@@ -53,3 +53,8 @@ body {
   opacity: 1;
 }
 
+.high-contrast * {
+  background: white;
+  color: black !important;
+  font-weight: bold;
+}

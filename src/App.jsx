@@ -31,20 +31,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className={`app ${this.state.isFullscreen ? 'fullscreen' : ''}`} style={{height:'100vh'}}>
+      <div className={`app ${this.state.isFullscreen ? 'fullscreen' : ''} ${this.state.settings.highContrast ? 'high-contrast' : ''}`} style={{height:'100vh'}}>
         <div className="grid-y" style={{height:'100%'}}>
           <div className="cell small-2">
             <Title />
           </div>
-          <div className="cell small-8 grid-y" style={{'overflow-y': 'hidden'}}>
+          <div className={`cell small-${this.state.settings.showLogos ? '8' : '10'} grid-y`} style={{'overflow-y': 'hidden'}}>
             <RankingsTable />
           </div>
-          {Settings.settings.showLogos ? <div className="cell small-2">
+          {this.state.settings.showLogos ? <div className="cell small-2">
             <LogosStripe />
           </div> : null}
         </div>
         <SettingsButton />
-        {Settings.settings.showTimer ? <Timer /> : null}
+        {this.state.settings.showTimer ? <Timer /> : null}
         <ReactResizeDetector handleWidth handleHeight onResize={() => this.setState({ isFullscreen: isFullscreen() })} />
       </div>
     );

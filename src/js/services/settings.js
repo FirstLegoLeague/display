@@ -2,7 +2,8 @@ import EventEmitter from 'event-emitter-es6'
 
 const DEFAULT_SETTINGS = {
 	showTimer: true,
-	showLogos: true
+	showLogos: true,
+	highContrast: false
 }
 const SETTINGS_KEY = 'settings'
 
