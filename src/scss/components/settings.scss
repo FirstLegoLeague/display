@@ -1,0 +1,16 @@
+.settings {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+}
+
+.setting {
+	align-items: center;
+	margin-bottom: 0.5rem;
+
+	.switch {
+		margin-bottom: 0;
+		margin-right: 0.5rem;
+	}
+}
