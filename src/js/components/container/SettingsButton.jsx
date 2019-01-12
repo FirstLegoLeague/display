@@ -6,7 +6,8 @@ import Settings from '../../services/settings'
 const SETTINGS_TITLES = {
   showTimer: 'Show timer',
   showLogos: 'Show Logos Strip',
-  highContrast: 'Use High Contrast colors'
+  highContrast: 'Use High Contrast colors',
+  RTL: 'Right to Left'
 }
 
 class SettingsButton extends Component {
