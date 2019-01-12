@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Messenger from '../../services/messenger.js'
 import Modal from 'react-foundation-modal'
 
-
 function pad (number, length) {
   return (new Array(length + 1).join('0') + number).slice(-length)
 }

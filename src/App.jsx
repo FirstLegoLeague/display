@@ -29,9 +29,16 @@ class App extends Component {
     })
   }
 
+  appStyle() {
+    const style = { height: '100vh' }
+    style.direction = this.state.settings.RTL ? 'rtl' : 'ltr'
+    return style
+  }
+
   render() {
     return (
-      <div className={`app ${this.state.isFullscreen ? 'fullscreen' : ''} ${this.state.settings.highContrast ? 'high-contrast' : ''}`} style={{height:'100vh'}}>
+      <div className={`app ${this.state.isFullscreen ? 'fullscreen' : ''} ${this.state.settings.highContrast ? 'high-contrast' : ''}`}
+            style={this.appStyle()}>
         <div className="grid-y" style={{height:'100%'}}>
           <div className="cell small-2">
             <Title />
