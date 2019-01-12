@@ -32,7 +32,7 @@ class InfiniteStripe extends Component {
 
   render() {
   	let children = this.props.children
-    return <div className="infinite-stipe" id={this.props.id} ref="stripe" style={{marginLeft: -this.state.scrollLeft}}>
+    return <div className="infinite-stipe" id={this.props.id} ref="stripe" style={{direction: 'ltr', marginLeft: -this.state.scrollLeft}}>
       {children}
       {children}
     </div>
