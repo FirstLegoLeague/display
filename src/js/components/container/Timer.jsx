@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Messenger from '../../services/messenger.js'
 import Modal from 'react-foundation-modal'
+import { Textfit } from 'react-textfit'
 
 function pad (number, length) {
   return (new Array(length + 1).join('0') + number).slice(-length)
@@ -64,7 +65,9 @@ class Timer extends Component {
                   overlayStyle={overlayStyle}
                   revealStyle={revelStyle}
                   open={this.state.running} closeStyle={{'display': 'none'}}>
-      <div className="time text-center h1">{this.state.time}</div>
+      <Textfit className="time text-center" mode="single" max="100" forceSingleModeWidth="false">
+        {this.state.time}
+      </Textfit>
     </Modal>
   }
 }

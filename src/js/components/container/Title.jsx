@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Environment from '../../services/env'
 import Messenger from '../../services/messenger'
 import axios from 'axios'
-import { Textfit } from 'react-textfit';
+import { Textfit } from 'react-textfit'
 import Stage from './Stage.jsx'
 import MhubSyncingComponent from './generic/MhubSyncingComponent.jsx'
 
