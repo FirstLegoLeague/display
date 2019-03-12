@@ -1,4 +1,4 @@
-.infinite-table .grid-x .grid-x:nth-child(2n), .infinite-table .headers {
+.app:not(.high-contrast) .infinite-table .grid-x .grid-x:nth-child(2n), .infinite-table .headers {
   background: #cccccc;
 
   .cell.callout {
