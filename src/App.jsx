@@ -40,10 +40,10 @@ class App extends Component {
       <div className={`app ${this.state.isFullscreen ? 'fullscreen' : ''} ${this.state.settings.highContrast ? 'high-contrast' : ''}`}
             style={this.appStyle()}>
         <div className="grid-y" style={{height:'100%'}}>
-          <div className="cell small-2">
+          <div className="cell">
             <Title />
           </div>
-          <div className={`cell small-${this.state.settings.showLogos ? '8' : '10'} grid-y`} style={{'overflow-y': 'hidden'}}>
+          <div className="cell flex-child-shrink grid-y" style={{'overflow-y': 'hidden'}}>
             <RankingsTable />
           </div>
           {this.state.settings.showLogos ? <div className="cell small-2">

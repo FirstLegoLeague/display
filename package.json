@@ -2,9 +2,9 @@
   "name": "@first-lego-league/display",
   "version": "2.4.3",
   "scripts": {
-    "mhub": "mhub-server -c ./dev/mhub.config.json",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --config webpack.config.js"
+    "mhub": "mhub-server -c ./dev/mhub.config.json",
+    "start": "webpack-dev-server --config webpack.config.js --hot"
   },
   "devDependencies": {
     "@first-lego-league/user-interface": "1.3.7",

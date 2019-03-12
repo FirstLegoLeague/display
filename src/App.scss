@@ -16,6 +16,10 @@ body {
   margin: 0;
 }
 
+#title-row > * {
+  margin-bottom: 0;
+}
+
 #fll-logo {
   background: url('~@first-lego-league/user-interface/current/assets/img/fll_logo_wide.png');
   background-position: center;
@@ -28,6 +32,10 @@ body {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+#rankings > .cell.grid-y {
+    padding-top: 0;
 }
 
 #rankings .callout {

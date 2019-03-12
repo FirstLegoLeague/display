@@ -40,8 +40,6 @@ router.get('/rankings.json', (req, res, next) => {
 
 router.use('/images', express.static(path.resolve(__dirname, 'images')))
 
-router.use('/images', express.static(path.resolve(__dirname, 'images')))
-
 router.use(express.static(path.resolve(__dirname, '../dist')))
 
 exports.MockAPIRouter = router
