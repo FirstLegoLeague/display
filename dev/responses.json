@@ -1,6 +1,11 @@
 {
   "title": "FIRST Lego League Houston",
   "stage": "practice",
+  "env": {
+    "mhubUri": "ws://localhost:13900",
+    "moduleTournamentUrl": "",
+    "moduleRankingsUrl": ""
+  },
   "logos": [
     {
       "image": "/images/1999.jpg"
@@ -56,11 +61,6 @@
     },
     "/images/2017.jpg"
   ],
-  "env": {
-    "mhubUri": "ws://localhost:13900",
-    "moduleTournamentUrl": "",
-    "moduleRankingsUrl": ""
-  },
   "rankings": {
     "practice": [
       {
