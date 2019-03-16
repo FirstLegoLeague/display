@@ -43,7 +43,7 @@ class App extends Component {
           <div className="cell">
             <Title />
           </div>
-          <div className="cell flex-child-shrink grid-y" style={{'overflow-y': 'hidden'}}>
+          <div className="cell flex-child-grow grid-y" style={{'overflow-y': 'hidden'}}>
             <RankingsTable />
           </div>
           {this.state.settings.showLogos ? <div className="cell small-2">
