@@ -30,16 +30,18 @@ body {
 
 #fll-logo {
   background: url('~@first-lego-league/user-interface/current/assets/img/fll_logo_wide.png');
-  background-position: center;
   background-size: 75%;
+  background-position: center;
   background-repeat: no-repeat;
+  height: calc(100% - .9375rem);
 }
 
 #challenge-logo {
   background: url('~@first-lego-league/user-interface/current/assets/img/challenge_logo.png');
-  background-position: center;
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
+  height: calc(100% - .9375rem);
 }
 
 #rankings .callout {
