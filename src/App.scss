@@ -7,6 +7,14 @@ body {
   background: url('~@first-lego-league/user-interface/current/assets/img/background_tile.jpg');
 }
 
+.app > .grid-y > .cell:not(.flex-child-grow) {
+  height: 15%;
+}
+
+.app > .grid-y > .cell.flex-child-grow {
+  height: 70%;
+}
+
 #logos-stripe, #title-row {
   background: white;
 }

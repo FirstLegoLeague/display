@@ -5,7 +5,6 @@ const cors = require('cors')
 const router = express.Router()
 
 const PORT = 3000
-const STAGE = 'qualification'
 
 function mockResponses() {
 	return JSON.parse(fs.readFileSync(path.resolve(__dirname, 'responses.json'), 'utf8'))
@@ -35,7 +34,7 @@ router.get('/image/all', (req, res, next) => {
 
 router.get('/rankings.json', (req, res, next) => {
 	let responses = mockResponses()
-	res.send(responses.rankings[STAGE])
+	res.send(responses.rankings[responses.stage])
 })
 
 router.use('/images', express.static(path.resolve(__dirname, 'images')))

@@ -46,7 +46,7 @@ class App extends Component {
           <div className="cell flex-child-shrink grid-y" style={{'overflow-y': 'hidden'}}>
             <RankingsTable />
           </div>
-          {this.state.settings.showLogos ? <div className="cell small-2">
+          {this.state.settings.showLogos ? <div className="cell">
             <LogosStripe />
           </div> : null}
         </div>
