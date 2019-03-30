@@ -7,6 +7,14 @@ body {
   background: url('~@first-lego-league/user-interface/current/assets/img/background_tile.jpg');
 }
 
+.app > .grid-y > .cell:not(.flex-child-grow) {
+  height: 15%;
+}
+
+.app > .grid-y > .cell.flex-child-grow {
+  height: 70%;
+}
+
 #logos-stripe, #title-row {
   background: white;
 }
@@ -22,16 +30,18 @@ body {
 
 #fll-logo {
   background: url('~@first-lego-league/user-interface/current/assets/img/fll_logo_wide.png');
-  background-position: center;
   background-size: 75%;
+  background-position: center;
   background-repeat: no-repeat;
+  height: calc(100% - .9375rem);
 }
 
 #challenge-logo {
   background: url('~@first-lego-league/user-interface/current/assets/img/challenge_logo.png');
-  background-position: center;
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
+  height: calc(100% - .9375rem);
 }
 
 #rankings .callout {
