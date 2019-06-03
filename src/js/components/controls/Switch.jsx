@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../../../scss/components/settings.scss'
+import '../../../scss/components/settings.scss'
 
 
 class Switch extends Component{

@@ -6,14 +6,22 @@ const DEFAULT_DELAY = 1000
 class InfiniteTable extends Component {
   constructor (props) {
     super(props)
-    this.state = { scrollTop: 0 }
+    this.state = { scrollTop: 0,
+      scrollSpeed: DEFAULT_SPEED
+    }
   }
 
   componentDidMount() {
     setTimeout(() => {
       this.interval = setInterval(() => {
-          this.setState({ scrollTop: this.newScroll(this.state.scrollTop) })
-      }, 1000 / (this.props.speed || DEFAULT_SPEED))
+          this.setState({scrollTop: this.newScroll(this.state.scrollTop) })
+          if (this.state.scrollSpeed != this.props.speed()) {
+            console.log('scroll speed changed to ' + this.props.speed())
+            this.setState({scrollSpeed: this.props.speed()})
+            this.componentWillUnmount()
+            this.componentDidMount()
+          }
+      }, 1000 / (this.state.scrollSpeed))
     }, (this.props.delay || DEFAULT_DELAY))
   }
 
