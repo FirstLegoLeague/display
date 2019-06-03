@@ -37,7 +37,7 @@ class SettingsButton extends Component {
       
       case 'number':
         console.log(setting.key+' - rendering num');
-        settingControl = <NumericSlider onUpdate={Setting}></NumericSlider>
+        settingControl = <NumericSlider setting={setting} onUpdate={(e) => console.log(e.target.value)}></NumericSlider>
         break;
     }
 
