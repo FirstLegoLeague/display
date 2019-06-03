@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import Modal from 'react-foundation-modal'
 
 import Settings from '../../services/settings'
-import Switch from './controls/Switch.jsx'
-import NumericSlider from './controls/NumericSlider.jsx'
+import Switch from '../controls/Switch.jsx'
+import NumericSlider from '../controls/NumericSlider.jsx'
 
 const SETTINGS_TITLES = {
   showTimer: 'Show timer',
@@ -31,13 +31,11 @@ class SettingsButton extends Component {
     var settingControl = null;
     switch(typeof(setting.value)) {
       case 'boolean':
-        console.log(setting.key+' - rendering bool');
         settingControl = <Switch setting={setting} onUpdate={() => Settings.set(setting.key, !setting.value)}></Switch>
         break;
       
       case 'number':
-        console.log(setting.key+' - rendering num');
-        settingControl = <NumericSlider setting={setting} onUpdate={(e) => console.log(e.target.value)}></NumericSlider>
+        settingControl = <NumericSlider setting={setting} onUpdate={(e) => Settings.set(setting.key, parseInt(e.target.value))}></NumericSlider>
         break;
     }
 
@@ -49,7 +47,6 @@ class SettingsButton extends Component {
 
   render () {
     const settings = Object.entries(this.state.settings).map(([key, value]) => ({ key, value, title: SETTINGS_TITLES[key] }))
-    console.log(settings);
     return [<div className="settings show-on-hover button" onClick={() => this.setState({ modalIsOpen: !this.state.modalIsOpen })}>
       Settings
     </div>,

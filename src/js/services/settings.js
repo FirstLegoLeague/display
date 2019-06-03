@@ -5,7 +5,7 @@ const DEFAULT_SETTINGS = {
 	showLogos: true,
 	highContrast: false,
 	RTL: false,
-	ScrollSpeed: "false"
+	ScrollSpeed: 10
 }
 const SETTINGS_KEY = 'settings'
 
