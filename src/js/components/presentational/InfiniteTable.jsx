@@ -68,7 +68,7 @@ class InfiniteTable extends Component {
     </div>)
 
     if(scrolling) {
-      return <div ref="body" className="cell small-12" style={{marginTop: -this.state.scrollTop}}>
+      return <div ref="body" className="cell small-12" style={{marginTop: - this.state.scrollTop}}>
         {table}
         {table}
       </div>
