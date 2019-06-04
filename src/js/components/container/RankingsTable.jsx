@@ -59,7 +59,7 @@ class RankingsTable extends RestSyncingComponent {
         headers={this.tableHeaders(maxScoresCount)}
         highlight={['High', 'Score']}
         data={this.tableData(maxScoresCount)}
-        speed={() => Settings.get('ScrollSpeed')}/>
+        speed={Settings.get('ScrollSpeed')}/>
     } else if(this.state.error) {
       return <div>Couldn't load rankings</div>
     } else {

@@ -8,9 +8,9 @@ class NumericSlider extends Component{
     }
 
     render() {
-        return [<input id={this.props.setting.key} name={this.props.setting.key}
+        return <input id={this.props.setting.key} name={this.props.setting.key}
             type="range" min="10" max="1000" defaultValue={this.props.setting.value} className="slider"
-            onChange={this.props.onUpdate}/>]
+            onChange={this.props.onUpdate}/>
     }
 }
 
