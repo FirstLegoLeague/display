@@ -18,7 +18,7 @@ class InfiniteTable extends Component {
           if (this.state.scrollSpeed !== this.props.speed) {
             console.log('scroll speed changed to ' + this.props.speed)
             this.setState({scrollSpeed: this.props.speed})
-            this.componentWillUnmount()
+            clearInterval(this.interval)
             this.componentDidMount()
           }
       }, 1000 / (this.state.scrollSpeed))
