@@ -11,18 +11,21 @@ class InfiniteTable extends Component {
     }
   }
 
-  componentDidMount() {
+  delayAndScroll() {
     setTimeout(() => {
       this.interval = setInterval(() => {
           this.setState({scrollTop: this.newScroll(this.state.scrollTop) })
           if (this.state.scrollSpeed !== this.props.speed) {
-            console.log('scroll speed changed to ' + this.props.speed)
             this.setState({scrollSpeed: this.props.speed})
             clearInterval(this.interval)
             this.componentDidMount()
           }
       }, 1000 / (this.state.scrollSpeed))
     }, (this.props.delay || DEFAULT_DELAY))
+  }
+
+  componentDidMount() {
+    this.delayAndScroll()
   }
 
   newScroll(oldScroll) {
