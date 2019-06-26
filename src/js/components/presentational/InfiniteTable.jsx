@@ -1,31 +1,22 @@
 import React, { Component } from 'react'
 
-const DEFAULT_SPEED = 10
+const DEFAULT_SPEED = 1
 const DEFAULT_DELAY = 1000
 
 class InfiniteTable extends Component {
   constructor (props) {
     super(props)
     this.state = { scrollTop: 0,
-      scrollSpeed: DEFAULT_SPEED
     }
   }
 
-  delayAndScroll() {
-    setTimeout(() => {
-      this.interval = setInterval(() => {
-          this.setState({scrollTop: this.newScroll(this.state.scrollTop) })
-          if (this.state.scrollSpeed !== this.props.speed) {
-            this.setState({scrollSpeed: this.props.speed})
-            clearInterval(this.interval)
-            this.componentDidMount()
-          }
-      }, 1000 / (this.state.scrollSpeed))
-    }, (this.props.delay || DEFAULT_DELAY))
+  scrollCallback() {
+    this.setState({scrollTop: this.newScroll(this.state.scrollTop) })
+    requestAnimationFrame(() => this.scrollCallback())
   }
 
   componentDidMount() {
-    this.delayAndScroll()
+    setTimeout(() => requestAnimationFrame(() => this.scrollCallback(), (this.props.delay || DEFAULT_DELAY)))
   }
 
   newScroll(oldScroll) {
@@ -33,7 +24,7 @@ class InfiniteTable extends Component {
     if(oldScroll >= height / 2 || !this.isScrolling()) {
       return 0
     } else {
-      return oldScroll + 1
+      return oldScroll + (this.props.speed || DEFAULT_SPEED)
     }
   }
 

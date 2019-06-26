@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../../../scss/components/NumericSlider.scss'
 
-const MIN = "10"
+const MIN = "0"
 const MAX = "1000"
 
 class NumericSlider extends Component{

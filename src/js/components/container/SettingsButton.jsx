@@ -35,7 +35,9 @@ class SettingsButton extends Component {
         break;
       
       case 'number':
-        settingControl = <NumericSlider setting={setting} onUpdate={(e) => Settings.set(setting.key, parseInt(e.target.value))}></NumericSlider>
+        settingControl = <NumericSlider setting={setting} 
+        onUpdate={(e) => Settings.set(setting.key, parseInt(e.target.value))}
+        min="1" max="5"></NumericSlider>
         break;
     }
 
