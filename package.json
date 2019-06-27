@@ -11,6 +11,11 @@
   "engines": {
     "node": ">=8.x"
   },
+  "files": [
+    "dist",
+    "module.yml",
+    "yarn.lock"
+  ],
   "devDependencies": {
     "@first-lego-league/eslint-config": "^1.0.0",
     "@first-lego-league/user-interface": "1.3.7",
