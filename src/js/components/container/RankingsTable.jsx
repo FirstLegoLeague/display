@@ -1,28 +1,28 @@
-import React, { Component } from 'react'
+import React from 'react'
+
+import RestSyncingComponent from './generic/RestSyncingComponent.jsx'
+
 import Environment from '../../services/env'
 import Messenger from '../../services/messenger'
-import RestSyncingComponent from './generic/RestSyncingComponent.jsx'
 import InfiniteTable from '../presentational/InfiniteTable.jsx'
-import axios from 'axios'
 
 class RankingsTable extends RestSyncingComponent {
-
-  constructor() {
-    let urlPromise = Environment.load().then(env => `${env.moduleRankingsUrl}/rankings.json`)
+  constructor () {
+    const urlPromise = Environment.load().then(env => `${env.moduleRankingsUrl}/rankings.json`)
     super('rankings:reload', urlPromise)
   }
 
-  componentWillMount() {
+  componentWillMount () {
     super.componentWillMount()
     Messenger.on('tournamentStage:update', () => this.reload())
     Messenger.on('teams:reload', () => this.reload())
   }
 
-  tableHeaders(maxScoresCount) {
+  tableHeaders (maxScoresCount) {
     let headers = ['Rank', 'Team']
-    if(maxScoresCount > 1) {
+    if (maxScoresCount > 1) {
       headers.push('High')
-      const scoresHeaders = Array.from(new Array(maxScoresCount),(val,index)=>((index + 1).toString()))
+      const scoresHeaders = Array.from(new Array(maxScoresCount), (val, index) => ((index + 1).toString()))
       headers = headers.concat(scoresHeaders)
     } else {
       headers.push('Score')
@@ -31,11 +31,10 @@ class RankingsTable extends RestSyncingComponent {
     return headers
   }
 
-  tableData(maxScoresCount) {
+  tableData (maxScoresCount) {
     return this.state.data.map(rank => {
-      let affiliationStr = '';
-      if (rank.team.affiliation && rank.team.affiliation.trim().length > 0)
-        affiliationStr = ` (${rank.team.affiliation})`
+      let affiliationStr = ''
+      if (rank.team.affiliation && rank.team.affiliation.trim().length > 0) { affiliationStr = ` (${rank.team.affiliation})` }
       const tableRank = { Rank: rank.rank, Team: `#${rank.team.number} - ${rank.team.name}${affiliationStr}` }
       if (maxScoresCount > 1) {
         tableRank.High = rank.highest
@@ -49,25 +48,24 @@ class RankingsTable extends RestSyncingComponent {
     })
   }
 
-  render() {
-    if(this.state.data) {
+  render () {
+    if (this.state.data) {
       const maxScoresCount = Math.max.apply(null, this.state.data.map(rank => rank.scores.length))
-      return <InfiniteTable id="rankings"
+      return <InfiniteTable id='rankings'
         delay={3000}
-        largeCell="Team"
+        largeCell='Team'
         headers={this.tableHeaders(maxScoresCount)}
         highlight={['High', 'Score']}
-        data={this.tableData(maxScoresCount)}/>
-    } else if(this.state.error) {
+        data={this.tableData(maxScoresCount)} />
+    } else if (this.state.error) {
       return <div>Couldn't load rankings</div>
     } else {
-      return <div className="loading">
-        <div className="dimmer">
-          <div className="big loader"></div>
+      return <div className='loading'>
+        <div className='dimmer'>
+          <div className='big loader' />
         </div>
       </div>
     }
-
   }
 }
 

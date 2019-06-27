@@ -1,33 +1,33 @@
-import React, { Component } from 'react'
-import Environment from '../../services/env'
-import InfiniteStripe from '../presentational/InfiniteStripe.jsx'
+import React from 'react'
+
 import RestSyncingComponent from './generic/RestSyncingComponent.jsx'
 
-class LogosStripe extends RestSyncingComponent {
+import Environment from '../../services/env'
+import InfiniteStripe from '../presentational/InfiniteStripe.jsx'
 
-  constructor() {
-    let urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/image/all`)
+class LogosStripe extends RestSyncingComponent {
+  constructor () {
+    const urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/image/all`)
     super('images:reload', urlPromise)
   }
 
-  render() {
-    if(this.state.data) {
-      let logos = []
+  render () {
+    if (this.state.data) {
+      const logos = []
       for (let i = 0; i < this.state.data.length; i++) {
-          logos.push(<img src={this.state.data[i].image}></img>)
+        logos.push(<img src={this.state.data[i].image} />)
       }
-      return <InfiniteStripe id="logos-stripe" speed="100">{logos}</InfiniteStripe>
-    } else if(this.state.error) {
+      return <InfiniteStripe id='logos-stripe' speed='100'>{logos}</InfiniteStripe>
+    } else if (this.state.error) {
       return <div>Could'nt load logos</div>
     } else {
-      return <div className="loading">
-        <div className="dimmer">
-          <div className="big loader"></div>
+      return <div className='loading'>
+        <div className='dimmer'>
+          <div className='big loader' />
         </div>
       </div>
     }
   }
-
 }
 
 export default LogosStripe

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import ReactResizeDetector from 'react-resize-detector'
 
 import isFullscreen from './js/services/fullscreen.js'
@@ -29,24 +29,24 @@ class App extends Component {
     })
   }
 
-  appStyle() {
+  appStyle () {
     const style = { height: '100vh' }
     style.direction = this.state.settings.RTL ? 'rtl' : 'ltr'
     return style
   }
 
-  render() {
+  render () {
     return (
       <div className={`app ${this.state.isFullscreen ? 'fullscreen' : ''} ${this.state.settings.highContrast ? 'high-contrast' : ''}`}
-            style={this.appStyle()}>
-        <div className="grid-y" style={{height:'100%'}}>
-          <div className="cell">
+        style={this.appStyle()}>
+        <div className='grid-y' style={{ height: '100%' }}>
+          <div className='cell'>
             <Title />
           </div>
-          <div className="cell flex-child-grow grid-y" style={{'overflow-y': 'hidden'}}>
+          <div className='cell flex-child-grow grid-y' style={{ 'overflow-y': 'hidden' }}>
             <RankingsTable />
           </div>
-          {this.state.settings.showLogos ? <div className="cell">
+          {this.state.settings.showLogos ? <div className='cell'>
             <LogosStripe />
           </div> : null}
         </div>
@@ -54,7 +54,7 @@ class App extends Component {
         {this.state.settings.showTimer ? <Timer /> : null}
         <ReactResizeDetector handleWidth handleHeight onResize={() => this.setState({ isFullscreen: isFullscreen() })} />
       </div>
-    );
+    )
   }
 }
 
