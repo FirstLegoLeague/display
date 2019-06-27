@@ -3,11 +3,12 @@
   "version": "2.4.5",
   "scripts": {
     "clean": "rimraf dist",
-    "prepack": "yarn clean && yarn build",
     "build": "webpack --mode production",
+    "lint": "eslint src --ext .js,.jsx",
+    "prepack": "yarn clean && yarn build",
+    "start": "concurrently -k npm:start:*",
     "start:mhub": "mhub-server -c ./dev/mhub.config.json",
-    "start:webpack": "webpack-dev-server --config webpack.config.js --hot",
-    "start": "concurrently -k npm:start:*"
+    "start:webpack": "webpack-dev-server --config webpack.config.js --hot"
   },
   "engines": {
     "node": ">=8.x"
