@@ -1,0 +1,4 @@
+extends: "@first-lego-league"
+
+parserOptions:
+  sourceType: module
