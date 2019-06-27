@@ -1,6 +1,7 @@
 {
   "name": "@first-lego-league/display",
   "version": "2.4.5",
+  "license": "GPL-3.0",
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack --mode production",
