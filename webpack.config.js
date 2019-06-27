@@ -1,3 +1,5 @@
+/* eslint-disable node/exports-style */
+
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const CopyWebPackPlugin = require('copy-webpack-plugin')
 
