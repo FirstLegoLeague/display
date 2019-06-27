@@ -1,3 +1,8 @@
+[![npm](https://img.shields.io/npm/v/@first-lego-league/display.svg)](https://www.npmjs.com/package/@first-lego-league/display)
+[![codecov](https://codecov.io/gh/FirstLegoLeague/display/branch/master/graph/badge.svg)](https://codecov.io/gh/FirstLegoLeague/display)
+![Windows Build](https://img.shields.io/static/v1.svg?label=build&message=missing&color=red&logo=windows&logoColor=9cf)
+[![GitHub](https://img.shields.io/github/license/FirstLegoLeague/display.svg)](https://github.com/FirstLegoLeague/display/blob/master/LICENSE)
+
 # Display
 A Display module for the big screen in FIRST LEGO League competitions.
 
