@@ -27,16 +27,16 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader'
+          'style-loader',
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
         test: /\.css$/,
         use: [
-            'style-loader',
-            'css-loader'
+          'style-loader',
+          'css-loader'
         ]
       },
       {
@@ -59,8 +59,8 @@ module.exports = {
   devServer: {
     open: true,
     hot: true,
-    setup: function(app) {
-      app.use(MockAPIRouter);
+    setup: function (app) {
+      app.use(MockAPIRouter)
     }
   }
-};
+}

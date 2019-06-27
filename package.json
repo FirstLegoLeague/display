@@ -2,9 +2,11 @@
   "name": "@first-lego-league/display",
   "version": "2.4.5",
   "scripts": {
+    "prepack": "yarn build",
     "build": "webpack --mode production",
-    "mhub": "mhub-server -c ./dev/mhub.config.json",
-    "start": "webpack-dev-server --config webpack.config.js --hot"
+    "start:mhub": "mhub-server -c ./dev/mhub.config.json",
+    "start:webpack": "webpack-dev-server --config webpack.config.js --hot",
+    "start": "concurrently -k npm start:*"
   },
   "engines": {
     "node": ">=8.x"
@@ -18,6 +20,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.5",
+    "concurrently": "^4.1.1",
     "copy-webpack-plugin": "^4.5.2",
     "cors": "^2.8.4",
     "css-loader": "^1.0.0",
