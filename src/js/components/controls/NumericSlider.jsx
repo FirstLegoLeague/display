@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import '../../../scss/components/NumericSlider.scss'
 
-const MIN = "0"
-const MAX = "1000"
+const DEFAULT_MIN = "0"
+const DEFAULT_MAX = "1000"
 
 class NumericSlider extends Component{
     constructor(props){
@@ -12,7 +12,8 @@ class NumericSlider extends Component{
 
     render() {
         return <input id={this.props.setting.key} name={this.props.setting.key}
-            type="range" min={this.props.min || MIN} max={this.props.max || MAX} defaultValue={this.props.setting.value} className="slider"
+            type="range" min={this.props.min || DEFAULT_MIN} max={this.props.max || MADEFAULT_MAX} 
+            defaultValue={this.props.setting.value} className="slider"
             onChange={this.props.onUpdate}/>
     }
 }
