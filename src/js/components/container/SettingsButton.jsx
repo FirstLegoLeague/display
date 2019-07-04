@@ -10,12 +10,12 @@ const SETTINGS_TITLES = {
   showLogos: 'Show Logos Strip',
   highContrast: 'Use High Contrast colors',
   RTL: 'Right to Left',
-  ScrollSpeed: 'Scroll Speed'
+  scrollSpeed: 'Scroll Speed'
 }
 
 class SettingsButton extends Component {
   constructor () {
-  	super()
+    super()
 
     this.state = {
       settings: Settings.settings,
@@ -27,21 +27,21 @@ class SettingsButton extends Component {
     })
   }
 
-  renderSetting(setting) {
-    var settingControl = null;
-    switch(typeof(setting.value)) {
+  renderSetting (setting) {
+    let settingControl = null
+    switch (typeof (setting.value)) {
       case 'boolean':
-        settingControl = <Switch setting={setting} onUpdate={() => Settings.set(setting.key, !setting.value)}></Switch>
-        break;
-      
+        settingControl = <Switch setting={setting} onUpdate={() => Settings.set(setting.key, !setting.value)} />
+        break
+
       case 'number':
-        settingControl = <NumericSlider setting={setting} 
-        onUpdate={(e) => Settings.set(setting.key, parseInt(e.target.value))}
-        min="1" max="5"></NumericSlider>
-        break;
+        settingControl = <NumericSlider setting={setting}
+          onUpdate={e => Settings.set(setting.key, parseInt(e.target.value))}
+          min='1' max='5' />
+        break
     }
 
-    return <div className="setting grid-x">
+    return <div className='setting grid-x'>
       {settingControl}
       <div>{setting.title}</div>
     </div>
@@ -49,13 +49,15 @@ class SettingsButton extends Component {
 
   render () {
     const settings = Object.entries(this.state.settings).map(([key, value]) => ({ key, value, title: SETTINGS_TITLES[key] }))
-    return [<div className="settings show-on-hover button" onClick={() => this.setState({ modalIsOpen: !this.state.modalIsOpen })}>
-      Settings
-    </div>,
-    <Modal id="settings-modal" isModal size="small" open={this.state.modalIsOpen} closeModal={() => this.setState({ modalIsOpen: false })} >
+    return [
+      <div className='settings show-on-hover button' onClick={() => this.setState({ modalIsOpen: !this.state.modalIsOpen })}>
+        Settings
+      </div>,
+      <Modal id='settings-modal' isModal size='small' open={this.state.modalIsOpen} closeModal={() => this.setState({ modalIsOpen: false })} >
         <h1>Settings</h1>
         {settings.map(setting => this.renderSetting(setting))}
-    </Modal>]
+      </Modal>
+    ]
   }
 }
 

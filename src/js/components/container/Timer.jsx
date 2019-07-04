@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import Messenger from '../../services/messenger.js'
+
 import Modal from 'react-foundation-modal'
 import { Textfit } from 'react-textfit'
+
+import Messenger from '../../services/messenger.js'
 
 function pad (number, length) {
   return (new Array(length + 1).join('0') + number).slice(-length)
@@ -18,27 +20,25 @@ function parseTime (time, format) {
 }
 
 class Timer extends Component {
-
   constructor () {
     super()
     this.state = {
       running: null,
       time: '00:00'
     }
-
   }
 
   componentDidMount () {
     Messenger.on('clock:start', () => {
-      this.setState({running: true})
+      this.setState({ running: true })
     })
 
     Messenger.on('clock:end', () => {
-      this.setState({running: false})
+      this.setState({ running: false })
     })
 
     Messenger.on('clock:stop', () => {
-      this.setState({running: false})
+      this.setState({ running: false })
     })
 
     Messenger.on('clock:time', message => {
@@ -60,12 +60,12 @@ class Timer extends Component {
       'border': '2px #adadad solid'
     }
 
-    return <Modal isModal size="tiny"
-                  className="timer-modal"
-                  overlayStyle={overlayStyle}
-                  revealStyle={revelStyle}
-                  open={this.state.running} closeStyle={{'display': 'none'}}>
-      <Textfit className="time text-center" mode="single" max="100" forceSingleModeWidth="false">
+    return <Modal isModal size='tiny'
+      className='timer-modal'
+      overlayStyle={overlayStyle}
+      revealStyle={revelStyle}
+      open={this.state.running} closeStyle={{ 'display': 'none' }}>
+      <Textfit className='time text-center' mode='single' max='100' forceSingleModeWidth='false'>
         {this.state.time}
       </Textfit>
     </Modal>

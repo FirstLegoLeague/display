@@ -1,0 +1,12 @@
+extends:
+  - "@first-lego-league"
+  - standard-jsx
+
+parserOptions:
+  sourceType: module
+  env:
+    browser: true
+
+globals:
+  localStorage: true
+  WebSocket: true
