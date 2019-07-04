@@ -4,6 +4,7 @@ import Messenger from '../../services/messenger'
 import RestSyncingComponent from './generic/RestSyncingComponent.jsx'
 import InfiniteTable from '../presentational/InfiniteTable.jsx'
 import axios from 'axios'
+import Settings from '../../services/settings'
 
 class RankingsTable extends RestSyncingComponent {
 
@@ -57,7 +58,8 @@ class RankingsTable extends RestSyncingComponent {
         largeCell="Team"
         headers={this.tableHeaders(maxScoresCount)}
         highlight={['High', 'Score']}
-        data={this.tableData(maxScoresCount)}/>
+        data={this.tableData(maxScoresCount)}
+        speed={Settings.get('ScrollSpeed')}/>
     } else if(this.state.error) {
       return <div>Couldn't load rankings</div>
     } else {
