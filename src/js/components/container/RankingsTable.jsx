@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 
 import RestSyncingComponent from './generic/RestSyncingComponent.jsx'
 
@@ -59,7 +58,7 @@ class RankingsTable extends RestSyncingComponent {
         headers={this.tableHeaders(maxScoresCount)}
         highlight={['High', 'Score']}
         data={this.tableData(maxScoresCount)}
-        speed={Settings.get('ScrollSpeed')}/>
+        speed={Settings.get('scrollSpeed')} />
     } else if (this.state.error) {
       return <div>Couldn't load rankings</div>
     } else {

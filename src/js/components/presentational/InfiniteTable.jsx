@@ -6,17 +6,17 @@ const DEFAULT_DELAY = 1000
 class InfiniteTable extends Component {
   constructor (props) {
     super(props)
-    this.state = { scrollTop: 0,
+    this.state = { scrollTop: 0
     }
   }
 
-  scrollCallback() {
-        this.setState({ scrollTop: this.newScroll(this.state.scrollTop) })
-    requestAnimationFrame(() => this.scrollCallback())
+  scrollCallback () {
+    this.setState({ scrollTop: this.newScroll(this.state.scrollTop) })
+    window.requestAnimationFrame(() => this.scrollCallback())
   }
 
-  componentDidMount() {
-    setTimeout(() => requestAnimationFrame(() => this.scrollCallback(), (this.props.delay || DEFAULT_DELAY)))
+  componentDidMount () {
+    setTimeout(() => window.requestAnimationFrame(() => this.scrollCallback(), (this.props.delay || DEFAULT_DELAY)))
   }
 
   newScroll (oldScroll) {
