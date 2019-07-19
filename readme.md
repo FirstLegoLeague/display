@@ -1,3 +1,8 @@
+[![npm](https://img.shields.io/npm/v/@first-lego-league/display.svg)](https://www.npmjs.com/package/@first-lego-league/display)
+[![codecov](https://codecov.io/gh/FirstLegoLeague/display/branch/master/graph/badge.svg)](https://codecov.io/gh/FirstLegoLeague/display)
+![Windows Build](https://img.shields.io/static/v1.svg?label=build&message=missing&color=red&logo=windows&logoColor=9cf)
+[![GitHub](https://img.shields.io/github/license/FirstLegoLeague/display.svg)](https://github.com/FirstLegoLeague/display/blob/master/LICENSE)
+
 # Display
 A Display module for the big screen in FIRST LEGO League competitions.
 
@@ -30,7 +35,7 @@ This module is a `web` module (see the [Module Standard](https://github.com/Firs
 * Run `yarn start` to run the `webpack-dev-server`
 
 ### To Publish to NPM
-You must publish the subdirectory `dist` to NPM instead of the whole module, so use the designed script `./bin/publish.sh`. Run it from the shell/git-bash/msys2/any other Linux CLI
+To publish the package run command `yarn publish`.
 
 ### A few things to notice while developing:
 * Use `yarn` not `npm`

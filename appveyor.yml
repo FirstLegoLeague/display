@@ -1,0 +1,17 @@
+branches:
+  only:
+    - master
+skip_branch_with_pr: true
+
+environment:
+  nodejs_version: "10.13.0"
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - yarn install --frozen-lockfile
+
+test_script:
+  - yarn lint
+  - yarn pack
+
+build: off
