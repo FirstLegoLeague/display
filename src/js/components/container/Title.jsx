@@ -16,15 +16,15 @@ class Title extends MhubSyncingComponent {
 
   render () {
     if (this.state.data) {
-      return <div className='grid-x grid-margin-y' id='title-row'>
-        <div className='cell small-2' id='fll-logo' />
-        <div className='cell small-8 grid-x grid-padding-x align-center-middle text-center'>
+      return <div className='row' id='title-row'>
+        <div class="three wide column" id='fll-logo'/>
+        <div class="center aligned ten wide column" id='title'>
           <Textfit className='cell' mode='single' max='50' forceSingleModeWidth='false'>
             {this.state.data}
           </Textfit>
           <Stage />
         </div>
-        <div className='cell small-2' id='challenge-logo' />
+        <div class="three wide column" id='challenge-logo' />
       </div>
     } else if (this.state.error) {
       return <div>Couldn't load title</div>

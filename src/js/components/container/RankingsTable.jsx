@@ -49,12 +49,12 @@ class RankingsTable extends RestSyncingComponent {
     })
   }
 
-  render () {
+  table () {
     if (this.state.data) {
       const maxScoresCount = Math.max.apply(null, this.state.data.map(rank => rank.scores.length))
       return <InfiniteTable id='rankings'
         delay={3000}
-        largeCell='Team'
+        largeCell={'Team'}
         headers={this.tableHeaders(maxScoresCount)}
         highlight={['High', 'Score']}
         data={this.tableData(maxScoresCount)}
@@ -68,6 +68,10 @@ class RankingsTable extends RestSyncingComponent {
         </div>
       </div>
     }
+  }
+
+  render () {
+    return <div className={this.props.showLogos ? 'sixteen wide column logo-striped' : 'sixteen wide column'} id='rankings-row'>{this.table()}</div>
   }
 }
 

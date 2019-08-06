@@ -3,9 +3,8 @@ import EventEmitter from 'event-emitter-es6'
 const DEFAULT_SETTINGS = {
   showTimer: true,
   showLogos: true,
-  highContrast: false,
   RTL: false,
-  scrollSpeed: 10
+  scrollSpeed: 1
 }
 const SETTINGS_KEY = 'settings'
 

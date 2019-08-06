@@ -14,7 +14,7 @@ class NumericSlider extends Component {
   render () {
     return <input id={this.props.setting.key} name={this.props.setting.key}
       type='range' min={this.props.min || DEFAULT_MIN} max={this.props.max || DEFAULT_MAX}
-      defaultValue={this.props.setting.value} className='slider'
+      defaultValue={this.props.setting.value}
       onChange={this.props.onUpdate} />
   }
 }

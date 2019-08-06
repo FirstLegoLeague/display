@@ -16,13 +16,15 @@ class InfiniteTable extends Component {
   }
 
   componentDidMount () {
-    setTimeout(() => window.requestAnimationFrame(() => this.scrollCallback(), (this.props.delay || DEFAULT_DELAY)))
+    setTimeout(() => window.requestAnimationFrame(() => this.scrollCallback()), (this.props.delay || DEFAULT_DELAY))
   }
 
   newScroll (oldScroll) {
-    const height = this.refs.body.scrollHeight
-    if (oldScroll >= height / 2 || !this.isScrolling()) {
+    const height = this.bodyScrollHeight()
+    if (!this.isScrolling()) {
       return 0
+    } else if (oldScroll >= height / 2) {
+      return oldScroll - height / 2
     } else {
       return oldScroll + (this.props.speed || DEFAULT_SPEED)
     }
@@ -36,51 +38,67 @@ class InfiniteTable extends Component {
     return this.props.data.map(entry => this.props.headers.map(header => ([header, entry[header]])))
   }
 
+
+  bodyScrollHeight () {
+    return this.state.scrollTop + this.refs.body.scrollHeight
+  }
+
   cellClass (key) {
-    let clazz = 'cell callout'
+    let clazz = ''
 
-    if (this.props.largeCell === key) { clazz += ' auto' } else { clazz += ' small-1 text-center' }
+    if (this.props.largeCell === key) { clazz += ' large' }
 
-    if (this.props.highlight && this.props.highlight.includes(key)) { clazz += ' primary' }
+    if (this.props.highlight && this.props.highlight.includes(key)) { clazz += ' ui primary basic button' }
 
     return clazz
   }
 
   isScrolling () {
-    return this.refs.parent.getBoundingClientRect().height < this.refs.body.scrollHeight
+    return this.refs.body.clientHeight < this.bodyScrollHeight()
+  }
+
+  lineStyle (line, data, withScrollMargin) {
+    const lineStyle = { }
+    if (withScrollMargin && line === 0) {
+      lineStyle.marginTop = -this.state.scrollTop
+    } else if (line === data.length - 1) {
+      lineStyle.marginBottom = '1em'
+    }
+    return lineStyle
   }
 
   renderTable () {
     const scrolling = Object.keys(this.refs).length ? this.isScrolling() : false
     const data = this.data()
-    const table = data.map((entry, index) => <div className='grid-x' style={(index === data.length - 1) ? { marginBottom: '1em' } : {}}>
-      {entry.map(([key, value]) => <div className={this.cellClass(key)}>{value}</div>)}
-    </div>)
+    const firstTable = data.map((entry, index) => <tr style={this.lineStyle(index, data, true)}>
+      {entry.map(([key, value]) => <td class={this.cellClass(key)}>{value}</td>)}
+    </tr>)
+    const secondTable = data.map((entry, index) => <tr style={this.lineStyle(index, data, false)}>
+      {entry.map(([key, value]) => <td class={this.cellClass(key)}>{value}</td>)}
+    </tr>)
 
     if (scrolling) {
-      return <div ref='body' className='cell small-12' style={{ marginTop: -this.state.scrollTop }}>
-        {table}
-        {table}
-      </div>
+      return <tbody ref='body' style={{ overflow: 'hidden' }}>
+        {firstTable}
+        {secondTable}
+      </tbody>
     } else {
-      return <div ref='body' className='cell small-12' style={{ marginTop: 0 }}>
-        {table}
-      </div>
+      return <tbody ref='body' style={{ overflow: 'hidden' }}>
+        {firstTable}
+      </tbody>
     }
   }
 
   render () {
-    return <div className='infinite-table grid-x grid-y grid-padding-x grid-padding-y cell small-12' id={this.props.id}>
-      <div className='cell small-12 grid-y'>
-        <div ref='parent' className='cell small-12'>
-          <div ref='headers' className='grid-x headers'>
-            {this.props.headers.map(column => <div className={`${this.cellClass(column)} text-center`}>{column}</div>)}
-          </div>
-          <div className='grid-x' style={{ overflow: 'hidden' }}>
-            {this.renderTable()}
-          </div>
-        </div>
-      </div>
+    return <div className='infinite-table ui segment' id={this.props.id}>
+      <table ref='parent' className='ui scrollable single line very basic compact table'>
+        <thead>
+          <tr ref='headers' className='headers'>
+            {this.props.headers.map(column => <th class={this.cellClass(column)}>{column}</th>)}
+          </tr>
+        </thead>
+        {this.renderTable()}
+      </table>
     </div>
   }
 }
