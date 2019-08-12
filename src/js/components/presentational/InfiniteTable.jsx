@@ -38,7 +38,6 @@ class InfiniteTable extends Component {
     return this.props.data.map(entry => this.props.headers.map(header => ([header, entry[header]])))
   }
 
-
   bodyScrollHeight () {
     return this.state.scrollTop + this.refs.body.scrollHeight
   }
