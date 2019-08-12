@@ -1,6 +1,6 @@
 {
   "name": "@first-lego-league/display",
-  "version": "2.5.1",
+  "version": "2.6.0",
   "license": "GPL-3.0",
   "scripts": {
     "clean": "rimraf dist",
