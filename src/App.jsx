@@ -40,7 +40,7 @@ class App extends Component {
       <div className={`app fll ui padded grid tile-background ${this.state.isFullscreen ? 'fullscreen' : ''}`}
         style={this.appStyle()}>
         <Title />
-        <RankingsTable showLogos={this.state.settings.showLogos} ></RankingsTable>
+        <RankingsTable showLogos={this.state.settings.showLogos} />
         {this.state.settings.showLogos ? <LogosStripe /> : null}
         <SettingsButton />
         {this.state.settings.showTimer ? <Timer /> : null}
