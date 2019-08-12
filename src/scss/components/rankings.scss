@@ -1,0 +1,11 @@
+#rankings-row.logo-striped {
+	height: calc(100vh - 6rem - 15%);
+}
+
+#rankings-row:not(.logo-striped) {
+	height: calc(100vh - 6rem);
+}
+
+#rankings {
+	height: 100%;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Modal from 'react-foundation-modal'
+import { Modal } from 'semantic-ui-react'
 import { Textfit } from 'react-textfit'
 
 import Messenger from '../../services/messenger.js'
@@ -50,22 +50,11 @@ class Timer extends Component {
   }
 
   render () {
-    const overlayStyle = {
-      'backgroundColor': 'rgba(0,0,0,0)'
-    }
-
-    const revelStyle = {
-      'background-color': '#f9ebde',
-      'opacity': '0.75',
-      'border': '2px #adadad solid'
-    }
-
-    return <Modal isModal size='tiny'
+    return <Modal basic
       className='timer-modal'
-      overlayStyle={overlayStyle}
-      revealStyle={revelStyle}
-      open={this.state.running} closeStyle={{ 'display': 'none' }}>
-      <Textfit className='time text-center' mode='single' max='100' forceSingleModeWidth='false'>
+      open={this.state.running}
+      closeOnDimmerClick={false}>
+      <Textfit className='time' mode='single' max='100' forceSingleModeWidth='false'>
         {this.state.time}
       </Textfit>
     </Modal>

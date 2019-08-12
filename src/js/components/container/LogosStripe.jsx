@@ -11,7 +11,7 @@ class LogosStripe extends RestSyncingComponent {
     super('images:reload', urlPromise)
   }
 
-  render () {
+  stripe () {
     if (this.state.data) {
       const logos = []
       for (let i = 0; i < this.state.data.length; i++) {
@@ -27,6 +27,12 @@ class LogosStripe extends RestSyncingComponent {
         </div>
       </div>
     }
+  }
+
+  render () {
+    return <div className='row' id='logo-stripe-row'>
+      {this.stripe()}
+    </div>
   }
 }
 

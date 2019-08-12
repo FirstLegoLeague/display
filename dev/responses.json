@@ -43,7 +43,9 @@
     {
       "image": "/images/2010.jpg"
     },
-    "/images/2011.png",
+    {
+      "image": "/images/2011.png"
+    },
     {
       "image": "/images/2012.jpg"
     },
@@ -59,7 +61,9 @@
     {
       "image": "/images/2016.jpg"
     },
-    "/images/2017.jpg"
+    {
+      "image": "/images/2017.jpg"
+    }
   ],
   "rankings": {
     "practice": [

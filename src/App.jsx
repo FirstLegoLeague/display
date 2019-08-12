@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import ReactResizeDetector from 'react-resize-detector'
 
 import isFullscreen from './js/services/fullscreen.js'
-import '@first-lego-league/user-interface/current/assets/js/app.js'
+import '@first-lego-league/user-interface/current/app.js'
 
-import '@first-lego-league/user-interface/current/assets/css/app.css'
+import '@first-lego-league/user-interface/current/app.css'
 import './App.scss'
 
 import Title from './js/components/container/Title.jsx'
@@ -37,19 +37,11 @@ class App extends Component {
 
   render () {
     return (
-      <div className={`app ${this.state.isFullscreen ? 'fullscreen' : ''} ${this.state.settings.highContrast ? 'high-contrast' : ''}`}
+      <div className={`app fll ui padded grid tile-background ${this.state.isFullscreen ? 'fullscreen' : ''}`}
         style={this.appStyle()}>
-        <div className='grid-y' style={{ height: '100%' }}>
-          <div className='cell'>
-            <Title />
-          </div>
-          <div className='cell flex-child-grow grid-y' style={{ 'overflow-y': 'hidden' }}>
-            <RankingsTable />
-          </div>
-          {this.state.settings.showLogos ? <div className='cell'>
-            <LogosStripe />
-          </div> : null}
-        </div>
+        <Title />
+        <RankingsTable showLogos={this.state.settings.showLogos} />
+        {this.state.settings.showLogos ? <LogosStripe /> : null}
         <SettingsButton />
         {this.state.settings.showTimer ? <Timer /> : null}
         <ReactResizeDetector handleWidth handleHeight onResize={() => this.setState({ isFullscreen: isFullscreen() })} />

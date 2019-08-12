@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Checkbox } from 'semantic-ui-react'
 
 import '../../../scss/components/settings.scss'
 
@@ -9,11 +10,7 @@ class Switch extends Component {
   }
 
   render () {
-    return [<div className='switch'>
-      <input className='switch-input' type='checkbox' id={this.props.setting.key}
-        name={this.props.setting.key} checked={this.props.setting.value} onClick={this.props.onUpdate} />
-      <label className='switch-paddle' for={this.props.setting.key} />
-    </div>]
+    return <Checkbox toggle onChange={this.props.onUpdate} checked={this.props.setting.value} />
   }
 }
 
