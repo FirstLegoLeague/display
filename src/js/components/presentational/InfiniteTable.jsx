@@ -42,12 +42,14 @@ class InfiniteTable extends Component {
     return this.state.scrollTop + this.refs.body.scrollHeight
   }
 
-  cellClass (key) {
+  cellClass (key, value) {
     let clazz = ''
 
     if (this.props.largeCell === key) { clazz += ' large' }
 
     if (this.props.highlight && this.props.highlight.includes(key)) { clazz += ' ui primary basic button' }
+
+    if (value === '-') { clazz += ' no show' }
 
     return clazz
   }
@@ -70,10 +72,10 @@ class InfiniteTable extends Component {
     const scrolling = Object.keys(this.refs).length ? this.isScrolling() : false
     const data = this.data()
     const firstTable = data.map((entry, index) => <tr style={this.lineStyle(index, data, true)}>
-      {entry.map(([key, value]) => <td class={this.cellClass(key)}>{value}</td>)}
+      {entry.map(([key, value]) => <td class={this.cellClass(key, value)}>{value}</td>)}
     </tr>)
     const secondTable = data.map((entry, index) => <tr style={this.lineStyle(index, data, false)}>
-      {entry.map(([key, value]) => <td class={this.cellClass(key)}>{value}</td>)}
+      {entry.map(([key, value]) => <td class={this.cellClass(key, value)}>{(value === '-') ? '' : value}</td>)}
     </tr>)
 
     if (scrolling) {
