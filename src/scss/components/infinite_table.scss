@@ -10,4 +10,9 @@
 	    font-weight: bold !important;
 	    text-align: center;
 	}
+
+	&.no-show {
+		background-color: #c2c2c2 !important;
+		pointer-events: none;
+	}
 }
