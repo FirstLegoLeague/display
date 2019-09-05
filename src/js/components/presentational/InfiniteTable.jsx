@@ -49,7 +49,7 @@ class InfiniteTable extends Component {
 
     if (this.props.highlight && this.props.highlight.includes(key)) { clazz += ' ui primary basic button' }
 
-    if (value === '-') { clazz += ' no show' }
+    if (value === '-') { clazz += ' no-show' }
 
     return clazz
   }
