@@ -4,7 +4,7 @@ import { Button, Modal } from 'semantic-ui-react'
 import Settings from '../../services/settings'
 import Switch from '../controls/Switch.jsx'
 import NumericSlider from '../controls/NumericSlider.jsx'
-import ButtonSet from '../controls/ButtonSet.jsx'
+import EnumSetting from '../controls/EnumSetting.jsx'
 
 const SETTINGS_TITLES = {
   showTimer: 'Show timer',
@@ -41,7 +41,7 @@ class SettingsButton extends Component {
           min='1' max='5' />
         break
       case 'string':
-        settingControl = <ButtonSet setting={setting}
+        settingControl = <EnumSetting setting={setting}
           onClick={e => Settings.set(setting.key, e.target.value)}
           buttonValues={['14px', '16px', '18px']} />
         break

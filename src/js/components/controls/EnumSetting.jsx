@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { ButtonGroup, Button } from 'semantic-ui-react'
 
-class ButtonSet extends Component {
+class EnumSetting extends Component {
   constructor (props) {
     super(props)
     this.props = props
@@ -14,4 +14,4 @@ class ButtonSet extends Component {
   }
 }
 
-export default ButtonSet
+export default EnumSetting
