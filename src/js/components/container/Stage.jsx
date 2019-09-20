@@ -27,7 +27,7 @@ class Stage extends MhubSyncingComponent {
 
   render () {
     if (this.state.data) {
-      return <Textfit className='cell' mode='single' max='20' forceSingleModeWidth='false'>
+      return <Textfit className='cell' mode='single' max='15' forceSingleModeWidth='false'>
         {upperCaseFirstIfLetter(this.state.data)}
       </Textfit>
     } else if (this.state.error) {

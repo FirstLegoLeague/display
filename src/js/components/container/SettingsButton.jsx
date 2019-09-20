@@ -43,7 +43,7 @@ class SettingsButton extends Component {
       case 'string':
         settingControl = <EnumSetting setting={setting}
           onClick={e => Settings.set(setting.key, e.target.value)}
-          buttonValues={['14px', '16px', '18px']} />
+          buttonValues={['Small', 'Medium', 'Large']} />
         break
     }
 

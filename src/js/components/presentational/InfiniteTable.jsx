@@ -89,8 +89,19 @@ class InfiniteTable extends Component {
     }
   }
 
+  fontSize (size) {
+    switch (size) {
+      case 'Small':
+        return '14px'
+      case 'Medium':
+        return '16px'
+      case 'Large':
+        return '18px'
+    }
+  }
+
   render () {
-    return <div className='infinite-table ui segment' id={this.props.id} style={{ fontSize: this.props.textSize }}>
+    return <div className='infinite-table ui segment' id={this.props.id} style={{ fontSize: this.fontSize(this.props.textSize) }}>
       <table ref='parent' className='ui scrollable single line very basic compact table'>
         <thead>
           <tr ref='headers' className='headers'>
