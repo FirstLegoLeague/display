@@ -6,7 +6,21 @@
     "moduleTournamentUrl": "",
     "moduleRankingsUrl": ""
   },
-  "logos": [
+  "global_logos": [
+    {
+      "image": "/images/global_sponsors/GM.jpg"
+    },
+    {
+      "image": "/images/global_sponsors/LEGO_EDU.jpg"
+    },
+    {
+      "image": "/images/global_sponsors/NI.jpg"
+    },
+    {
+      "image": "/images/global_sponsors/RA.jpg"
+    }
+  ],
+  "local_logos": [
     {
       "image": "/images/1999.jpg"
     },
