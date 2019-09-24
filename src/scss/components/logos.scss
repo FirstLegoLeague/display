@@ -1,5 +1,20 @@
 #logo-stripe-row {
 	background: white;
-    height: 15%;
+    height: 30%;
     padding: 0;
+
+	 > * {
+	    height: 50%;
+	    width: 100%;
+	}
+}
+
+#global-logos {
+    box-shadow: 0px 3px 3px 1px;
+    text-align: center;
+
+    > * {
+	    height: 100%;
+	    padding: 1rem;
+	}
 }
