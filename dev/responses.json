@@ -6,21 +6,21 @@
     "moduleTournamentUrl": "",
     "moduleRankingsUrl": ""
   },
-  "global_logos": [
+  "globalLogos": [
     {
-      "image": "/images/global_sponsors/GM.jpg"
+      "image": "/images/global_sponsers/3M.png"
     },
     {
-      "image": "/images/global_sponsors/LEGO_EDU.jpg"
+      "image": "/images/global_sponsers/LEGO-EDU.png"
     },
     {
-      "image": "/images/global_sponsors/NI.jpg"
+      "image": "/images/global_sponsers/NI.png"
     },
     {
-      "image": "/images/global_sponsors/RA.jpg"
+      "image": "/images/global_sponsers/RA.png"
     }
   ],
-  "local_logos": [
+  "localLogos": [
     {
       "image": "/images/1999.jpg"
     },

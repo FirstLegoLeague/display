@@ -28,12 +28,17 @@ router.get('/settings/tournamentStage', (req, res, next) => {
 
 router.get('/image/global', (req, res, next) => {
   const responses = mockResponses()
-  res.send(responses.global_logos)
+  res.send(responses.globalLogos)
 })
 
 router.get('/image/local', (req, res, next) => {
   const responses = mockResponses()
-  res.send(responses.local_logos)
+  res.send(responses.localLogos)
+})
+
+router.get('/image/all', (req, res, next) => {
+  const responses = mockResponses()
+  res.send({ localLogos: responses.localLogos, globalLogos: responses.globalLogos })
 })
 
 router.get('/rankings.json', (req, res, next) => {
