@@ -6,7 +6,7 @@
     "moduleTournamentUrl": "",
     "moduleRankingsUrl": ""
   },
-  "globalLogos": [
+  "global": [
     {
       "image": "/images/global_sponsers/3M.png"
     },
@@ -20,7 +20,7 @@
       "image": "/images/global_sponsers/RA.png"
     }
   ],
-  "localLogos": [
+  "local": [
     {
       "image": "/images/1999.jpg"
     },

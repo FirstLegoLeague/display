@@ -1,6 +1,6 @@
 #logo-stripe-row {
 	background: white;
-    height: 18.75%;
+    height: 20%;
     padding: 0;
 
 	 > * {
@@ -9,16 +9,21 @@
 }
 
 #global-logos {
-    height: 60%;
+    height: 55%;
     box-shadow: 0px 3px 3px 1px;
     text-align: center;
 
     > * {
 	    height: 100%;
-	    padding: 1rem;
+	    padding: 0.5em 1rem;
 	}
 }
 
 #local-logos {
-	height: 40%;
+	height: 45%;
+
+    > * {
+	    height: calc(100% - 1em);
+	    padding: 0.5em 10rem;
+	}
 }
