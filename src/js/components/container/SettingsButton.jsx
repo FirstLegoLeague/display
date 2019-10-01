@@ -4,14 +4,12 @@ import { Button, Modal } from 'semantic-ui-react'
 import Settings from '../../services/settings'
 import Switch from '../controls/Switch.jsx'
 import NumericSlider from '../controls/NumericSlider.jsx'
-import EnumSetting from '../controls/EnumSetting.jsx'
 
 const SETTINGS_TITLES = {
   showTimer: 'Show timer',
   showLogos: 'Show Logos Strip',
   RTL: 'Right to Left',
-  scrollSpeed: 'Scroll Speed',
-  textSize: 'Text Size'
+  scrollSpeed: 'Scroll Speed'
 }
 
 class SettingsButton extends Component {
@@ -39,11 +37,6 @@ class SettingsButton extends Component {
         settingControl = <NumericSlider setting={setting}
           onUpdate={e => Settings.set(setting.key, parseInt(e.target.value))}
           min='1' max='5' />
-        break
-      case 'string':
-        settingControl = <EnumSetting setting={setting}
-          onClick={e => Settings.set(setting.key, e.target.value)}
-          buttonValues={['Small', 'Medium', 'Large']} />
         break
     }
 

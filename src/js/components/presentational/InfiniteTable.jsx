@@ -7,7 +7,8 @@ const NO_SHOW_CONTENT = <i className='ui minus icon' />
 class InfiniteTable extends Component {
   constructor (props) {
     super(props)
-    this.state = { scrollTop: 0 }
+    this.state = { scrollTop: 0
+    }
   }
 
   scrollCallback () {
@@ -47,7 +48,7 @@ class InfiniteTable extends Component {
 
     if (this.props.largeCell === key) { clazz += ' large' }
 
-    if (this.props.highlight && this.props.highlight.includes(key)) { clazz += ' ui primary basic' }
+    if (this.props.highlight && this.props.highlight.includes(key)) { clazz += ' ui primary basic button' }
 
     return clazz
   }
@@ -100,7 +101,7 @@ class InfiniteTable extends Component {
   }
 
   render () {
-    return <div className='infinite-table ui segment' id={this.props.id} style={{ fontSize: this.fontSize(this.props.textSize) }}>
+    return <div className='infinite-table ui segment' id={this.props.id}>
       <table ref='parent' className='ui scrollable single line very basic compact table'>
         <thead>
           <tr ref='headers' className='headers'>
