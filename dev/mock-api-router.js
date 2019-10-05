@@ -38,7 +38,7 @@ router.get('/image/local', (req, res, next) => {
 
 router.get('/image/all', (req, res, next) => {
   const responses = mockResponses()
-  res.send({ localLogos: responses.localLogos, globalLogos: responses.globalLogos })
+  res.send({ local: responses.local, global: responses.global })
 })
 
 router.get('/rankings.json', (req, res, next) => {
