@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Textfit } from 'react-textfit'
 
 import Messenger from '../../services/messenger.js'
 
