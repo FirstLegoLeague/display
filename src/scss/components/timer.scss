@@ -1,10 +1,11 @@
 #timer {
     position: fixed;
     top: 10rem;
-    left: calc(50% - 10rem);
-    width: 100vw;
+    left: calc(50% - 12.5rem);
+    width: 25rem;
     height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 7rem;
 }

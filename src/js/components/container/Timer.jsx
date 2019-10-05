@@ -48,14 +48,12 @@ class Timer extends Component {
   }
 
   render () {
-    // if (!this.state.running) {
-    //   return ''
-    // }
+    if (!this.state.running) {
+      return ''
+    }
 
     return <div id='timer' className='ui raised segment'>
-      <Textfit mode='single' max='100' forceSingleModeWidth='false'>
-        {this.state.time}
-      </Textfit>
+      {this.state.time}
     </div>
   }
 }
