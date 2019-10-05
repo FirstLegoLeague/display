@@ -1,5 +1,11 @@
-.time {
-  text-align: center;
-  font-weight: bold;
-  font-size: 8em;
+#timer {
+    position: fixed;
+    top: 10rem;
+    left: calc(50% - 12.5rem);
+    width: 25rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7rem;
 }

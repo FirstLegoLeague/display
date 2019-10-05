@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 
-import { Modal } from 'semantic-ui-react'
-import { Textfit } from 'react-textfit'
-
 import Messenger from '../../services/messenger.js'
 
 function pad (number, length) {
@@ -50,14 +47,13 @@ class Timer extends Component {
   }
 
   render () {
-    return <Modal basic
-      className='timer-modal'
-      open={this.state.running}
-      closeOnDimmerClick={false}>
-      <Textfit className='time' mode='single' max='100' forceSingleModeWidth='false'>
-        {this.state.time}
-      </Textfit>
-    </Modal>
+    if (!this.state.running) {
+      return ''
+    }
+
+    return <div id='timer' className='ui raised segment'>
+      {this.state.time}
+    </div>
   }
 }
 
