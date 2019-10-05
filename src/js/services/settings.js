@@ -4,7 +4,8 @@ const DEFAULT_SETTINGS = {
   showTimer: true,
   showLogos: true,
   RTL: false,
-  scrollSpeed: 1
+  scrollSpeed: 1,
+  textSize: ''
 }
 const SETTINGS_KEY = 'settings'
 
