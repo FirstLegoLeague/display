@@ -1,5 +1,5 @@
 #rankings-row.logo-striped {
-	height: calc(100vh - 6rem - 15%);
+	height: calc(100vh - 6rem - 20%);
 }
 
 #rankings-row:not(.logo-striped) {
@@ -8,4 +8,9 @@
 
 #rankings {
 	height: 100%;
+
+	td {
+	    padding-top: 0.2rem;
+	    padding-bottom: 0.2rem;
+	}
 }

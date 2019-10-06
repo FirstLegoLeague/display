@@ -13,11 +13,20 @@ class LogosStripe extends RestSyncingComponent {
 
   stripe () {
     if (this.state.data) {
-      const logos = []
-      for (let i = 0; i < this.state.data.length; i++) {
-        logos.push(<img src={this.state.data[i].image} />)
+      const globalLogos = []
+      for (let i = 0; i < this.state.data.global.length; i++) {
+        globalLogos.push(<img src={this.state.data.global[i].image} />)
       }
-      return <InfiniteStripe id='logos-stripe' speed='100'>{logos}</InfiniteStripe>
+      const localLogos = []
+      for (let i = 0; i < this.state.data.local.length; i++) {
+        localLogos.push(<img src={this.state.data.local[i].image} />)
+      }
+      return [
+        <div id='global-logos'>{globalLogos}</div>,
+        <div id='local-logos'>
+          <InfiniteStripe speed='100'>{localLogos}</InfiniteStripe>
+        </div>
+      ]
     } else if (this.state.error) {
       return <div>Could'nt load logos</div>
     } else {

@@ -2,39 +2,48 @@ const express = require('express')
 const fs = require('fs')
 const path = require('path')
 const cors = require('cors')
+
 const router = express.Router()
 
-const PORT = 3000
-
-function mockResponses() {
-	return JSON.parse(fs.readFileSync(path.resolve(__dirname, 'responses.json'), 'utf8'))
+function mockResponses () {
+  return JSON.parse(fs.readFileSync(path.resolve(__dirname, 'responses.json'), 'utf8'))
 }
 
 router.use(cors())
 
 router.get('/environment.json', (req, res, next) => {
-	let responses = mockResponses()
-	res.send(responses.env)
+  const responses = mockResponses()
+  res.send(responses.env)
 })
 
 router.get('/settings/tournamentTitle', (req, res, next) => {
-	let responses = mockResponses()
-	res.send(responses.title)
+  const responses = mockResponses()
+  res.send(responses.title)
 })
 
 router.get('/settings/tournamentStage', (req, res, next) => {
-  let responses = mockResponses()
+  const responses = mockResponses()
   res.send(responses.stage)
 })
 
+router.get('/image/global', (req, res, next) => {
+  const responses = mockResponses()
+  res.send(responses.globalLogos)
+})
+
+router.get('/image/local', (req, res, next) => {
+  const responses = mockResponses()
+  res.send(responses.localLogos)
+})
+
 router.get('/image/all', (req, res, next) => {
-	let responses = mockResponses()
-	res.send(responses.logos)
+  const responses = mockResponses()
+  res.send({ local: responses.local, global: responses.global })
 })
 
 router.get('/rankings.json', (req, res, next) => {
-	let responses = mockResponses()
-	res.send(responses.rankings[responses.stage])
+  const responses = mockResponses()
+  res.send(responses.rankings[responses.stage])
 })
 
 router.use('/images', express.static(path.resolve(__dirname, 'images')))
