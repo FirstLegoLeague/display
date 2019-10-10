@@ -8,16 +8,19 @@
   },
   "global": [
     {
-      "image": "/images/global_sponsers/3M.png"
+      "image": "/images/global_sponsers/1-3M_Logo.png"
     },
     {
-      "image": "/images/global_sponsers/LEGO-EDU.png"
+      "image": "/images/global_sponsers/2-John Deere C&F Logo.png"
     },
     {
-      "image": "/images/global_sponsers/NI.png"
+      "image": "/images/global_sponsers/3-LEGO-education_LOGO.png"
     },
     {
-      "image": "/images/global_sponsers/RA.png"
+      "image": "/images/global_sponsers/4-National_Instruments.png"
+    },
+    {
+      "image": "/images/global_sponsers/5-RA_Logo.png"
     }
   ],
   "local": [
@@ -101,7 +104,7 @@
         },
         "rank": 1,
         "scores": [
-          523
+
         ],
         "highest": 222
       },
@@ -125,7 +128,7 @@
         },
         "rank": 1,
         "scores": [
-          523
+
         ],
         "highest": 221
       },
@@ -149,7 +152,7 @@
         },
         "rank": 3,
         "scores": [
-          426
+          "-"
         ],
         "highest": 426
       },
@@ -173,7 +176,7 @@
         },
         "rank": 5,
         "scores": [
-          356
+          "-"
         ],
         "highest": 356
       },
