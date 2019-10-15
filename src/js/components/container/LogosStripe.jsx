@@ -15,7 +15,7 @@ class LogosStripe extends RestSyncingComponent {
     if (this.state.data) {
       const globalLogos = []
       for (let i = 0; i < this.state.data.global.length; i++) {
-        globalLogos.push(<img src={this.state.data.global[i].image} style={{width: `${100/this.state.data.global.length}%`}} />)
+        globalLogos.push(<img src={this.state.data.global[i].image} style={{ width: `${100 / this.state.data.global.length}%` }} />)
       }
       const localLogos = []
       for (let i = 0; i < this.state.data.local.length; i++) {
