@@ -12,10 +12,13 @@
     height: 55%;
     box-shadow: 0px 3px 3px 1px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 
     > * {
 	    height: 100%;
-	    padding: 0.5em 1rem;
+	    padding: 0.5rem 1rem;
+	    object-fit: contain;
 	}
 }
 
@@ -23,7 +26,9 @@
 	height: 45%;
 
     .infinite-stipe > * {
-	    height: calc(100% - 1em);
-	    margin: 0.5em 10rem;
+	    height: 100%;
+	    margin: 0;
+	    padding: 0.5rem 10vw;
+	    object-fit: contain;
 	}
 }
