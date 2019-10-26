@@ -41,7 +41,7 @@ class App extends Component {
         style={this.appStyle()}>
         <Title />
         <RankingsTable showLogos={this.state.settings.showLogos} />
-        {this.state.settings.showLogos ? <LogosStripe /> : null}
+        <LogosStripe showLogos={this.state.settings.showLogos} />
         <SettingsButton />
         {this.state.settings.showTimer ? <Timer /> : null}
         <ReactResizeDetector handleWidth handleHeight onResize={() => this.setState({ isFullscreen: isFullscreen() })} />
