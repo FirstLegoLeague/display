@@ -6,11 +6,17 @@
 	 > * {
 	    width: 100%;
 	}
+
+	&.local-logos-hidden {
+		height: 10%;
+
+		#global-logos {
+			height: 100%;
+			box-shadow: none;
+		}
+	}
 }
 
-#logo-stripe-row.local-logos-hidden {
-	height: 10%;
-}
 
 #global-logos {
     height: 55%;
@@ -24,11 +30,6 @@
 	    padding: 0.5rem 1rem;
 	    object-fit: contain;
 	}
-}
-
-#global-logos.local-logos-hidden {
-	height: 100%;
-	box-shadow: none;
 }
 
 #local-logos {
