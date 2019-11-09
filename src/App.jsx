@@ -40,8 +40,8 @@ class App extends Component {
       <div className={`app fll ui padded grid tile-background ${this.state.isFullscreen ? 'fullscreen' : ''}`}
         style={this.appStyle()}>
         <Title />
-        <RankingsTable showLogos={this.state.settings.showLogos} />
-        {this.state.settings.showLogos ? <LogosStripe /> : null}
+        <RankingsTable showLocalLogos={this.state.settings.showLogos} />
+        <LogosStripe showLocalLogos={this.state.settings.showLogos} />
         <SettingsButton />
         {this.state.settings.showTimer ? <Timer /> : null}
         <ReactResizeDetector handleWidth handleHeight onResize={() => this.setState({ isFullscreen: isFullscreen() })} />

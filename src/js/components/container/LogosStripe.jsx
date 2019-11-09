@@ -22,10 +22,10 @@ class LogosStripe extends RestSyncingComponent {
         localLogos.push(<img src={this.state.data.local[i].image} />)
       }
       return [
-        <div id='global-logos'>{globalLogos}</div>,
-        <div id='local-logos'>
+        <div id='global-logos' className={this.props.showLocalLogos ? '' : 'local-logos-hidden'}>{globalLogos}</div>,
+        this.props.showLocalLogos ? <div id='local-logos'>
           <InfiniteStripe speed='100'>{localLogos}</InfiniteStripe>
-        </div>
+        </div> : null
       ]
     } else if (this.state.error) {
       return <div>Could'nt load logos</div>
@@ -39,7 +39,7 @@ class LogosStripe extends RestSyncingComponent {
   }
 
   render () {
-    return <div className='row' id='logo-stripe-row'>
+    return <div className={!this.props.showLocalLogos ? 'row local-logos-hidden' : 'row'} id='logo-stripe-row'>
       {this.stripe()}
     </div>
   }

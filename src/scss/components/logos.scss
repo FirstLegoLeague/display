@@ -8,6 +8,10 @@
 	}
 }
 
+#logo-stripe-row.local-logos-hidden {
+	height: 10%;
+}
+
 #global-logos {
     height: 55%;
     box-shadow: 0px 3px 3px 1px;
@@ -20,6 +24,11 @@
 	    padding: 0.5rem 1rem;
 	    object-fit: contain;
 	}
+}
+
+#global-logos.local-logos-hidden {
+	height: 100%;
+	box-shadow: none;
 }
 
 #local-logos {
