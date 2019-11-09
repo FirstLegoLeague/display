@@ -27,7 +27,7 @@ class InfiniteTable extends Component {
     } else if (oldScroll >= height / 2) {
       return oldScroll - height / 2
     } else {
-      return oldScroll + (this.props.speed || DEFAULT_SPEED)
+      return oldScroll + ((this.props.speed || DEFAULT_SPEED) / 2)
     }
   }
 
