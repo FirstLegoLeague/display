@@ -91,12 +91,18 @@ class InfiniteTable extends Component {
 
   fontSize (size) {
     switch (size) {
+      case 'Tiny':
+        return '12xp'
       case 'Small':
         return '14px'
       case 'Medium':
         return '16px'
       case 'Large':
         return '18px'
+      case 'Giant':
+        return '20px'
+      case 'Huge':
+        return '22px'
     }
   }
 
