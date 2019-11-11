@@ -28,7 +28,7 @@ class LogosStripe extends RestSyncingComponent {
       return [
         <div id='global-logos'>{globalLogos}</div>,
         this.showLocalLogos() ? <div id='local-logos'>
-          <InfiniteStripe speed='100'>{localLogos}</InfiniteStripe>
+          <InfiniteStripe speed={2}>{localLogos}</InfiniteStripe>
         </div> : null
       ]
     } else if (this.state.error) {

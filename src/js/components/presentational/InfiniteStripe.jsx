@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const DEFAULT_SPEED = 10
+const DEFAULT_SPEED = 1
 const DEFAULT_DELAY = 0
 
 class InfiniteStripe extends Component {
@@ -19,7 +19,7 @@ class InfiniteStripe extends Component {
   }
 
   newScroll (oldScroll) {
-    const width = this.stripeScrollWidth()
+    const width = this.refs.stripe.scrollWidth
     if (!this.isScrolling()) {
       return 0
     } else if (oldScroll >= width / 2) {
@@ -29,12 +29,8 @@ class InfiniteStripe extends Component {
     }
   }
 
-  stripeScrollWidth () {
-    return this.state.scrollLeft + this.refs.stripe.scrollWidth
-  }
-
   isScrolling () {
-    return this.refs.stripe.clientWidth < this.stripeScrollWidth()
+    return this.refs.stripe.parentElement ? this.refs.stripe.parentElement.clientWidth < this.refs.stripe.scrollWidth : false
   }
 
   render () {
@@ -42,7 +38,7 @@ class InfiniteStripe extends Component {
     const children = this.props.children
 
     if (scrolling) {
-      return <div className=' scrolling' id={this.props.id} ref='stripe' style={{ direction: 'ltr', marginLeft: -this.state.scrollLeft }}>
+      return <div className='infinite-stripe scrolling' id={this.props.id} ref='stripe' style={{ direction: 'ltr', marginLeft: -this.state.scrollLeft }}>
         {children}
         {children}
       </div>
