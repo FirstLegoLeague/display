@@ -27,7 +27,7 @@ class InfiniteTable extends Component {
     } else if (oldScroll >= height / 2) {
       return oldScroll - height / 2
     } else {
-      return oldScroll + (this.props.speed || DEFAULT_SPEED)
+      return oldScroll + ((this.props.speed || DEFAULT_SPEED) / 2)
     }
   }
 
@@ -91,12 +91,18 @@ class InfiniteTable extends Component {
 
   fontSize (size) {
     switch (size) {
+      case 'Tiny':
+        return '12xp'
       case 'Small':
         return '14px'
       case 'Medium':
         return '16px'
       case 'Large':
         return '18px'
+      case 'Giant':
+        return '20px'
+      case 'Huge':
+        return '22px'
     }
   }
 
