@@ -11,6 +11,10 @@ class LogosStripe extends RestSyncingComponent {
     super('images:reload', urlPromise)
   }
 
+  showLocalLogos () {
+    return this.props.showLocalLogos && this.state.data.local && this.state.data.local.length > 0
+  }
+
   stripe () {
     if (this.state.data) {
       const globalLogos = []
@@ -22,9 +26,9 @@ class LogosStripe extends RestSyncingComponent {
         localLogos.push(<img src={this.state.data.local[i].image} />)
       }
       return [
-        <div id='global-logos' className={this.props.showLocalLogos ? '' : 'local-logos-hidden'}>{globalLogos}</div>,
-        this.props.showLocalLogos ? <div id='local-logos'>
-          <InfiniteStripe speed='100'>{localLogos}</InfiniteStripe>
+        <div id='global-logos'>{globalLogos}</div>,
+        this.showLocalLogos() ? <div id='local-logos'>
+          <InfiniteStripe speed={2}>{localLogos}</InfiniteStripe>
         </div> : null
       ]
     } else if (this.state.error) {
@@ -39,7 +43,7 @@ class LogosStripe extends RestSyncingComponent {
   }
 
   render () {
-    return <div className={!this.props.showLocalLogos ? 'row local-logos-hidden' : 'row'} id='logo-stripe-row'>
+    return <div className={!this.showLocalLogos() ? 'row local-logos-hidden' : 'row'} id='logo-stripe-row'>
       {this.stripe()}
     </div>
   }

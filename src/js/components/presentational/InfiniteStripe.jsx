@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const DEFAULT_SPEED = 10
+const DEFAULT_SPEED = 1
 const DEFAULT_DELAY = 0
 
 class InfiniteStripe extends Component {
@@ -9,33 +9,44 @@ class InfiniteStripe extends Component {
     this.state = { scrollLeft: 0 }
   }
 
+  scrollCallback () {
+    this.setState({ scrollLeft: this.newScroll(this.state.scrollLeft) })
+    window.requestAnimationFrame(() => this.scrollCallback())
+  }
+
   componentDidMount () {
-    setTimeout(() => {
-      this.interval = setInterval(() => {
-        this.setState({ scrollLeft: this.newScroll(this.state.scrollLeft) })
-      }, 1000 / (this.props.speed || DEFAULT_SPEED))
-    }, (this.props.delay || DEFAULT_DELAY))
+    setTimeout(() => window.requestAnimationFrame(() => this.scrollCallback()), (this.props.delay || DEFAULT_DELAY))
   }
 
   newScroll (oldScroll) {
     const width = this.refs.stripe.scrollWidth
-    if (oldScroll >= width / 2) {
+    if (!this.isScrolling()) {
       return 0
+    } else if (oldScroll >= width / 2) {
+      return oldScroll - width / 2
     } else {
-      return oldScroll + 1
+      return oldScroll + (this.props.speed || DEFAULT_SPEED)
     }
   }
 
-  componentWillUnmount () {
-    clearInterval(this.interval)
+  isScrolling () {
+    return this.refs.stripe.parentElement ? this.refs.stripe.parentElement.clientWidth < this.refs.stripe.scrollWidth : false
   }
 
   render () {
+    const scrolling = Object.keys(this.refs).length ? this.isScrolling() : false
     const children = this.props.children
-    return <div className='infinite-stipe' id={this.props.id} ref='stripe' style={{ direction: 'ltr', marginLeft: -this.state.scrollLeft }}>
-      {children}
-      {children}
-    </div>
+
+    if (scrolling) {
+      return <div className='infinite-stripe scrolling' id={this.props.id} ref='stripe' style={{ direction: 'ltr', marginLeft: -this.state.scrollLeft }}>
+        {children}
+        {children}
+      </div>
+    } else {
+      return <div className='infinite-stripe' id={this.props.id} ref='stripe' style={{ direction: 'ltr', marginLeft: -this.state.scrollLeft }}>
+        {children}
+      </div>
+    }
   }
 }
 
