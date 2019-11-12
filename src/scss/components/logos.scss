@@ -6,11 +6,17 @@
 	 > * {
 	    width: 100%;
 	}
+
+	&.local-logos-hidden {
+		height: 10%;
+
+		#global-logos {
+			height: 100%;
+			box-shadow: none;
+		}
+	}
 }
 
-#logo-stripe-row.local-logos-hidden {
-	height: 10%;
-}
 
 #global-logos {
     height: 55%;
@@ -26,18 +32,20 @@
 	}
 }
 
-#global-logos.local-logos-hidden {
-	height: 100%;
-	box-shadow: none;
-}
-
 #local-logos {
 	height: 45%;
 
-    .infinite-stipe > * {
-	    height: 100%;
-	    margin: 0;
-	    padding: 0.5rem 10vw;
-	    object-fit: contain;
-	}
+    .infinite-stripe {
+    	&:not(.scrolling) {
+    		display: flex;
+    		justify-content: space-evenly;
+    	}
+
+    	> * {
+		    height: 100%;
+		    margin: 0;
+		    padding: 0.5rem 10vw;
+		    object-fit: contain;
+		}
+    }
 }
