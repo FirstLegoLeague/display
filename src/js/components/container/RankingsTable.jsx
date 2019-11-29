@@ -72,7 +72,7 @@ class RankingsTable extends RestSyncingComponent {
   }
 
   render () {
-    return <div className={this.props.showLogos ? 'sixteen wide column logo-striped' : 'sixteen wide column'} id='rankings-row'>{this.table()}</div>
+    return <div className={this.props.showLocalLogos ? 'sixteen wide column logo-striped' : 'sixteen wide column'} id='rankings-row'>{this.table()}</div>
   }
 }
 
