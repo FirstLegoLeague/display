@@ -35,9 +35,13 @@ class App extends Component {
     return style
   }
 
+  appClass () {
+    return `app fll ui padded grid tile-background ${this.state.isFullscreen ? 'fullscreen' : ''} ${this.state.settings.RTL ? 'rtl' : ''}`
+  }
+
   render () {
     return (
-      <div className={`app fll ui padded grid tile-background ${this.state.isFullscreen ? 'fullscreen' : ''}`}
+      <div className={this.appClass()}
         style={this.appStyle()}>
         <Title />
         <RankingsTable showLocalLogos={this.state.settings.showLogos} />
