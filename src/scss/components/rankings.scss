@@ -9,8 +9,16 @@
 #rankings {
 	height: 100%;
 
+	th:not(.large), td:not(.large) {
+	    text-align: center;
+	}
+
 	td {
 	    padding-top: 0.2rem;
 	    padding-bottom: 0.2rem;
 	}
+}
+
+.rtl #rankings .large, .rtl #rankings .large {
+	text-align: right;
 }
