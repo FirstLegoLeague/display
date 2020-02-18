@@ -12,6 +12,7 @@ import Timer from './js/components/container/Timer.jsx'
 import SettingsButton from './js/components/container/SettingsButton.jsx'
 import LogosStripe from './js/components/container/LogosStripe.jsx'
 import RankingsTable from './js/components/container/RankingsTable.jsx'
+import NextUp from './js/components/container/NextUp.jsx'
 
 import Settings from './js/services/settings.js'
 
@@ -44,7 +45,7 @@ class App extends Component {
       <div className={this.appClass()}
         style={this.appStyle()}>
         <Title />
-        <RankingsTable showLocalLogos={this.state.settings.showLogos} />
+        {this.state.settings.showNextUp ? <NextUp showLocalLogos={this.state.settings.showLogos}/> : <RankingsTable showLocalLogos={this.state.settings.showLogos} />}
         <LogosStripe showLocalLogos={this.state.settings.showLogos} />
         <SettingsButton />
         {this.state.settings.showTimer ? <Timer /> : null}

@@ -41,6 +41,31 @@ router.get('/image/all', (req, res, next) => {
   res.send({ local: responses.local, global: responses.global })
 })
 
+router.get('/team/all', (req, res) => {
+  const responses = mockResponses()
+  res.send(responses.teams)
+})
+
+router.get('/table/all', (req, res) => {
+  const responses = mockResponses()
+  res.send(responses.tables)
+})
+
+router.get('/match/current', (req, res) => {
+  const responses = mockResponses()
+  res.send(responses.matches[0])
+})
+
+router.get('/match/upcoming/:count', (req, res) => {
+  const responses = mockResponses()
+  res.send(responses.matches.slice(1, req.params.count + 1))
+})
+
+router.get('/match/upcoming', (req, res) => {
+  const responses = mockResponses()
+  res.send(responses.matches.slice(1, 2))
+})
+
 router.get('/rankings.json', (req, res, next) => {
   const responses = mockResponses()
   res.send(responses.rankings[responses.stage])

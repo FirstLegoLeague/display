@@ -7,7 +7,8 @@ import NumericSlider from '../controls/NumericSlider.jsx'
 import EnumSetting from '../controls/EnumSetting.jsx'
 
 const SETTINGS_TITLES = {
-  showTimer: 'Show timer',
+  showNextUp: 'Show next teams instead of scoreboard',
+  showTimer: 'Show timer over scoreboard',
   showLogos: 'Show Logos Strip',
   RTL: 'Right to Left',
   scrollSpeed: 'Scroll Speed',

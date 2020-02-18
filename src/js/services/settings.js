@@ -1,6 +1,7 @@
 import EventEmitter from 'event-emitter-es6'
 
 const DEFAULT_SETTINGS = {
+  showNextUp: true,
   showTimer: true,
   showLogos: true,
   RTL: false,
