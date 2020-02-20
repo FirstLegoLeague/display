@@ -1,7 +1,7 @@
 import React from 'react'
 
 import RestSyncingComponent from './generic/RestSyncingComponent.jsx'
-import NextUpTeam from './NextUpTeam.jsx'
+import NextUpTables from './NextUpTables.jsx'
 
 import Environment from '../../services/env'
 
@@ -9,13 +9,13 @@ import '../../../scss/components/NextUpTeams.scss'
 
 class NextUpTeams extends RestSyncingComponent {
   constructor () {
-    const urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/table/all`)
-    super('tables:reload', urlPromise)
+    const urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/team/all`)
+    super('teams:reload', urlPromise)
   }
 
   render () {
     if (this.state.data) {
-      return this.props.teams.map(({ tableId, teamNumber }) => <NextUpTeam table={this.state.data.find(table => table.tableId === tableId)} teamNumber={teamNumber} />)
+      return <NextUpTables matchTeams={this.props.matchTeams} teams={this.state.data} />
     } else if (this.state.error) {
       return <div>Couldn't load table names</div>
     } else {

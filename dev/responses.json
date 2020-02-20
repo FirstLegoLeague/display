@@ -350,25 +350,29 @@
     { "tableId": 1, "tableName": "Table 1" },
     { "tableId": 2, "tableName": "Table 2" },
     { "tableId": 3, "tableName": "Table 3" },
-    { "tableId": 4, "tableName": "Table 4" }
+    { "tableId": 4, "tableName": "Table 4" },
+    { "tableId": 5, "tableName": "Table 5" },
+    { "tableId": 6, "tableName": "Table 6" },
+    { "tableId": 7, "tableName": "Table 7" },
+    { "tableId": 8, "tableName": "Table 8" }
   ],
   "teams": [
-    { "number": 1, "name": "The first team" },
-    { "number": 2, "name": "Two is always together" },
-    { "number": 8, "name": "Magic 8" },
-    { "number": 15, "name": "The RoboJars" },
-    { "number": 54, "name": "What will you get if you multiply six by nine?" },
-    { "number": 123, "name": "Genesis" },
-    { "number": 132, "name": "King of Hearts" },
-    { "number": 173, "name": "The Society of the Blind Eye" },
-    { "number": 182, "name": "The blue dot" },
-    { "number": 534, "name": "The Fellowship of the Ring" },
-    { "number": 856, "name": "The Order of the Phoenix" },
-    { "number": 956, "name": "ElectroWreckers" },
-    { "number": 981, "name": "The Green slime club" },
-    { "number": 2212, "name": "The Spikes" },
-    { "number": 2468, "name": "Even us" },
-    { "number": 8846, "name": "Syntax error" }
+    { "number": 1, "name": "The first team", "affiliation": "Westworld" },
+    { "number": 2, "name": "Two is always together", "affiliation": "Ba-Sing-Se" },
+    { "number": 8, "name": "Magic 8", "affiliation": "Naboo" },
+    { "number": 15, "name": "The RoboJars", "affiliation": "Gravity Falls" },
+    { "number": 54, "name": "What will you get if you multiply six by nine?", "affiliation": "Narnia" },
+    { "number": 123, "name": "Genesis", "affiliation": "Rivendell" },
+    { "number": 132, "name": "King of Hearts", "affiliation": "Hogwarts" },
+    { "number": 173, "name": "The Society of the Blind Eye", "affiliation": "Gotham" },
+    { "number": 182, "name": "The blue dot", "affiliation": "Winterfell" },
+    { "number": 534, "name": "The Fellowship of the Ring", "affiliation": "Camelot" },
+    { "number": 856, "name": "The Order of the Phoenix", "affiliation": "Wanderland" },
+    { "number": 956, "name": "ElectroWreckers", "affiliation": "Oz" },
+    { "number": 981, "name": "The Green slime club", "affiliation": "Neverland" },
+    { "number": 2212, "name": "The Spikes", "affiliation": "Lod" },
+    { "number": 2468, "name": "Even us", "affiliation": "Avalon" },
+    { "number": 8846, "name": "Syntax error", "affiliation": "Matrix" }
   ],
   "matches": [{
     "matchId": 1,
@@ -379,7 +383,11 @@
       { "teamNumber": 2468, "tableId": 1 },
       { "teamNumber": 8, "tableId": 2 },
       { "teamNumber": 2212, "tableId": 3 },
-      { "teamNumber": 123, "tableId": 4 }
+      { "teamNumber": 123, "tableId": 4 },
+      { "teamNumber": 173, "tableId": 5 },
+      { "teamNumber": 2, "tableId": 6 },
+      { "teamNumber": 8846, "tableId": 7 },
+      { "teamNumber": 981, "tableId": 8 }
     ]
   },{
     "matchId": 2,
@@ -390,7 +398,11 @@
       { "teamNumber": 2468, "tableId": 1 },
       { "teamNumber": 8, "tableId": 2 },
       { "teamNumber": 2212, "tableId": 3 },
-      { "teamNumber": 123, "tableId": 4 }
+      { "teamNumber": 123, "tableId": 4 },
+      { "teamNumber": 173, "tableId": 5 },
+      { "teamNumber": 2, "tableId": 6 },
+      { "teamNumber": 8846, "tableId": 7 },
+      { "teamNumber": 981, "tableId": 8 }
     ]
   },{
     "matchId": 3,
@@ -401,7 +413,11 @@
       { "teamNumber": 2468, "tableId": 1 },
       { "teamNumber": 8, "tableId": 2 },
       { "teamNumber": 2212, "tableId": 3 },
-      { "teamNumber": 123, "tableId": 4 }
+      { "teamNumber": 123, "tableId": 4 },
+      { "teamNumber": 173, "tableId": 5 },
+      { "teamNumber": 2, "tableId": 6 },
+      { "teamNumber": 8846, "tableId": 7 },
+      { "teamNumber": 981, "tableId": 8 }
     ]
   },{
     "matchId": 4,
@@ -412,7 +428,11 @@
       { "teamNumber": 2468, "tableId": 1 },
       { "teamNumber": 8, "tableId": 2 },
       { "teamNumber": 2212, "tableId": 3 },
-      { "teamNumber": 123, "tableId": 4 }
+      { "teamNumber": 123, "tableId": 4 },
+      { "teamNumber": 173, "tableId": 5 },
+      { "teamNumber": 2, "tableId": 6 },
+      { "teamNumber": 8846, "tableId": 7 },
+      { "teamNumber": 981, "tableId": 8 }
     ]
   },{
     "matchId": 5,
@@ -423,7 +443,11 @@
       { "teamNumber": 2468, "tableId": 1 },
       { "teamNumber": 8, "tableId": 2 },
       { "teamNumber": 2212, "tableId": 3 },
-      { "teamNumber": 123, "tableId": 4 }
+      { "teamNumber": 123, "tableId": 4 },
+      { "teamNumber": 173, "tableId": 5 },
+      { "teamNumber": 2, "tableId": 6 },
+      { "teamNumber": 8846, "tableId": 7 },
+      { "teamNumber": 981, "tableId": 8 }
     ]
   },{
     "matchId": 6,
@@ -434,7 +458,11 @@
       { "teamNumber": 2468, "tableId": 1 },
       { "teamNumber": 8, "tableId": 2 },
       { "teamNumber": 2212, "tableId": 3 },
-      { "teamNumber": 123, "tableId": 4 }
+      { "teamNumber": 123, "tableId": 4 },
+      { "teamNumber": 173, "tableId": 5 },
+      { "teamNumber": 2, "tableId": 6 },
+      { "teamNumber": 8846, "tableId": 7 },
+      { "teamNumber": 981, "tableId": 8 }
     ]
   }]
 }

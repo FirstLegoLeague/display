@@ -1,3 +1,22 @@
 #next-up {
+    height: 100%;
+}
+
+#next-up .header {
+	height: 2rem;
+}
+
+#next-up > .grid {
+    height: calc(100% - 2rem)
+}
+
+#next-up > .grid > .row,
+#next-up > .grid > .row > .column > .segment > .grid > .column > .grid > .row {
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+#next-up > .grid > .row > .column,
+#next-up > .grid > .row > .column > .segment,
+#next-up > .grid > .row > .column > .segment > .grid {
 	height: 100%;
 }
