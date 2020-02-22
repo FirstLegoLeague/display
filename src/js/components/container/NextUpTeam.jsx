@@ -19,11 +19,11 @@ class NextUpTeam extends Component {
           </div>
           <div className='eight wide column'>
             <div className='ui grid'>
-              <div className='row team-name'>
-                <div className='ui header'>{team.name}</div>
-              </div>
-              <div className='row team-affiliation'>
-                <div className='ui header'>{team.affiliation}</div>
+              <div className='row'>
+                <div className='ui large header'>
+                  {team.name}
+                  <div className='ui sub header'>{team.affiliation}</div>
+                </div>
               </div>
             </div>
           </div>
