@@ -45,7 +45,7 @@ class App extends Component {
       <div className={this.appClass()}
         style={this.appStyle()}>
         <Title />
-        {this.state.settings.showNextUp ? <NextUp showLocalLogos={this.state.settings.showLogos}/> : <RankingsTable showLocalLogos={this.state.settings.showLogos} />}
+        {this.state.settings.showNextUp ? <NextUp showLocalLogos={this.state.settings.showLogos} /> : <RankingsTable showLocalLogos={this.state.settings.showLogos} />}
         <LogosStripe showLocalLogos={this.state.settings.showLogos} />
         <SettingsButton />
         {this.state.settings.showTimer ? <Timer /> : null}
