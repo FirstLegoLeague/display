@@ -7,24 +7,16 @@ class NextUpTeam extends Component {
     return <div className='column' style={{ width: `${100 / this.props.columns}%` }}>
       <div className='ui raised segment'>
         <div className='ui grid'>
-          <div className='ui three wide column table-name'>
-            <div className='ui header'>{tableName}</div>
-          </div>
-          <div className='ui five wide column team-number'>
-            <div className='ui statistic'>
-              <div className='value'>
-                #{team.number}
-              </div>
+          <div className='five wide column'>
+            <div className='ui large header'>
+              <div className='sub header'>{tableName}</div>
+              <div>#{team.number}</div>
             </div>
           </div>
-          <div className='eight wide column'>
-            <div className='ui grid'>
-              <div className='row'>
-                <div className='ui large header'>
-                  {team.name}
-                  <div className='ui sub header'>{team.affiliation}</div>
-                </div>
-              </div>
+          <div className='eleven wide column'>
+            <div className='ui large team-name header'>
+              {team.name}
+              <div className='sub header'>{team.affiliation}</div>
             </div>
           </div>
         </div>

@@ -17,20 +17,21 @@ class NextUpTeams extends RestSyncingComponent {
 
   render () {
     if (this.state.data) {
-      return this.props.matchTeams.map(({ tableId, teamNumber }) =>
+      const matchTeams = this.props.matchTeams.filter(({ teamNumber }) => Boolean(teamNumber))
+      return matchTeams.filter(({ teamNumber }) => Boolean(teamNumber)).map(({ tableId, teamNumber }) =>
         <NextUpTeam
           table={this.state.data.find(table => table.tableId === tableId)}
           team={this.props.teams.find(team => team.number === teamNumber)}
           columns={TEAMS_PER_ROW} />)
-        .reduce((nextUpTeams, nextUpTeam) => {
-          if (nextUpTeams[nextUpTeams.length - 1].length === TEAMS_PER_ROW) {
-            nextUpTeams.push([nextUpTeam])
-          } else {
-            nextUpTeams[nextUpTeams.length - 1].push(nextUpTeam)
+        .reduce((nextUpTeams, nextUpTeam, index) => {
+          const row = index % (matchTeams.length / TEAMS_PER_ROW)
+          if (!nextUpTeams[row]) {
+            nextUpTeams[row] = []
           }
+          nextUpTeams[row].push(nextUpTeam)
           return nextUpTeams
-        }, [[]])
-        .map(teamsRow => <div className='row' style={{ height: `${100 / (this.props.matchTeams.length / TEAMS_PER_ROW)}%` }} >{teamsRow}</div>)
+        }, [])
+        .map(teamsRow => <div className='row' style={{ height: `${100 / (matchTeams.length / TEAMS_PER_ROW)}%` }} >{teamsRow}</div>)
     } else if (this.state.error) {
       return <div>Couldn't load table names</div>
     } else {

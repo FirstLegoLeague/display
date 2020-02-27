@@ -2,7 +2,7 @@
     height: 100%;
 }
 
-#next-up .header {
+#next-up > .header {
 	height: 2rem;
 }
 
@@ -19,4 +19,10 @@
 #next-up > .grid > .row > .column > .segment,
 #next-up > .grid > .row > .column > .segment > .grid {
 	height: 100%;
+}
+
+#next-up .team-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

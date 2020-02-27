@@ -12,9 +12,9 @@ class NextUp extends RestSyncingComponent {
   }
 
   content () {
-    if (this.state.data) {
+    if (this.state.data && this.state.data.length > 0) {
       return [
-        <div class='ui header'>{this.state.data[0].stage} match #{this.state.data[0].matchId}</div>,
+        <div class='ui huge header'>{this.state.data[0].stage} match #{this.state.data[0].matchId}</div>,
         <div className='ui grid'>
           <NextUpTeams matchTeams={this.state.data[0].matchTeams} />
         </div>
