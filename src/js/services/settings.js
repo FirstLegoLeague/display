@@ -6,7 +6,7 @@ const DEFAULT_SETTINGS = {
   showLogos: true,
   RTL: false,
   scrollSpeed: 1,
-  textSize: ''
+  textSize: 'Small'
 }
 const SETTINGS_KEY = 'settings'
 
