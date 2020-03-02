@@ -19,11 +19,20 @@
 
 #next-up > .grid > .row > .column,
 #next-up > .grid > .row > .column > .segment,
-#next-up > .grid > .row > .column > .segment > .grid {
+#next-up > .grid > .row > .column > .segment > .grid > .column,
+#next-up .segment .ui.header {
 	height: 100%;
 }
 
+#next-up > .grid > .row > .column > .segment > .grid > .column {
+    padding: 1%;
+}
+
+#next-up > .grid > .row > .column > .segment > .grid {
+    height: calc(100% + 2rem);
+}
+
 #next-up .segment .ui.header > * {
-    height: 1em;
+    height: 50%;
     line-height: 1em;
 } 

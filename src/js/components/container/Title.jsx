@@ -19,7 +19,7 @@ class Title extends MhubSyncingComponent {
       return <div className='row' id='title-row'>
         <div class='three wide column' id='fll-logo' />
         <div class='center aligned ten wide column' id='title'>
-          <Textfit className='cell' mode='single' max='50' forceSingleModeWidth='false'>
+          <Textfit className='cell' mode='single' max='50' forceSingleModeWidth={false}>
             {this.state.data}
           </Textfit>
           <Stage />

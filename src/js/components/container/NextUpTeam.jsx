@@ -20,16 +20,16 @@ class NextUpTeam extends Component {
       <div className='ui raised segment'>
         <div className='ui grid'>
           <div className='five wide column'>
-            <div className='ui header'>
-              <Textfit className='sub header' mode='single' max='50'>{tableName}</Textfit>
-              <Textfit mode='single' max='70'>#{team.number}</Textfit>
-            </div>
+            <Textfit className='ui header' mode='single' max='70' forceSingleModeWidth={false}>
+              <div className='sub header'>{tableName}</div>
+              #{team.number}
+            </Textfit>
           </div>
           <div className='eleven wide column'>
-            <div className='ui header'>
-              <Textfit mode='single' max='70'>{team.name}</Textfit>
-              <Textfit className='sub header' mode='single' max='50'>{team.affiliation}</Textfit>
-            </div>
+            <Textfit className='ui header' mode='single' max='70' forceSingleModeWidth={false}>
+              {team.name}
+              <div className='sub header'>{team.affiliation}</div>
+            </Textfit>
           </div>
         </div>
       </div>
