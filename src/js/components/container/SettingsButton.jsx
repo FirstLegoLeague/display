@@ -7,12 +7,12 @@ import NumericSlider from '../controls/NumericSlider.jsx'
 import EnumSetting from '../controls/EnumSetting.jsx'
 
 const SETTINGS_TITLES = {
-  showNextUp: 'Show next teams instead of scoreboard',
-  showTimer: 'Show timer over scoreboard',
-  showLogos: 'Show Logos Strip',
-  RTL: 'Right to Left',
-  scrollSpeed: 'Scroll Speed',
-  textSize: 'Text Size'
+  scrollSpeed: 'Scroll speed',
+  textSize: 'Text size',
+  showTimer: 'Show match timer over Scoreboard',
+  showLogos: 'Show local sponsor logo strip',
+  showNextUp: 'Show Next-Up teams instead of Scoreboard',
+  RTL: 'Right to left'
 }
 
 class SettingsButton extends Component {
