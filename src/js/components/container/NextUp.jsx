@@ -4,6 +4,9 @@ import RestSyncingComponent from './generic/RestSyncingComponent.jsx'
 import NextUpTeams from './NextUpTeams.jsx'
 
 import Environment from '../../services/env'
+import { upperCaseFirstIfLetter } from '../../services/upper_case'
+
+import '../../../scss/components/NextUp.scss'
 
 class NextUp extends RestSyncingComponent {
   constructor () {
@@ -14,7 +17,7 @@ class NextUp extends RestSyncingComponent {
   content () {
     if (this.state.data && this.state.data.length > 0) {
       return [
-        <div class='ui huge header'>{this.state.data[0].stage} match #{this.state.data[0].matchId}</div>,
+        <div class='ui huge header'>{upperCaseFirstIfLetter(this.state.data[0].stage)} match #{this.state.data[0].matchId}</div>,
         <div className='ui grid'>
           <NextUpTeams matchTeams={this.state.data[0].matchTeams} />
         </div>
@@ -32,7 +35,7 @@ class NextUp extends RestSyncingComponent {
 
   render () {
     return <div id='main-row' className={this.props.showLocalLogos ? 'sixteen wide column logo-striped' : 'sixteen wide column'}>
-      <div id='next-up' className='ui segment'>
+      <div id='next-up' className='ui basic segment'>
         {this.content()}
       </div>
     </div>

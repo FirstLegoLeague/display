@@ -5,18 +5,7 @@ import { Textfit } from 'react-textfit'
 import MhubSyncingComponent from './generic/MhubSyncingComponent.jsx'
 
 import Environment from '../../services/env'
-
-function upperCaseFirstIfLetter (string) {
-  const stringRegex = /^\D/
-  const regex = new RegExp(stringRegex)
-
-  if (regex.test(string)) {
-    const first = string.slice(0, 1)
-    const stelse = string.slice(1, string.length)
-    return first.toUpperCase() + stelse
-  }
-  return string
-}
+import { upperCaseFirstIfLetter } from '../../services/upper_case'
 
 class Stage extends MhubSyncingComponent {
   constructor () {

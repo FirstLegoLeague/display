@@ -5,8 +5,6 @@ import NextUpTables from './NextUpTables.jsx'
 
 import Environment from '../../services/env'
 
-import '../../../scss/components/NextUpTeams.scss'
-
 class NextUpTeams extends RestSyncingComponent {
   constructor () {
     const urlPromise = Environment.load().then(env => `${env.moduleTournamentUrl}/team/all`)

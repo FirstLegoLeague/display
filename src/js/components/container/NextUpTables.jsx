@@ -5,8 +5,6 @@ import NextUpTeam from './NextUpTeam.jsx'
 
 import Environment from '../../services/env'
 
-import '../../../scss/components/NextUpTeams.scss'
-
 const TEAMS_PER_ROW = 2
 
 class NextUpTeams extends RestSyncingComponent {

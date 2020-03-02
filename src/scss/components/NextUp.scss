@@ -4,6 +4,8 @@
 
 #next-up > .header {
 	height: 2rem;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
 }
 
 #next-up > .grid {
@@ -21,8 +23,7 @@
 	height: 100%;
 }
 
-#next-up .team-name {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+#next-up .segment .ui.header > * {
+    height: 1em;
+    line-height: 1em;
+} 
