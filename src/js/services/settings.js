@@ -1,12 +1,12 @@
 import EventEmitter from 'event-emitter-es6'
 
 const DEFAULT_SETTINGS = {
-  showNextUp: true,
+  scrollSpeed: 1,
+  textSize: 'Small',
   showTimer: true,
   showLogos: true,
-  RTL: false,
-  scrollSpeed: 1,
-  textSize: 'Small'
+  showNextUp: false,
+  RTL: false
 }
 const SETTINGS_KEY = 'settings'
 
