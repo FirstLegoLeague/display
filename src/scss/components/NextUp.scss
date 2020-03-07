@@ -1,42 +1,53 @@
 #next-up {
     height: 100%;
-}
 
-#next-up > .header {
-	height: 2rem;
-    margin-top: -1rem;
-    margin-bottom: 2rem;
-}
+    > .header {
+        height: 2rem;
+        margin-top: -1rem;
+        margin-bottom: 2rem;
+    }
 
-#next-up > .grid {
-    height: calc(100% - 2rem)
-}
+    > .grid {
+        height: calc(100% - 2rem);
 
-#next-up > .grid > .row,
-#next-up > .grid > .row > .column > .segment > .grid > .column > .grid > .row {
-    padding: 0.5rem 0 0.5rem 0;
-}
+        > .row {
+            padding: 0.5rem 0 0.5rem 0;
+            height: 100%;
 
-#next-up > .grid > .row > .column,
-#next-up > .grid > .row > .column > .segment,
-#next-up > .grid > .row > .column > .segment > .grid > .column,
-#next-up .segment .ui.header {
-	height: 100%;
-}
+            > .column {
+                height: 100%;
 
-#next-up > .grid > .row > .column > .segment > .grid > .column {
-    padding: 1%;
-}
+                > .segment {
+                    height: 100%;
 
-#next-up > .grid > .row > .column > .segment > .grid {
-    height: calc(100% + 2rem);
-}
+                    > .grid {
+                        height: calc(100% + 2rem);
 
-#next-up .segment .ui.header > * {
-    height: 50%;
-    line-height: 1em;
-}
+                        > .column {
+                            height: 100%;
+                            padding: 2%;
+                        }
+                    }
+                }
+            }
+        }
 
-#next-up .segment .ui.header .sub.header {
-    font-size: 0.5em;
+        > .column > .segment > .grid > .column > .grid > .row {
+            padding: 0.5rem 0 0.5rem 0;
+        }
+    }
+
+    .segment .ui.header {
+        height: 100%;
+        line-height: 1em;
+        box-shadow: none !important;
+        cursor: unset;
+        pointer-events: none;
+        font-weight: bold;
+        text-align: left;
+
+        .sub.header {
+            font-size: 0.5em;
+        }
+    }
 }

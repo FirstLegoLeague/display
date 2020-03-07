@@ -9,7 +9,7 @@ class NextUpTeam extends Component {
       <div className='ui raised segment'>
         <div className='ui grid'>
           <div className='four wide column'>
-            <Textfit className='ui header' mode='single' max='70' forceSingleModeWidth={false}>
+            <Textfit className='ui primary basic fluid button header' mode='single' max='70' forceSingleModeWidth={false}>
               <div className='sub header'>{tableName}</div>
               #{team.number}
             </Textfit>
