@@ -20,6 +20,14 @@
   background-repeat: no-repeat;
 }
 
+#main-row.logo-striped {
+  height: calc(100vh - 6rem - 20%);
+}
+
+#main-row:not(.logo-striped) {
+  height: calc(100vh - 6rem - 10%);
+}
+
 .show-on-hover:hover {
     transition: opacity 0.25s linear;
 }

@@ -1,0 +1,53 @@
+#next-up {
+    height: 100%;
+
+    > .header {
+        height: 2rem;
+        margin-top: -1rem;
+        margin-bottom: 2rem;
+    }
+
+    > .grid {
+        height: calc(100% - 2rem);
+
+        > .row {
+            padding: 0.5rem 0 0.5rem 0;
+            height: 100%;
+
+            > .column {
+                height: 100%;
+
+                > .segment {
+                    height: 100%;
+
+                    > .grid {
+                        height: calc(100% + 2rem);
+
+                        > .column {
+                            height: 100%;
+                            padding: 2%;
+                        }
+                    }
+                }
+            }
+        }
+
+        > .column > .segment > .grid > .column > .grid > .row {
+            padding: 0.5rem 0 0.5rem 0;
+        }
+    }
+
+    .segment .ui.header {
+        height: 100%;
+        line-height: 1em;
+        box-shadow: none !important;
+        cursor: unset;
+        pointer-events: none;
+        font-weight: bold;
+        text-align: left;
+
+        .sub.header {
+            font-size: 0.5em;
+        }
+    }
+}
